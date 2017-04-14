@@ -1,0 +1,27 @@
+{
+  "name": "bow_wow_wheres_my_chow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test/integrations/users.spec.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "knex": "^0.12.9",
+    "locus": "^2.0.1",
+    "method-override": "^2.3.8",
+    "morgan": "^1.8.1",
+    "pg": "^6.1.5",
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  }
+}
