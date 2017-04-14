@@ -1,6 +1,6 @@
 'use strict'
 
-const express = require('express');
+const express = require('express'),
       app = express(),
       methodOverride = require('method-override'),
       bodyParser = require('body-parser'),
@@ -14,7 +14,7 @@ require('ejs');
 require("locus");
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
-app.use(morgan);
+// app.use(morgan); <-- Says Morgan depreciated. WTF Mate?
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(methodOverride("_method"));
