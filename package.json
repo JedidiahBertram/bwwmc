@@ -1,5 +1,5 @@
 {
-  "name": "bow_wow_wheres_my_chow",
+  "name": "bwwmc",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -17,7 +17,7 @@
     "locus": "^2.0.1",
     "method-override": "^2.3.8",
     "morgan": "^1.8.1",
-    "pg": "^6.1.5",
+    "pg": "^6.1.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
