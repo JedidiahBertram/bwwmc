@@ -32,13 +32,18 @@ router.route('/new')
 //Called via http://localhost:3000/users/edit
 router.route('/edit')
     .get((req, res) => {
-        res.render('users/edit');
+        res.render("users/edit");
     });
 
-router.route('/delete')
+router.route('/:user_id/delete')
+    // var userId = parseInt(req.params.user_id, 10);
     .get((req, res) => {
-        res.render('users/delete');
+        res.render("users/delete", {
+            id: req.params.user_id
+        });
     });
+
+
 
 //Routes specific to one user
 router.route('/:user_id')
@@ -46,7 +51,7 @@ router.route('/:user_id')
         console.log(req.params);
 
         knex('users')
-            .where('id', req.params.user_id)
+            .where("id", req.params.user_id)
             .then((user) => {
                 res.render('users/show', {
                     user_id: user[0].user_id,
@@ -82,11 +87,12 @@ router.route('/:user_id')
     })
 
     .delete((req, res) => {
+        var specificId = parseInt(req.params.user_id, 10);
         knex('users')
-            .where('id', req.body.user.user_id)
+            .where('id', specificId)
             .del()
             .then(() => {
-                res.redirect('/home')
+                res.redirect('statics/home')
             });
     });
 
