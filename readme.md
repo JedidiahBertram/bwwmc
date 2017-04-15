@@ -15,7 +15,8 @@ dog food aisle (or possibly a trip to the store all together) through a convenie
 delivery system, but it provides dogs and their owners a healthy, organic altern-
 ative to the big brand name dog foods.
 
-Putting you, and your dogs bowels at ease.
+Putting you, and your dogs bowels at ease. You're life may have never been so
+melan-COLLIE. ;)
 
 The tools we will use to make this project a reality:
 
@@ -30,3 +31,9 @@ Christina Angeline, Toby Godfrey, Jon Ramer, Adrian Thomas, Jedidiah Bertram.
 These lovely folks are all part of the G45 cohort at Galvanize in Austin Texas.
 At the time of this project they had been studying full-stack web development for
 9 weeks.
+
+Trello? Are you there? There you are! https://trello.com/b/4vydhv9M/q2-project
+
+Photos!
+
+![alt tag](https://thumb.ibb.co/cYHaRQ/IMG_6834.jpg)
