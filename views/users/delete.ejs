@@ -7,6 +7,11 @@
 
                 <h1>Account Deletion Page</h1>
 
-                <div>
-                    <ul>Was your dog getting a little too husky? We understand. Our food is LABsolutely amazing.</ul>
-                </div>
+                <h2>Was your dog getting a little too husky? We understand. Our food IS LABsolutely amazing.</h2>
+
+                <form name="delete" action="/users/<%=id%>/?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Account">
+                </form>
+        </body>
+
+</html>
