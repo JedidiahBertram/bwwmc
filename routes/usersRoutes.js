@@ -3,11 +3,20 @@ const router = express.Router();
 const knex = require('../db/knex');
 
 
-router.route("/")
-    .post(function(req, res) {
+router.route('/')
+    .get((req, res) => {
+        knex('users')
+            .then((allUsers) => {
+                res.render('users/index', {
+                    users: allUsers
+                });
+            })
+    })
+
+    .post((req, res) => {
         knex('users').insert(req.body.user)
             .returning('id')
-            .catch(function(err) {
+            .catch((err) => {
                 console.log(err);
             })
 
@@ -15,20 +24,25 @@ router.route("/")
 
 //The users/new route - render the data entry page to insert a new user
 //called via http://localhost:3000/users/new
-router.route("/new")
-    .get(function(req, res) {
-        res.render("users/new");
+router.route('/new')
+    .get((req, res) => {
+        res.render('users/new');
     });
 //Update a user route
 //Called via http://localhost:3000/users/edit
-router.route("/edit")
-    .get(function(req, res) {
+router.route('/edit')
+    .get((req, res) => {
         res.render("users/edit");
+    });
+
+router.route('/delete')
+    .get((req, res) => {
+        res.render("users/delete");
     });
 
 //Routes specific to one user
 router.route('/:user_id')
-    .get(function(req, res) {
+    .get((req, res) => {
         console.log(req.params);
 
         knex('users')
@@ -51,21 +65,30 @@ router.route('/:user_id')
             });
     })
 
-    .put(function(req, res) {
+    .put((req, res) => {
         console.log('In the single user PUT route for ' + JSON.stringify(req.body.user_id));
 
         knex('users')
             .where('id', '=', req.body.user.user_id)
             .update(req.body.user)
-            .returning("id")
-            .then(function(id) {
+            .returning('id')
+            .then((id) => {
                 res.redirect(`/users/${id}`);
             })
-            .catch(function(err) {
+            .catch((err) => {
                 console.log(err);
-            });
+            })
 
     })
+
+    .delete((req, res) => {
+        knex('users')
+            .where('id', req.body.user.user_id)
+            .del()
+            .then(() => {
+                res.redirect('/home')
+            });
+    });
 
 
 
