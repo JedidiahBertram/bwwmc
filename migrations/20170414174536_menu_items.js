@@ -2,9 +2,9 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('menu_items', (t) => {
     t.increments().primary();
-    t.string('item_name');
-    t.string('item_ingredients');
-    t.interger('item_price');
+    t.string('item_name').notNullable().defaultTo('');
+    t.string('item_ingredients').notNullable().defaultTo('');
+    t.string('item_price').notNullable().defaultTo('');
   })
 };
 
