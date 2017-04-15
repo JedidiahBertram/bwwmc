@@ -32,12 +32,12 @@ router.route('/new')
 //Called via http://localhost:3000/users/edit
 router.route('/edit')
     .get((req, res) => {
-        res.render("users/edit");
+        res.render('users/edit');
     });
 
 router.route('/delete')
     .get((req, res) => {
-        res.render("users/delete");
+        res.render('users/delete');
     });
 
 //Routes specific to one user
@@ -46,7 +46,7 @@ router.route('/:user_id')
         console.log(req.params);
 
         knex('users')
-            .where("id", req.params.user_id)
+            .where('id', req.params.user_id)
             .then((user) => {
                 res.render('users/show', {
                     user_id: user[0].user_id,
