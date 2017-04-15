@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 require('ejs');
 require("locus");
 app.set('view engine', 'ejs');
+app.use(morgan('tiny'));
 app.use(express.static(__dirname + "/public"));
 // app.use(morgan); <-- Says Morgan depreciated. WTF Mate?
 app.use(bodyParser.urlencoded({
