@@ -20,5 +20,12 @@ router.route("/")
 
     })
 
+//The users/new route - render the data entry page to insert a new user
+router.route("/new")
+    .get(function(req, res) {
+        res.render("users/new");
+    });
+
+
 
 module.exports = router;
