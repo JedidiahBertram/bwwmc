@@ -4,6 +4,12 @@
 <body>
 <%- include('../templates/navbar'); %>
 
+<% items.forEach((item) => { %>
+  <ul>Item: <%= item.item_name %></ul>
+  <ul>Ingredients: <%= item.item_ingredients %></ul>
+  <ul>Price: <%= item.item_price %></ul>
+
+<% }) %>
 
 </body>
 </html>
