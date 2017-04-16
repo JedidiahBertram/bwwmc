@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const express = require('express'),
     app = express(),
@@ -24,18 +24,18 @@ app.use(methodOverride("_method"));
 
 
 app.get('/', function(req, res) {
-    res.render("statics/home")
-})
+    res.render("statics/home");
+});
 
 // Routes
 app.use("/users", usersRouter);
-app.use("/orders", ordersRouter)
-app.use("/menu_items", menu_itemsRoutes)
+app.use("/orders", ordersRouter);
+app.use("/menu_items", menu_itemsRoutes);
 
 
-app.listen(PORT, function() {
+app.listen(PORT, () => {
     console.log('listening on', PORT);
-})
+});
 
 
 module.exports = app;

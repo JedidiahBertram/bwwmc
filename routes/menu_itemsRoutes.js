@@ -9,10 +9,9 @@ router.route("/")
     .get((req, res) => {
         knex('menu_items')
             .then((items) => {
-                console.log(items);
                 res.render('menu_items/index', {
                     items
-                })
+                });
             });
     });
 
