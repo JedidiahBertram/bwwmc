@@ -92,7 +92,7 @@ router.route('/:user_id')
             .where('id', specificId)
             .del()
             .then(() => {
-                res.redirect('statics/home')
+                res.redirect('/')
             });
     });
 
