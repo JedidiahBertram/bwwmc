@@ -7,7 +7,11 @@ const express = require('express'),
     morgan = require("morgan"),
     usersRouter = require("./routes/usersRoutes"),
     ordersRouter = require("./routes/ordersRoutes"),
-    menu_itemsRoutes = require("./routes/menu_itemsRoutes");
+    menu_itemsRoutes = require("./routes/menu_itemsRoutes"),
+    authRouter = require("./routes/auth"),
+    cookieParser = require('cookie-parser'),
+    session = require('cookie-session');
+
 const PORT = process.env.PORT || 3000;
 
 require('ejs');
@@ -21,6 +25,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(methodOverride("_method"));
+app.use(cookieParser());
+app.use(session({
+    keys: [process.env.SESSION_KEY1, process.env.SESSION_KEY2]
+}));
+
 
 
 app.get('/', function(req, res) {
@@ -31,6 +40,7 @@ app.get('/', function(req, res) {
 app.use("/users", usersRouter);
 app.use("/orders", ordersRouter);
 app.use("/menu_items", menu_itemsRoutes);
+app.use('/', authRouter);
 
 
 app.listen(PORT, () => {

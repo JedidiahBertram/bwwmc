@@ -2,3 +2,20 @@
     position: absolute;
     right: 40px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    margin-top: 10%;
+}
+
+.login {
+    margin-top: 5%;
+}
+
+.formField {
+    width: 100%;
+}
