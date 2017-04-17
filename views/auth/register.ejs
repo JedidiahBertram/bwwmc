@@ -4,7 +4,7 @@
 
         <body>
             <%- include('../templates/navbar'); %>
-            
+
                 <!-- Registration FORM  -->
                 <div class="container">
                     <div class="login-container">
@@ -14,13 +14,7 @@
                             <form action="/register" method="POST">
                                 <input class="formField" name="user[email]" type="text" placeholder="Email">
                                 <input class="formField" type="password" name="user[password]" placeholder="Password">
-                                <input class="formField" name="user[full_name]" type="text" placeholder="Full Name">
-                                <input class="formField" name="user[phone]" type="text" placeholder="Phone">
-                                <input class="formField" name="user[address]" type="text" placeholder="Billing Address">
-                                <input class="formField" name="user[city]" type="text" placeholder="City">
-                                <input class="formField" name="user[state]" type="text" placeholder="State">
-                                <input class="formField" name="user[zip]" type="text" placeholder="Zip Code">
-                                <button class="btn btn-info btn-block login" type="submit">Login</button>
+                                <button class="btn btn-info btn-block login" type="submit">Register</button>
                             </form>
                         </div>
                     </div>
