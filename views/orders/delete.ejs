@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../templates/head', {title: 'Your Orders'}); %>
-<body>
-<%- include('../templates/navbar'); %>
+    <%- include('../templates/head', {title: 'Your Orders'}); %>
 
-</body>
+        <body>
+            <%- include('../templates/navbar'); %>
+
+                <h1>delete order page</h1>
+                <form name="delete" action="/users/<%=id%>/?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Order">
+                </form>
+        </body>
+
 </html>
