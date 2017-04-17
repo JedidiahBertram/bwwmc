@@ -89,7 +89,9 @@ router.route('/:user_id')
     })
 
     .put((req, res) => {
-        console.log('In the single user PUT route for ' + JSON.stringify(req.body.user_id));
+        console.log('In the single user PUT route for ' + JSON.stringify(req.body.user));
+
+
         const specificId = parseInt(req.params.user_id, 10);
         knex('users')
             //.where('id', '=', req.body.user.user_id)
