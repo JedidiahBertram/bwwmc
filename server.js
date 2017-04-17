@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
 app.use("/users", usersRouter);
 app.use("/orders", ordersRouter);
 app.use("/menu_items", menu_itemsRoutes);
-app.use('/', authRouter);
+app.use('/auth', authRouter);
 
 
 app.listen(PORT, () => {
