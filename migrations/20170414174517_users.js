@@ -5,13 +5,13 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable("users", function(table) {
         table.increments()
             .primary();
-        table.string("user_id")
-            .notNullable()
-            .defaultTo('');
         table.string("password")
             .notNullable()
             .defaultTo('');
-        table.string("full_name")
+        table.string("first_name")
+            .notNullable()
+            .defaultTo('');
+        table.string("last_name")
             .notNullable()
             .defaultTo('');
         table.string("phone")
@@ -20,7 +20,10 @@ exports.up = function(knex, Promise) {
         table.string("email")
             .notNullable()
             .defaultTo('');
-        table.string("address")
+        table.string("billing_address")
+            .notNullable()
+            .defaultTo('');
+        table.string("shipping_address")
             .notNullable()
             .defaultTo('');
         table.string("city")
