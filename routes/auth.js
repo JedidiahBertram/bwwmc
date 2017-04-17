@@ -21,14 +21,7 @@ router.route('/register')
                 //Insert the email and the hashed password from the user
                 .insert({
                     email: req.body.user.email,
-                    password: hash,
-                    full_name: req.body.user.full_name,
-                    phone: req.body.user.phone,
-                    email: req.body.user.email,
-                    address: req.body.user.address,
-                    city: req.body.user.city,
-                    state: req.body.user.state,
-                    zip: req.body.user.zip
+                    password: hash
                 })
                 //Grab the id from the user that was just added
                 .returning('id')
@@ -45,7 +38,6 @@ router.route('/register')
                 .then((user) => {
                     //Creating a session for the newly created user
                     req.session.userId = user.id;
-                    console.log(req.session.userId);
                     //Redirecting the logged in user to the home page for now
                     res.redirect('/');
                 })
@@ -53,7 +45,7 @@ router.route('/register')
                 .catch((err) => {
                     //If there's an error throw the error and then call the next middleware
                     next(new Error(err));
-                })
+                });
             //If the user doesn't supply an email and a password
         } else {
             //Render the registration page

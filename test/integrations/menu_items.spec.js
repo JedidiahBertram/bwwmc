@@ -10,10 +10,6 @@ const request = require('supertest');
 const app = require('../../server');
 const knex = require('../../db/knex');
 
-// beforeEach(() => {
-//     return knex('menu_items')
-//         .del();
-// });
 
 describe("menu_items route", () => {
     describe("#index", () => {
