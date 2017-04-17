@@ -21,7 +21,6 @@ router.route('/')
             })
 
     })
-
 //The users/new route - render the data entry page to insert a new user
 //called via http://localhost:3000/users/new
 router.route('/new')
@@ -30,7 +29,7 @@ router.route('/new')
     });
 //Update a user route
 //Called via http://localhost:3000/users/edit
-router.route('/edit')
+router.route('/:user_id/edit')
     .get((req, res) => {
         res.render("users/edit");
     });
@@ -72,9 +71,10 @@ router.route('/:user_id')
 
     .put((req, res) => {
         console.log('In the single user PUT route for ' + JSON.stringify(req.body.user_id));
-
+        const specificId = parseInt(req.params.user_id, 10);
         knex('users')
-            .where('id', '=', req.body.user.user_id)
+            //.where('id', '=', req.body.user.user_id)
+            .where('id', '=', specificId)
             .update(req.body.user)
             .returning('id')
             .then((id) => {
@@ -87,7 +87,7 @@ router.route('/:user_id')
     })
 
     .delete((req, res) => {
-        var specificId = parseInt(req.params.user_id, 10);
+        const specificId = parseInt(req.params.user_id, 10);
         knex('users')
             .where('id', specificId)
             .del()
