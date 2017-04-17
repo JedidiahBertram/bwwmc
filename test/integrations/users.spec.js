@@ -8,3 +8,18 @@ const request = require('supertest');
 
 const app = require('../../server');
 const knex = require('../../db/knex');
+
+describe("users route", () => {
+    //describe("#show/1", () => {
+    it('gets a single user', () => {
+
+        return request(app)
+            .get('/users/1')
+            .then((response) => {
+                console.log('response = ', response);
+                expect(response.text)
+                    .to.include('jcena');
+            });
+    });
+    //});
+});

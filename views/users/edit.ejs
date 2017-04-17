@@ -6,7 +6,7 @@
             <%- include('../templates/navbar'); %>
 
 
-                <form name="updateUser" method="POST" action="/users/<%=id=>?_method=PUT">
+                <form name="updateUser" method="POST" action="/users/:userID?_method=PUT">
                     <h1>Update User</h1>
                     <p>
                         <label for="updateUser">User ID</label>

@@ -25,18 +25,21 @@ router.route('/')
 //called via http://localhost:3000/users/new
 router.route('/new')
     .get((req, res) => {
+        console.log("In the user new route");
         res.render('users/new');
     });
 //Update a user route
 //Called via http://localhost:3000/users/edit
 router.route('/:user_id/edit')
     .get((req, res) => {
+        console.log("In the user edit route");
         res.render("users/edit");
     });
 
 router.route('/:user_id/delete')
     // var userId = parseInt(req.params.user_id, 10);
     .get((req, res) => {
+        console.log("In the user delete route");
         res.render("users/delete", {
             id: req.params.user_id
         });
@@ -52,6 +55,8 @@ router.route('/:user_id')
         knex('users')
             .where("id", req.params.user_id)
             .then((user) => {
+                //console.log(req.params.user_id);
+
                 res.render('users/show', {
                     user_id: user[0].user_id,
                     full_name: user[0].full_name,
@@ -98,4 +103,4 @@ router.route('/:user_id')
 
 
 
-module.exports = router;
+module.exports = router;;
