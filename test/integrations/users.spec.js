@@ -10,7 +10,6 @@ const app = require('../../server');
 const knex = require('../../db/knex');
 
 describe("users route", () => {
-    //describe("#show/1", () => {
     it('gets a single user', () => {
 
         return request(app)
@@ -21,5 +20,4 @@ describe("users route", () => {
                     .to.include('jcena');
             });
     });
-    //});
 });

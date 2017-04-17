@@ -29,7 +29,7 @@ router.route('/new')
         res.render('users/new');
     });
 //Update a user route
-//Called via http://localhost:3000/users/edit
+//Called via http://localhost:3000/users/user_id/edit
 router.route('/:user_id/edit')
     .get((req, res) => {
         console.log("In the user edit route");
