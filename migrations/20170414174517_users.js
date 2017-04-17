@@ -20,10 +20,7 @@ exports.up = function(knex, Promise) {
         table.string("email")
             .notNullable()
             .defaultTo('');
-        table.string("billing_address")
-            .notNullable()
-            .defaultTo('');
-        table.string("shipping_address")
+        table.string("address")
             .notNullable()
             .defaultTo('');
         table.string("city")
