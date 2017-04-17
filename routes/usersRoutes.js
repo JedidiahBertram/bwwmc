@@ -69,7 +69,6 @@ router.route('/:user_id')
         knex('users')
             .where("id", req.params.user_id)
             .then((user) => {
-                //console.log(req.params.user_id);
 
                 res.render('users/show', {
                     user_id: user[0].user_id,
@@ -89,13 +88,12 @@ router.route('/:user_id')
     })
 
     .put((req, res) => {
-        console.log('In the single user PUT route for ' + JSON.stringify(req.body.user));
 
+        console.log('In the single user PUT route for ' + JSON.stringify(req.body.user.email));
 
         const specificId = parseInt(req.params.user_id, 10);
         knex('users')
-            //.where('id', '=', req.body.user.user_id)
-            .where('id', '=', specificId)
+            .where('email', '=', req.body.user.email)
             .update(req.body.user)
             .returning('id')
             .then((id) => {
