@@ -33,7 +33,17 @@ router.route('/new')
 router.route('/:user_id/edit')
     .get((req, res) => {
         console.log("In the user edit route");
-        res.render("users/edit");
+        // make our knex call
+        knex('users')
+            .where('id', req.params.user_id)
+            .then((users) => {
+                res.render("users/edit", {
+                    user: users[0]
+                });
+
+
+            })
+
     });
 
 router.route('/:user_id/delete')
@@ -94,7 +104,7 @@ router.route('/:user_id')
     .delete((req, res) => {
         const specificId = parseInt(req.params.user_id, 10);
         knex('users')
-            .where('id', specificId)
+            .where('id', '=', specificId)
             .del()
             .then(() => {
                 res.redirect('/')
