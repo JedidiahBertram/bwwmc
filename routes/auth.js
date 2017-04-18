@@ -23,17 +23,14 @@ router.route('/login')
             .where('email', req.body.user.email)
             .first()
             .then((user) => {
-                if (!user) {
-                    res.redirect('/register');
-                } else {
-                    let matches = bcrypt.compareSync('req.body.user.password', user.password);
-                    console.log(matches);
+                if (user) {
+                    let matches = bcrypt.compareSync(req.body.user.password, user.password);
                     if (matches) {
                         req.session.userId = user.id;
-                    } else {
-                        res.redirect('/register');
+                        res.redirect('/');
                     }
-                    res.redirect('/');
+                } else {
+                    res.redirect('/register');
                 }
             })
             .catch(err => {
