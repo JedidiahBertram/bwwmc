@@ -7,6 +7,37 @@ const knex = require('../db/knex');
 const bcrypt = require('bcryptjs');
 
 
+router.route('/logout')
+    .get((req, res) => {
+        req.session = null;
+        console.log("Req.session", req.session);
+        res.redirect('/');
+    });
+
+router.route('/login')
+    .get((req, res) => {
+        res.render('auth/login');
+    })
+    .post((req, res) => {
+        knex('users')
+            .where('email', req.body.user.email)
+            .first()
+            .then((user) => {
+                if (!user) {
+                    res.redirect('/register');
+                } else {
+                    let matches = bcrypt.compareSync('req.body.user.password', user.password);
+                    if (matches) {
+                        req.session.userId = user.id;
+                    }
+                    res.redirect('/');
+                }
+            })
+            .catch(err => {
+                res.send(err);
+            });
+    });
+
 router.route('/register')
     .get((req, res) => {
         res.render('auth/register');
