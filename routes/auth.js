@@ -27,8 +27,11 @@ router.route('/login')
                     res.redirect('/register');
                 } else {
                     let matches = bcrypt.compareSync('req.body.user.password', user.password);
+                    console.log(matches);
                     if (matches) {
                         req.session.userId = user.id;
+                    } else {
+                        res.redirect('/register');
                     }
                     res.redirect('/');
                 }
