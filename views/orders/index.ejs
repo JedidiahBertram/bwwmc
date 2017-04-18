@@ -3,6 +3,18 @@
 <%- include('../templates/head', {title: 'Your Orders'}); %>
 <body>
 <%- include('../templates/navbar'); %>
-
+<h1>Shows All Orders</h1>
+<table>
+<% orders.forEach(function(order){  %>
+   <tr>
+     <td><%= order.order_number %></td>
+     <td><%= order.order_date %></td>
+     <td><%= order.order_status %></td>
+     <td><%= order.order_total %></td>
+     <td><%= order.user_id %></td>
+     <td><%= order.delivery_date %></td>
+   </tr>
+<% }) %>
+</table>
 </body>
 </html>

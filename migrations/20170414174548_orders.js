@@ -23,6 +23,8 @@ exports.up = function(knex, Promise) {
             .inTable('users')
             .onDelete('CASCADE')
             .index();
+        t.date('delivery_date')
+            .notNullable();
     })
 };
 

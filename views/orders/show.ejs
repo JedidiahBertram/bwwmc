@@ -3,6 +3,15 @@
 <%- include('../templates/head', {title: 'Your Orders'}); %>
 <body>
 <%- include('../templates/navbar'); %>
+<h1>Shows A Single Order</h1>
 
+
+
+  <ul> Order Number:  <%= order_number %> </ul>
+  <ul> Order Date:  <%= order_date %> </ul>
+  <ul> Order Status:  <%= order_status %> </ul>
+  <ul> Order Total:  <%= order_total %> </ul>
+  <ul> User ID:  <%= user_id %> </ul>
+  <ul> Delivery Date:  <%= delivery_date %> </ul>
 </body>
 </html>
