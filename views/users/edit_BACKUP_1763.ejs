@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../templates/head', {title: 'HOME PAGE'}); %>
+
+        <body>
+            <%- include('../templates/navbar'); %>
+
+
+                <form name="updateUser" method="POST" action="/users/<%=user.id%>/?_method=PUT">
+                    <h1>Update User</h1>
+                    <p>
+                        <label for="updateUser">Email</label>
+                        <input type="text" id="email" placeholder="email address" name="user[email]" />
+                    </p>
+                    <p>
+                        <label for="updateUser">Password</label>
+                        <input type="text" id="password" placeholder="Password" name="user[password]" autofocus/>
+                    </p>
+                    <p>
+                        <label for="updateUser">Full Name</label>
+                        <input type="text" id="full_name" placeholder="Full Name" name="user[full_name]" value="<%=user.full_name%>" autofocus/>
+                    </p>
+                    <p>
+                        <label for="updateUser">Phone</label>
+                        <input type="text" id="phone" placeholder="Phone" name="user[phone]" value="<%=user.phone%>" />
+                    </p>
+                    <p>
+                        <label for="updateUser">Address</label>
+                        <input type="text" id="phone" placeholder="Address" name="user[address]" value="<%=user.address%>" />
+                    </p>
+                    <p>
+                        <label for="updateUser">City</label>
+                        <input type="text" id="city" placeholder="City" name="user[city]" value="<%=user.city%>" />
+                    </p>
+                    <p>
+                        <label for="updateUser">State</label>
+                        <input type="text" id="state" placeholder="State" name="user[state]" value="<%=user.state%>" />
+                    </p>
+                    <p>
+                        <label for="updateUser">Zip</label>
+                        <input type="text" id="zip" placeholder="Zip" name="user[zip]" value="<%=user.zip%>" />
+                    </p>
+
+                    <p>
+                        <button type="submit">Update User</button>
+                    </p>
+                </form>
+
+        </body>
+
+</html>

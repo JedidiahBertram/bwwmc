@@ -37,5 +37,11 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
     return knex.schema.dropTable('users');
+    //ALTER SEQUENCE orders_id_seq RESTART WITH 1;
+    //knex.schema.raw(resetSequenceCommand)
+
+};
+
+function resetUserSequence() {
 
 };

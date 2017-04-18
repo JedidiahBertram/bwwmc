@@ -5,9 +5,16 @@
         <body>
             <%- include('../templates/navbar'); %>
 
-                <h1>delete order page</h1>
-                <form name="delete" action="/users/<%=id%>/?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Order">
+                <form name="deleteOrder"  method="POST" action="/orders/:id?_method=DELETE">
+                  <h1>Delete Order</h1>
+                  <p>
+                    <label for="deleteOrder">Order ID</label>
+                    <input type="text" id="id" placeholder="Order ID" name="order[id]" autofocus/>
+                  </p>
+              		<p>
+              			<button type="submit">Delete Order</button>
+              		</p>
+
                 </form>
         </body>
 
