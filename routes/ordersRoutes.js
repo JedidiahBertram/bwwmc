@@ -5,81 +5,73 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
 
-
-router.route('/')
+router.route("/")
     .get((req, res) => {
-        knex('users')
-            .then((allUsers) => {
-                res.render('users/index', {
-                    users: allUsers
-                });
+        knex('orders')
+            .then((orders) => {
+                res.render('orders/index', {
+                    orders
+                })
+                // res.send('yo');
             })
     })
-
     .post((req, res) => {
-        knex('users')
-            .insert(req.body.user)
+        knex('orders')
+            .insert(req.body.order)
             .returning('id')
             .catch((err) => {
                 console.log(err);
             })
-
     })
-//The users/new route - render the data entry page to insert a new user
-//called via http://localhost:3000/users/new
-router.route('/new')
-    .get((req, res) => {
-        console.log("In the user new route");
-        res.render('users/new');
-    });
-//Update a user route
-//Called via http://localhost:3000/users/user_id/edit
-router.route('/:user_id/edit')
-    .get((req, res) => {
-        console.log("In the user edit route");
-        // make our knex call
-        knex('users')
-            .where('id', req.params.user_id)
-            .then((users) => {
-                res.render("users/edit", {
-                    user: users[0]
-                });
+    .put((req, res) => {
 
-
+        knex('orders')
+            .where('id', '=', req.body.order.order_id)
+            .update(req.body.order)
+            .returning('id')
+            .then((id) => {
+                res.redirect(`/orders/${id}`);
             })
+            .catch((err) => {
+                console.log(err);
+            })
+    })
 
+//The users/new route - render the data entry page to insert a new user
+router.route("/new")
+    .get(function(req, res) {
+        res.render("orders/new");
     });
 
-router.route('/:user_id/delete')
-    // var userId = parseInt(req.params.user_id, 10);
-    .get((req, res) => {
-        console.log("In the user delete route");
-        res.render("users/delete", {
-            id: req.params.user_id
-        });
+router.route("/update")
+    .get(function(req, res) {
+        res.render("orders/update");
     });
 
+router.route("/delete")
+    .get(function(req, res) {
+        res.render("orders/delete");
+    });
 
+//ALl the single order routes (update, delete, show, etc.)
+//Must be at the bottom of the file to avoid route
+//interception
+router.route("/:orderID")
+    .get(function(req, res) {
+        console.log('Get single order route');
 
-//Routes specific to one user
-router.route('/:user_id')
-    .get((req, res) => {
-        console.log(req.params);
-
-        knex('users')
-            .where("id", req.params.user_id)
-            .then((user) => {
-                //console.log(req.params.user_id);
-
-                res.render('users/show', {
-                    user_id: user[0].user_id,
-                    full_name: user[0].full_name,
-                    phone: user[0].phone,
-                    email: user[0].email,
-                    address: user[0].address,
-                    city: user[0].city,
-                    state: user[0].state,
-                    zip: user[0].zip
+        knex('orders')
+            .where("id", req.params.orderID)
+            .then((order) => {
+                console.log(order);
+                //res.send(order);
+                res.render('orders/show', {
+                    order_number: order[0].order_number,
+                    order_date: order[0].order_date,
+                    order_status: order[0].order_status,
+                    order_total: order[0].order_total,
+                    user_id: order[0].user_id,
+                    delivery_date: order[0].delivery_date
                 });
             }) //end then
             .catch((err) => {
@@ -87,34 +79,23 @@ router.route('/:user_id')
                 console.log(err);
             });
     })
+    .delete(function(req, res) {
+        console.log("In the delete order route");
 
-    .put((req, res) => {
-        console.log('In the single user PUT route for ' + JSON.stringify(req.body.user_id));
-        const specificId = parseInt(req.params.user_id, 10);
-        knex('users')
-            //.where('id', '=', req.body.user.user_id)
-            .where('id', '=', specificId)
-            .update(req.body.user)
-            .returning('id')
-            .then((id) => {
-                res.redirect(`/users/${id}`);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+        knex('orders')
+            .where('id', '=', req.body.order.id)
+            .del()
+            .returning("id")
+            .then((orders) => {
+                knex('orders')
+                    .then((orders) => {
+                        //console.log(users);
+                        res.render('orders', {
+                            orders
+                        });
+                    });
+            });
 
     })
-
-    .delete((req, res) => {
-        const specificId = parseInt(req.params.user_id, 10);
-        knex('users')
-            .where('id', '=', specificId)
-            .del()
-            .then(() => {
-                res.redirect('/')
-            });
-    });
-
-
 
 module.exports = router;
