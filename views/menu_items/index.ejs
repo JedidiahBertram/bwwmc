@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../templates/head', {title: 'Our Menu'}); %>
-<body>
-<%- include('../templates/navbar'); %>
+    <%- include('../templates/head', {title: 'Our Menu'}); %>
 
-<% items.forEach((item) => { %>
-  <ul>Item: <%= item.item_name %></ul>
-  <ul>Ingredients: <%= item.item_ingredients %></ul>
-  <ul>Price: <%= item.item_price %></ul>
+        <body>
+            <%- include('../templates/navbar'); %>
+                <div class="menuContainer">
+                    <div class="menuHeader">
+                        <h1 class="menuTitle">Our Menu</h1>
+                        <h4 class="menuSubtitle">Pick from our award winning menu</h4>
+                    </div>
 
-<% }) %>
+                    <% items.forEach((item) => { %>
+                        <div class="menuItem">
+                            <div class="menuImageContainer">
+                                <ul>
+                                    <img class="menuImage" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
+                                </ul>
+                            </div>
+                            <div class="menuTextContainer">
+                                <ul>
+                                    <%= item.item_name %>
+                                </ul>
+                                <ul>Ingredients:
+                                    <%= item.item_ingredients %>
+                                </ul>
+                                <ul>Price:
+                                    <%= item.item_price %>
+                                    <select>Qty:
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                    </select>
+                                    <button type="button" class="btn btn-default btn-sm">
+                                      <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart
+                                    </button>
+                                </ul>
+                            </div>
+                        </div>
 
-</body>
+                        <% }) %>
+
+        </body>
+
 </html>
