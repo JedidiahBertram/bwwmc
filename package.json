@@ -20,6 +20,7 @@
     "locus": "^2.0.1",
     "method-override": "^2.3.8",
     "morgan": "^1.8.1",
+    "nodemailer": "^4.0.1",
     "pg": "^6.1.5"
   },
   "devDependencies": {

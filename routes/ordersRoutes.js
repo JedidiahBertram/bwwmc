@@ -4,6 +4,8 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
+// const nodemailer = require('nodemailer');//Will be used for confirmation email
+
 
 router.route("/")
     .get((req, res) => {
@@ -11,17 +13,42 @@ router.route("/")
             .then((orders) => {
                 res.render('orders/index', {
                     orders
-                })
-                // res.send('yo');
-            })
+                });
+            });
     })
     .post((req, res) => {
         knex('orders')
             .insert(req.body.order)
-            .returning('id')
+            //WILL BE USED FOR CONFIRMATION EMAIL
+            // .returning('id')
+            // .then((id) => {
+            //     // create reusable transporter object using the default SMTP transport
+            //     let transporter = nodemailer.createTransport({
+            //         service: 'gmail',
+            //         auth: {
+            //             user: 'chowconfirmation@gmail.com',
+            //             pass: 'bowwowwheresmychow'
+            //         }
+            //     });
+            //     // setup email data with unicode symbols
+            //     let mailOptions = {
+            //         from: '"BWWMC" <chowconfirmation@gmail.com>', // sender address
+            //         to: 'bar@blurdybloop.com' // list of receivers
+            //         subject: 'BWWMC Order Confirmation', // Subject line
+            //         text: "Thank you for your order!", // plain text body
+            //         html: '<b>Thank you for your order!</b>' // html body
+            //     };
+            //     // send mail with defined transport object
+            //     transporter.sendMail(mailOptions, (error, info) => {
+            //         if (error) {
+            //             return console.log(error);
+            //         }
+            //         console.log('Message %s sent: %s', info.messageId, info.response);
+            //     });
+            // })
             .catch((err) => {
                 console.log(err);
-            })
+            });
     })
     .put((req, res) => {
 
@@ -34,8 +61,8 @@ router.route("/")
             })
             .catch((err) => {
                 console.log(err);
-            })
-    })
+            });
+    });
 
 //The users/new route - render the data entry page to insert a new user
 router.route("/new")
@@ -63,8 +90,6 @@ router.route("/:orderID")
         knex('orders')
             .where("id", req.params.orderID)
             .then((order) => {
-                console.log(order);
-                //res.send(order);
                 res.render('orders/show', {
                     order_number: order[0].order_number,
                     order_date: order[0].order_date,
@@ -75,7 +100,6 @@ router.route("/:orderID")
                 });
             }) //end then
             .catch((err) => {
-                //console.log(user[0]);
                 console.log(err);
             });
     })
@@ -89,13 +113,11 @@ router.route("/:orderID")
             .then((orders) => {
                 knex('orders')
                     .then((orders) => {
-                        //console.log(users);
                         res.render('orders', {
                             orders
                         });
                     });
             });
-
-    })
+    });
 
 module.exports = router;
