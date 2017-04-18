@@ -1,6 +1,8 @@
-.navbar-login-text {
-    position: absolute;
-    right: 40px;
+/*  Register, Login, and Logout Navbar Styling */
+
+.userOptions {
+    margin-left: 95vh;
+    display: flex;
 }
 
 
