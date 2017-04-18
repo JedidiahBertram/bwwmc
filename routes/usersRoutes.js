@@ -1,3 +1,6 @@
+"use strict";
+
+
 const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
@@ -14,7 +17,8 @@ router.route('/')
     })
 
     .post((req, res) => {
-        knex('users').insert(req.body.user)
+        knex('users')
+            .insert(req.body.user)
             .returning('id')
             .catch((err) => {
                 console.log(err);
