@@ -17,10 +17,31 @@ router.route("/")
             });
     })
     .post((req, res) => {
-        knex('orders')
-            .insert(req.body.order)
-
         console.log('In the orders post route');
+        console.log(req.body);
+
+        //       { menuItemID: '1',
+        // quantity: '1',
+        // item_price: '45',
+        // schedDate: '04/26/2017',
+        // recurring: 'false',
+        // frequency: 'Weekly' }
+
+
+        for (var order in req.body) {
+            console.log(req.body[order]);
+            var menuItemID = req.body[order].menuItemID;
+            var qty = req.body[order].quantity;
+            var price = req.body[order].item_price;
+            var recur = req.body[order].recurring;
+            var freq = req.body[order].frequency;
+            var totalPrice = price * qty;
+
+
+        }
+
+
+
         //WILL BE USED FOR CONFIRMATION EMAIL
         // .returning('id')
         // .then((id) => {

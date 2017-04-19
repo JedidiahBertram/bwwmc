@@ -27,6 +27,7 @@ router.route('/login')
                     let matches = bcrypt.compareSync(req.body.user.password, user.password);
                     if (matches) {
                         req.session.userId = user.id;
+                        console.log(req.session.userId);
                         res.redirect('/');
                     }
                 } else {
@@ -88,9 +89,9 @@ router.route('/register')
     });
 
 router.route("/password_reset")
-.get((req, res) => {
-  res.render('auth/password');
-})
+    .get((req, res) => {
+        res.render('auth/password');
+    })
 
 
 
