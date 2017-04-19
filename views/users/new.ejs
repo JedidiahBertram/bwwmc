@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../templates/head', {title: 'HOME PAGE'}); %>
-<body>
-<%- include('../templates/navbar'); %>
+    <%- include('../templates/head', {title: 'HOME PAGE'}); %>
 
-<form name="newUser" method="post" action="/users">
-<h1>Insert User</h1>
-<p>
-  <label for="newUser">User ID</label>
-  <input type="text" id="user_id" placeholder="User ID" name="user[user_id]" autofocus/>
-</p>
-<p>
-  <label for="newUser">Password</label>
-  <input type="text" id="password" placeholder="Password" name="user[password]" autofocus/>
-</p>
-<p>
-  <label for="newUser">Full Name</label>
-  <input type="text" id="full_name" placeholder="Full Name" name="user[full_name]" autofocus/>
-</p>
-<p>
-  <label for="newUser">Phone</label>
-  <input type="text" id="phone" placeholder="Phone" name="user[phone]" />
-</p>
-<p>
-  <label for="newUser">Email</label>
-  <input type="text" id="email" placeholder="email address" name="user[email]" />
-</p>
-<p>
-  <label for="newUser">Address</label>
-  <input type="text" id="phone" placeholder="Address" name="user[address]" />
-</p>
-<p>
-  <label for="newUser">City</label>
-  <input type="text" id="city" placeholder="City" name="user[city]" />
-</p>
-<p>
-  <label for="newUser">State</label>
-  <input type="text" id="state" placeholder="State" name="user[state]" />
-</p>
-<p>
-  <label for="newUser">Zip</label>
-  <input type="text" id="zip" placeholder="Zip" name="user[zip]" />
-</p>
+        <body>
+            <%- include('../templates/navbar'); %>
 
-<p>
-  <button type="submit">Add User</button>
-</p>
-</form>
+                <form name="newUser" method="post" action="/users">
+                    <h1>Insert User</h1>
+                    <p>
+                        <label for="newUser">First Name</label>
+                        <input type="text" id="first_name" placeholder="First Name" name="user[first_name]" autofocus/>
+                    </p>
+                    <p>
+                        <label for="newUser">Last Name</label>
+                        <input type="text" id="last_name" placeholder="Last Name" name="user[last_name]" autofocus/>
+                    </p>
+                    <p>
+                        <label for="newUser">Password</label>
+                        <input type="text" id="password" placeholder="Password" name="user[password]" autofocus/>
+                    </p>
+                    <p>
+                        <label for="newUser">Phone</label>
+                        <input type="text" id="phone" placeholder="Phone" name="user[phone]" />
+                    </p>
+                    <p>
+                        <label for="newUser">Email</label>
+                        <input type="text" id="email" placeholder="email address" name="user[email]" />
+                    </p>
+                    <p>
+                        <label for="newUser">Address</label>
+                        <input type="text" id="phone" placeholder="Address" name="user[address]" />
+                    </p>
+                    <p>
+                        <label for="newUser">City</label>
+                        <input type="text" id="city" placeholder="City" name="user[city]" />
+                    </p>
+                    <p>
+                        <label for="newUser">State</label>
+                        <input type="text" id="state" placeholder="State" name="user[state]" />
+                    </p>
+                    <p>
+                        <label for="newUser">Zip</label>
+                        <input type="text" id="zip" placeholder="Zip" name="user[zip]" />
+                    </p>
 
-</body>
+                    <p>
+                        <button type="submit">Add User</button>
+                    </p>
+                </form>
+
+        </body>
+
 </html>
