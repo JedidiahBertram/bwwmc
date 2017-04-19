@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../templates/head', {title: 'HOME PAGE'}); %>
-<body>
-<%- include('../templates/navbar'); %>>
+    <%- include('../templates/head', {title: 'HOME PAGE'}); %>
 
-<h1>User <%= user_id %> </h1>
+        <body>
+            <%- include('../templates/navbar'); %>>
 
-  <ul> Full Name:  <%= full_name %> </ul>
-  <ul> Email:  <%= email %> </ul>
-  <ul> address:  <%= address %> </ul>
-  <ul> city:  <%= city %> </ul>
-  <ul> State:  <%= state %> </ul>
-  <ul> Zip:  <%= zip %> </ul>
-</body>
+
+
+                <ul> First Name:
+                    <%= first_name %>
+                </ul>
+                <ul> Last Name:
+                    <%= last_name %>
+                </ul>
+                <ul> Email:
+                    <%= email %>
+                </ul>
+                <ul> address:
+                    <%= address %>
+                </ul>
+                <ul> city:
+                    <%= city %>
+                </ul>
+                <ul> State:
+                    <%= state %>
+                </ul>
+                <ul> Zip:
+                    <%= zip %>
+                </ul>
+        </body>
+
 </html>
