@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../templates/head', {title: 'Login'}); %>
+  <%- include('../templates/head', {title: 'Login'}); %>
 
-        <body>
-            <%- include('../templates/navbar'); %>
+  <body>
+    <%- include('../templates/navbar'); %>
 
-                <!-- Login FORM  -->
-                <div class="container">
-                    <div class="login-container">
-                        <div id="output"></div>
-                        <div class="avatar"></div>
-                        <div class="form-box">
-                            <form action="/login" method="POST">
-                                <input class="formField" name="user[email]" type="text" placeholder="Email" required>
-                                <input class="formField" type="password" name="user[password]" placeholder="Password" required>
-                                <button class="btn btn-info btn-block login" type="submit">Login</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+      <!-- Login FORM  -->
 
-        </body>
+
+          <div class="container">
+            <div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                <form action="/login" method="POST">
+                <h1>Login In</h1>
+
+                <h2>Email</h2>
+                    <input class="formField" name="user[email]" type="text" placeholder="Email" required>
+
+                <h2>Password</h2>
+                <input class="formField" type="password" name="user[password]" placeholder="Password" required>
+                <label class="form-check-label">
+
+                <input type="checkbox" class="form-check-input">
+                Remember Me?
+
+                <button class="btn btn-info btn-block login" type="submit">Log In</button>
+
+                  </form>
+
+                  <form action="/register" method="POST">
+                    Don't have an account?
+                    <a href="/register">Sign Up</a>
+
+                  </form>
+              </div>
+              </div>
+              </div>
+
+    </body>
 
 </html>
