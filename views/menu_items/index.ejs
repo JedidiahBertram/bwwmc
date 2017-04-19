@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../templates/head', {title: 'Our Menu'}); %>
 
-        <body>
-            <%- include('../templates/navbar'); %>
-                <div class="menuContainer">
-                    <div class="menuHeader">
-                        <h1 class="menuTitle">Our Menu</h1>
-                        <h4 class="menuSubtitle">Pick from our award winning menu</h4>
-                    </div>
+    <head>
+        <meta charset="utf-8">
+        <title>Our Menu</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/js/cart.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+        <link rel="stylesheet" href="/stylesheet.css">
+    </head>
 
-                    <% items.forEach((item) => { %>
-                        <div class="menuItem">
-                            <div class="menuImageContainer">
-                                <ul>
-                                    <img class="menuImage" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
-                                </ul>
-                            </div>
-                            <div class="menuTextContainer">
-                                <ul>
-                                    <%= item.item_name %>
-                                </ul>
-                                <ul>Ingredients:
-                                    <%= item.item_ingredients %>
-                                </ul>
-                                <ul>Price:
-                                    <%= item.item_price %>
-                                    <select>Qty:
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                      <option value="4">4</option>
-                                      <option value="5">5</option>
-                                    </select>
-                                    <button type="button" class="btn btn-default btn-sm">
+    <body>
+        <%- include('../templates/navbar'); %>
+            <div class="menuContainer">
+                <div class="menuHeader">
+                    <h1 class="menuTitle">Our Menu</h1>
+                    <h4 class="menuSubtitle">Pick from our award winning menu</h4>
+                </div>
+
+                <% items.forEach((item) => { %>
+                    <div class="menuItem">
+                        <div class="menuImageContainer">
+                            <ul>
+                                <img class="menuImage" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
+                            </ul>
+                        </div>
+                        <div class="menuTextContainer">
+                            <ul id="<%= item.item_name %>">
+                                <%= item.item_name %>
+                            </ul>
+                            <ul>Ingredients:
+                                <%= item.item_ingredients %>
+                            </ul>
+                            <ul id"<%= item.item_price %>">Price:
+                                <%= item.item_price %>
+                                      <select id="dropdown<%= item.id %>">Qty:
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                      </select>
+                                    <button id="<%= item.id %>" type="button" class="btn btn-default btn-sm addToCart">
                                       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart
                                     </button>
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
+                    </div>
 
-                        <% }) %>
+                    <% }) %>
 
-        </body>
+    </body>
 
 </html>
