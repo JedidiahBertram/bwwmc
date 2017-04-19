@@ -17,7 +17,17 @@ describe("users route", () => {
             .then((response) => {
                 console.log('response = ', response);
                 expect(response.text)
-                    .to.include('jcena');
+                    .to.include('John Cena');
+            });
+    });
+});
+
+describe("users route", () => {
+    it('renders edit profile page', () => {
+        return request(app)
+            .get('/users/1/edit')
+            .then((response) => {
+                expect(response.text).to.include('Update User');
             });
     });
 });
