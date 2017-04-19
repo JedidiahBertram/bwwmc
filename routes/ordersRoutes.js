@@ -80,6 +80,11 @@ router.route("/delete")
         res.render("orders/delete");
     });
 
+router.route("/order_pay")
+    .get(function(req, res) {
+        res.render("orders/order_pay")
+    })
+
 //ALl the single order routes (update, delete, show, etc.)
 //Must be at the bottom of the file to avoid route
 //interception

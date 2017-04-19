@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../templates/head', {title: 'Your Orders'}); %>
+  <head>
+    <meta charset="utf-8">
+    <title>Schedule Order and Pay</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <script>
+        //create an array of dates (reached max deliverys) to exclude from the calendar
+        var dateArray = [];
+        //Year, Month, Date
+        var date1 = new Date("04/21/2017");
+        var date2 = new Date("04/25/2017");
+        var todaysDate = new Date();
+
+        dateArray.push(date1);
+        dateArray.push(date2);
+
+
+        $(document).ready(function(){
+
+          //$('#btn-group').hide();
+
+
+          var date_input=$('input[name="date"]'); //our date input has the name "date"
+          var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+          var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+            daysOfWeekDisabled: [0, 6],
+            disabledDates: ['2017-04-21', '2017-04-25'],
+            startDate: todaysDate,
+          };
+          date_input.datepicker(options);
+        });
+    </script>
+
+
+<script>
+$(document).ready(function () {
+    $('.btn-group').hide();
+    $('#recurringCB').click(function () {
+      //console.log('recurringCB clicked');
+        $( ".btn-group" ).show( "slow", function() {
+          // Animation complete.
+        });
+    });
+});
+
+</script>
+
+  </head>
+  <body>
+    <%- include('../templates/navbar'); %>
+
+    <form name="orderPay" method="POST" action="">
+      <div class="bootstrap-iso">
+       <div class="container-fluid">
+        <div class="row">
+         <div class="col-md-6 col-sm-6 col-xs-12">
+
+          <!-- Form code begins -->
+          <form method="post">
+            <div>
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label class="control-label" for="date">PlaceHolder</label><br />
+            </div>
+            <div class="form-group"> <!-- Date input -->
+
+              <label class="control-label" for="date">Delivery Date</label>
+              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+            </div>
+
+           </form>
+           <!-- Form code ends -->
+
+          </div>
+        </div>
+       </div>
+      </div>
+      <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <label for="recurringCB">Recurring Order?</label>
+        <input id= "recurringCB" value="recurringCB" type="checkbox" aria-label="...">
+      </span>
+
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+
+<div class="btn-group" id="ddButton">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Recurring Order Options <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Weekly Recurring Order</a></li>
+    <li><a href="#">Bi-Weekly Recurring Order</a></li>
+    <li><a href="#">Monthly Recurring Order</a></li>
+  </ul>
+</div>
+
+<div class="form-group"> <!-- Submit button -->
+  <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+</div>
+    </form>
+
+  </body>
+</html>
