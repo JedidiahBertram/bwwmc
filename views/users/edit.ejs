@@ -9,16 +9,16 @@
                 <form name="updateUser" method="POST" action="/users/<%=user.id%>/?_method=PUT">
                     <h1>Update User</h1>
                     <p>
-                        <label for="updateUser">User ID</label>
-                        <input type="text" id="user_id" placeholder="User ID" name="user[user_id]" value="<%=user.user_id%>" autofocus/>
+                        <label for="updateUser">First Name</label>
+                        <input type="text" id="first_name" placeholder="First Name" name="user[first_name]" value="<%=user.first_name%>" autofocus/>
+                    </p>
+                    <p>
+                        <label for="updateUser">Last Name</label>
+                        <input type="text" id="last_name" placeholder="Last Name" name="user[last_name]" value="<%=user.last_name%>" autofocus/>
                     </p>
                     <p>
                         <label for="updateUser">Password</label>
                         <input type="text" id="password" placeholder="Password" name="user[password]" autofocus/>
-                    </p>
-                    <p>
-                        <label for="updateUser">Full Name</label>
-                        <input type="text" id="full_name" placeholder="Full Name" name="user[full_name]" value="<%=user.full_name%>" autofocus/>
                     </p>
                     <p>
                         <label for="updateUser">Phone</label>
