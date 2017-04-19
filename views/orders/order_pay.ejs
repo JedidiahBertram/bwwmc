@@ -16,6 +16,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+    <link rel="stylesheet" href="public/assets/index.css">
+
     <script>
         //create an array of dates (reached max deliverys) to exclude from the calendar
         var dateArray = [];
@@ -29,10 +31,6 @@
 
 
         $(document).ready(function(){
-
-          //$('#btn-group').hide();
-
-
           var date_input=$('input[name="date"]'); //our date input has the name "date"
           var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
           var options={
@@ -47,21 +45,38 @@
           date_input.datepicker(options);
         });
     </script>
-
-
 <script>
 $(document).ready(function () {
-    $('.btn-group').hide();
+    $('.recurrenceDD').hide();
     $('#recurringCB').click(function () {
-      //console.log('recurringCB clicked');
-        $( ".btn-group" ).show( "slow", function() {
-          // Animation complete.
+      console.log('recurrenceCB clicked')
+        $( ".recurrenceDD" ).show( "slow", function() {
         });
     });
 });
-
 </script>
 
+<script>
+//The action for the submit button
+//Gathers the schedule date and the status of the recurring delivery
+//checkbox and the value of the schedule dropdown
+$(document).ready(function () {
+    $('#submitSchedule').click(function () {
+
+      var schedDate = $('.datePickerText').val();
+      var recurring = $('#recurringCB')[0].checked;
+      var ddVal = $('#recurrenceDD :selected').text();
+
+      if(!schedDate){
+        alert("Please schedule a delivery date");
+      }
+
+      console.log(schedDate);
+      console.log(recurring);
+      console.log(ddVal);
+    });
+});
+</script>
   </head>
   <body>
     <%- include('../templates/navbar'); %>
@@ -71,62 +86,56 @@ $(document).ready(function () {
        <div class="container-fluid">
         <div class="row">
          <div class="col-md-6 col-sm-6 col-xs-12">
-
-          <!-- Form code begins -->
           <form method="post">
             <div>
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
-              <label class="control-label" for="date">PlaceHolder</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
+              <label>Menu Item</label><br />
             </div>
-            <div class="form-group"> <!-- Date input -->
 
-              <label class="control-label" for="date">Delivery Date</label>
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+
+            <div class="datePicker"> <!-- Date input -->
+              <label class="datePickerLabel" for="date">Delivery Date:  </label>
+              <input class="datePickerText" id="dateText" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
+
+
 
            </form>
-           <!-- Form code ends -->
-
           </div>
         </div>
        </div>
       </div>
       <div class="row">
   <div class="col-lg-6">
+
+
     <div class="input-group">
-      <span class="input-group-addon">
+      <span class="recurringCBGroup">
         <label for="recurringCB">Recurring Order?</label>
         <input id= "recurringCB" value="recurringCB" type="checkbox" aria-label="...">
       </span>
-
     </div><!-- /input-group -->
+
+
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
 
-
-<div class="btn-group" id="ddButton">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Recurring Order Options <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Weekly Recurring Order</a></li>
-    <li><a href="#">Bi-Weekly Recurring Order</a></li>
-    <li><a href="#">Monthly Recurring Order</a></li>
-  </ul>
+<div class="recurrenceDD" id="recurrenceDD">
+  <select id="dropdown-menu">
+    <option value='Weekly'>Weekly</option>
+    <option value='Daily'>Bi-Weekly</option>
+    <option value='Daily'>Monthly</option>
+  </select>
 </div>
 
 <div class="form-group"> <!-- Submit button -->
-  <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+  <button id="submitSchedule" class="btn btn-warning " name="submit" type="submit">Submit Your Order</button>
 </div>
     </form>
 
