@@ -27,8 +27,9 @@ app.use(bodyParser.json());
 app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.use(session({
-    keys: [process.env.SESSION_KEY1, process.env.SESSION_KEY2],
-    maxAge: 24
+    name: 'session',
+    secret: 'userId',
+    maxAge: 24 * 60 * 60 * 1000
 }));
 
 app.use(function(req, res, next) {
