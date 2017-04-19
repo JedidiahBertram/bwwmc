@@ -87,6 +87,12 @@ router.route('/register')
         }
     });
 
+router.route("/password_reset")
+.get((req, res) => {
+  res.render('auth/password');
+})
+
+
 
 
 
