@@ -19,36 +19,38 @@ router.route("/")
     .post((req, res) => {
         knex('orders')
             .insert(req.body.order)
-            //WILL BE USED FOR CONFIRMATION EMAIL
-            // .returning('id')
-            // .then((id) => {
-            //     // create reusable transporter object using the default SMTP transport
-            //     let transporter = nodemailer.createTransport({
-            //         service: 'gmail',
-            //         auth: {
-            //             user: 'chowconfirmation@gmail.com',
-            //             pass: 'bowwowwheresmychow'
-            //         }
-            //     });
-            //     // setup email data with unicode symbols
-            //     let mailOptions = {
-            //         from: '"BWWMC" <chowconfirmation@gmail.com>', // sender address
-            //         to: 'bar@blurdybloop.com' // list of receivers
-            //         subject: 'BWWMC Order Confirmation', // Subject line
-            //         text: "Thank you for your order!", // plain text body
-            //         html: '<b>Thank you for your order!</b>' // html body
-            //     };
-            //     // send mail with defined transport object
-            //     transporter.sendMail(mailOptions, (error, info) => {
-            //         if (error) {
-            //             return console.log(error);
-            //         }
-            //         console.log('Message %s sent: %s', info.messageId, info.response);
-            //     });
-            // })
-            .catch((err) => {
-                console.log(err);
-            });
+
+        console.log('In the orders post route');
+        //WILL BE USED FOR CONFIRMATION EMAIL
+        // .returning('id')
+        // .then((id) => {
+        //     // create reusable transporter object using the default SMTP transport
+        //     let transporter = nodemailer.createTransport({
+        //         service: 'gmail',
+        //         auth: {
+        //             user: 'chowconfirmation@gmail.com',
+        //             pass: 'bowwowwheresmychow'
+        //         }
+        //     });
+        //     // setup email data with unicode symbols
+        //     let mailOptions = {
+        //         from: '"BWWMC" <chowconfirmation@gmail.com>', // sender address
+        //         to: 'bar@blurdybloop.com' // list of receivers
+        //         subject: 'BWWMC Order Confirmation', // Subject line
+        //         text: "Thank you for your order!", // plain text body
+        //         html: '<b>Thank you for your order!</b>' // html body
+        //     };
+        //     // send mail with defined transport object
+        //     transporter.sendMail(mailOptions, (error, info) => {
+        //         if (error) {
+        //             return console.log(error);
+        //         }
+        //         console.log('Message %s sent: %s', info.messageId, info.response);
+        //     });
+        // })
+        // .catch((err) => {
+        //     console.log(err);
+        // });
 
 
     })

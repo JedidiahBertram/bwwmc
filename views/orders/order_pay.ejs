@@ -56,13 +56,16 @@ $(document).ready(function () {
 });
 </script>
 
+
+
+
+
+
 <script>
 //The action for the submit button
 //Gathers the schedule date and the status of the recurring delivery
 //checkbox and the value of the schedule dropdown
-$(document).ready(function () {
-    $('#submitSchedule').click(function () {
-
+function sendOrderToRoute(){
       var schedDate = $('.datePickerText').val();
       var recurring = $('#recurringCB')[0].checked;
       var ddVal = $('#recurrenceDD :selected').text();
@@ -71,22 +74,35 @@ $(document).ready(function () {
         alert("Please schedule a delivery date");
       }
 
-      console.log(schedDate);
-      console.log(recurring);
-      console.log(ddVal);
-    });
-});
+      var order = {
+        'menuItemID': 1,
+        'quantity': 2,
+        'total_price': 90,
+        'userID': 1,
+        'schedDate': schedDate,
+        'recurring': recurring,
+        'frequency': ddVal
+      };
+
+      console.log(order);
+      // console.log(recurring);
+      // console.log(ddVal);
+
+
+      //ajax call to the appropriate route
+    };
 </script>
+
   </head>
   <body>
     <%- include('../templates/navbar'); %>
 
-    <form name="orderPay" method="POST" action="">
+    <!-- <form name="orderPay" method="post" action="/ordersRoutes"> -->
       <div class="bootstrap-iso">
        <div class="container-fluid">
         <div class="row">
          <div class="col-md-6 col-sm-6 col-xs-12">
-          <form method="post">
+          <!-- <form method="post">
             <div>
               <label>Menu Item</label><br />
               <label>Menu Item</label><br />
@@ -99,21 +115,20 @@ $(document).ready(function () {
             </div>
 
 
-            <div class="datePicker"> <!-- Date input -->
-              <label class="datePickerLabel" for="date">Delivery Date:  </label>
-              <input class="datePickerText" id="dateText" name="date" placeholder="MM/DD/YYY" type="text"/>
-            </div>
 
-
-
-           </form>
+           </form> -->
+           <div class="datePicker">
+             <label class="datePickerLabel" for="date">Delivery Date:</label>
+             <input class="datePickerText" id="dateText" name="date" placeholder="MM/DD/YYY" type="text"/>
+           </div>
           </div>
         </div>
        </div>
       </div>
+
+
       <div class="row">
   <div class="col-lg-6">
-
 
     <div class="input-group">
       <span class="recurringCBGroup">
@@ -129,15 +144,15 @@ $(document).ready(function () {
 <div class="recurrenceDD" id="recurrenceDD">
   <select id="dropdown-menu">
     <option value='Weekly'>Weekly</option>
-    <option value='Daily'>Bi-Weekly</option>
-    <option value='Daily'>Monthly</option>
+    <option value='Bi-Weekly'>Bi-Weekly</option>
+    <option value='Monthly'>Monthly</option>
   </select>
 </div>
 
 <div class="form-group"> <!-- Submit button -->
-  <button id="submitSchedule" class="btn btn-warning " name="submit" type="submit">Submit Your Order</button>
+  <input type="button" value="Submit" onclick="sendOrderToRoute()">Submit Order</button>
 </div>
-    </form>
+    <!-- </form> -->
 
   </body>
 </html>
