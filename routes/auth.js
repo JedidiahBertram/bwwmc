@@ -28,7 +28,7 @@ router.route('/login')
                     if (matches) {
                         req.session.userId = user.id;
                         console.log(req.session.userId);
-                        res.render('statics/home');
+                        res.render('menu_items/index');
                     }
                 } else {
                     res.redirect('/register');
@@ -71,7 +71,9 @@ router.route('/register')
                     //Creating a session for the newly created user
                     req.session.userId = user.id;
                     //Redirecting the logged in user to the home page for now
-                    res.redirect('/');
+                    // res.redirect('/');
+                    // res.redirect('menu_items/index');
+                    res.render('menu_items/index');
                 })
                 //Error handling
                 .catch((err) => {
