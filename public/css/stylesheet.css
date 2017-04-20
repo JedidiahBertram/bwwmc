@@ -34,6 +34,16 @@ body {
   height: 400px;
 }
 
+.target-nav {
+  position: fixed;
+  margin: 18px;
+  z-index: 10000;
+}
+
+.opaque {
+  background-color: #f2f2f2;
+  
+}
 
 /*  Register, Login, and Logout Navbar Styling */
 
