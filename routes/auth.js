@@ -11,7 +11,7 @@ router.route('/logout')
     .get((req, res) => {
         req.session = null;
         console.log("Req.session", req.session);
-        res.redirect('/');
+        res.redirect('/')
     });
 
 router.route('/login')
@@ -28,7 +28,7 @@ router.route('/login')
                     if (matches) {
                         req.session.userId = user.id;
                         console.log(req.session.userId);
-                        res.redirect('/');
+                        res.render('statics/home');
                     }
                 } else {
                     res.redirect('/register');

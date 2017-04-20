@@ -32,27 +32,35 @@ $(document)
                     cartCount += chickenPotPie.quantity;
                     currentItem = chickenPotPie;
                     order.push(currentItem);
-                    console.log(order);
+                    console.log("Order", order);
                     localStorage.cart = JSON.stringify(order);
-                    console.log(JSON.parse(localStorage.cart));
+                    console.log("Local Storage", JSON.parse(localStorage.cart));
                     $('#cartCount')
                         .text(cartCount);
                 } else if (e.target.id === "2") {
                     chickenCasserole.quantity = parseInt($("#dropdown2 option:selected")
                         .text());
-                    cartCount += chickenCasserole.quantity;
+                    if (chickenCasserole.quantity !== 0) {
+                        cartCount += chickenCasserole.quantity;
+                    }
                     currentItem = chickenCasserole;
                     order.push(currentItem);
-                    console.log(order);
+                    console.log("Order", order);
+                    console.log("Local Storage", JSON.parse(localStorage.cart));
+                    localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
                 } else if (e.target.id === "3") {
                     doggieBeefStew.quantity = parseInt($("#dropdown3 option:selected")
                         .text());
-                    cartCount += doggieBeefStew.quantity;
+                    if (doggieBeefStew.quantity) {
+                        cartCount += doggieBeefStew.quantity;
+                    }
                     currentItem = doggieBeefStew;
                     order.push(currentItem);
-                    console.log(order);
+                    console.log("Order", order);
+                    console.log("Local Storage", JSON.parse(localStorage.cart));
+                    localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
                 }
