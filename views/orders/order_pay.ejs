@@ -73,6 +73,7 @@ function sendOrderToRoute(){
       if(!schedDate){
         alert("Please schedule a delivery date");
       }
+      console.log("Local Storage.cart", JSON.parse(localStorage.cart))
 
       var order = {
         'menuItemID': JSON.parse(localStorage.cart)[0].id,

@@ -4,7 +4,7 @@
 <body>
 
   <%- include('../templates/navbar'); %>
-  
+
     <section class="cover" >
       <div class="cover-caption">
         <div class="container">
@@ -21,6 +21,10 @@
       </div>
     </section>
 
+    <% if (loggedIn === true) { %>
+      <%- include('../templates/navbar'); %>
+      <%= loggedIn %>
+      <% } %>
 
 
     <section>

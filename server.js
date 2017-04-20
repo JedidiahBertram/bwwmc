@@ -19,7 +19,6 @@ require("locus");
 app.set('view engine', 'ejs');
 app.use(morgan('tiny'));
 app.use(express.static(__dirname + "/public"));
-// app.use(morgan); <-- Says Morgan depreciated. WTF Mate?
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -32,10 +31,10 @@ app.use(session({
     maxAge: 24 * 60 * 60 * 1000
 }));
 
-app.use(function(req, res, next) {
-    console.log('User = ', req.session.userId);
-    next();
-})
+// app.use(function(req, res, next) {
+//     console.log('User = ', req.session.userId);
+//     next();
+// })
 
 
 app.get('/', function(req, res) {
