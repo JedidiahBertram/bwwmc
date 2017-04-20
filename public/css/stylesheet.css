@@ -14,7 +14,7 @@ html, body {
     height: 100%;
 }
 
-
+/* Home Page */
 /*cover*/
 
 .cover {
@@ -39,14 +39,19 @@ html, body {
     position: fixed;
     padding: 18px;
     z-index: 10000;
+    transition: background-color 0.1s ease 0s;
 }
 
 .opaque {
-  transition-delay: 0.1s;
-  background-color: #fff;
-  box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
+    transition-delay: 0.1s;
+    background-color: #fff;
+    box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
+    transition: background-color 0.1s ease 0s;
 
 }
+
+
+
 /*  Register, Login, and Logout Navbar Styling */
 
 
@@ -82,12 +87,12 @@ html, body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 10%;
     width: 100%;
     font-family: 'Raleway', sans-serif;
 }
 
-.menuTitle {
+ .menuTitle {
     display: flex;
     justify-content: center;
     width: 100%;

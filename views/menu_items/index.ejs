@@ -15,46 +15,63 @@
     </head>
 
     <body>
-        <%- include('../templates/navbar'); %>
-            <div class="menuContainer">
-                <div class="menuHeader">
-                    <h1 class="menuTitle">Our Menu</h1>
-                    <h4 class="menuSubtitle">Pick from our award winning menu</h4>
-                </div>
+        <nav class="navbar navbar-toggleable-md navbar-light navigation target-nav fixed-top" id="navToggle">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <%# Brand  %>
+                <a class="navbar-brand" href="/">Bow Wow Where's My Chow?</a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-                <% items.forEach((item) => { %>
-                    <div class="menuItem">
-                        <div class="menuImageContainer">
-                            <ul>
-                                <img class="menuImage" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
-                            </ul>
+                    <%# Links %>
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link" href="/menu_items">Menu</a>
+                            <a class="nav-item nav-link go-right" href="/login">Login</a>
+                            <a class="nav-item nav-link go-right btn btn-primary " role="btn" style="background-color:rgb(242,98,38)" href="/register">Sign Up</a>
+                            <img src="/assets/images/shopping cart@2x.png" alt="shopping cart image"><div class='cart' id="cartCount"></div>
                         </div>
-                        <div class="menuTextContainer">
-                            <ul id="<%= item.item_name %>">
-                                <%= item.item_name %>
-                            </ul>
-                            <ul>Ingredients:
-                                <%= item.item_ingredients %>
-                            </ul>
-                            <ul id "<%= item.item_price %>">Price:
-                                <%= item.item_price %>
-                                    <select id="dropdown<%= item.id %>">Qty:
+                </div>
+        </nav>
+        <div class="menuContainer">
+            <div class="menuHeader">
+                <h1 class="menuTitle">Our Menu</h1>
+                <h4 class="menuSubtitle">Pick from our award winning menu</h4>
+            </div>
+
+            <% items.forEach((item) => { %>
+                <div class="menuItem">
+                    <div class="menuImageContainer">
+                        <ul>
+                            <img class="menuImage" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
+                        </ul>
+                    </div>
+                    <div class="menuTextContainer">
+                        <ul id="<%= item.item_name %>">
+                            <%= item.item_name %>
+                        </ul>
+                        <ul>Ingredients:
+                            <%= item.item_ingredients %>
+                        </ul>
+                        <ul id "<%= item.item_price %>">Price:
+                            <%= item.item_price %>
+                                <select id="dropdown<%= item.id %>">Qty:
+                                        <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                       </select>
-                                    <button id="<%= item.id %>" type="button" class="btn btn-default btn-sm addToCart" style="background-color:rgb(242,98,38)">
+                                <button id="<%= item.id %>" type="button" class="btn btn-default btn-sm addToCart" style="background-color:rgb(242,98,38)">
                                       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart
                                     </button>
-                            </ul>
-                        </div>
+                        </ul>
                     </div>
+                </div>
 
-                    <% }) %>
+                <% }) %>
                     <a class="nav-item nav-link go-right btn btn-primary deliveryButton" role="btn" style="background-color:rgb(242,98,38)" href="/orders/order_pay">Schedule Delivery</a>
-            </div>
+        </div>
 
 
     </body>
