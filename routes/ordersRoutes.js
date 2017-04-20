@@ -17,11 +17,6 @@ router.route("/")
             });
     })
     .post((req, res) => {
-        // console.log('In the orders post route');
-        console.log('req.body = ', req.body);
-        // console.log('req.body.item_price = ', req.body.item_price);
-        //console.log('User = ', req.session.userId);
-
         for (var order in req.body) {
             let userID = req.session.userId;
             let menuItemID = req.body.menuItemID;
