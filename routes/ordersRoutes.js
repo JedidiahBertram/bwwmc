@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
 // const nodemailer = require('nodemailer');//Will be used for confirmation email
-
+let orderObj = {};
 
 router.route("/")
     .get((req, res) => {
@@ -17,6 +17,8 @@ router.route("/")
             });
     })
     .post((req, res) => {
+
+        console.log("in the orders post route");
         for (var order in req.body) {
             let userID = req.session.userId;
             let menuItemID = req.body.menuItemID;
@@ -29,7 +31,7 @@ router.route("/")
             let schedDate = req.body.schedDate;
             let currentMonth = todaysDate.getMonth() + 1;
 
-            let orderObj = {
+            orderObj = {
                 "order_number": getRandomArbitrary(1000000, 9999999),
                 "order_date": currentMonth + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
                 "order_status": "In Progress",
@@ -57,6 +59,10 @@ router.route("/")
             function getRandomArbitrary(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
             }
+
+            res.render("orders/orderSchedule", {
+                orderObj
+            });
         }
 
 
@@ -128,6 +134,15 @@ router.route("/order_pay")
     .get(function(req, res) {
         res.render("orders/order_pay")
     })
+
+//http://localhost:3000/orders/order/orderData
+router.route("/order/orderData")
+    .get(function(req, res) {
+        res.render("orders/orderSchedule", {
+            orderObj
+        })
+    })
+
 
 //ALl the single order routes (update, delete, show, etc.)
 //Must be at the bottom of the file to avoid route
