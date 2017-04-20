@@ -120,6 +120,12 @@ html, body {
     width: 80%;
 }
 
+.deliveryButton {
+    width: 20%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
 
 /* End of Menu page styling */
 
