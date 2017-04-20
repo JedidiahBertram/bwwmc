@@ -44,14 +44,16 @@ router.route("/")
 
             console.log('todays date = ', orderObj.order_date);
 
-            knex('orders').insert(orderObj)
+            knex('orders')
+                .insert(orderObj)
                 .returning("id")
                 .then(function(id) {
                     let orderMenuItemsObj = {
                         "order_id": parseInt(id),
                         "menu_item_id": parseInt(menuItemID)
                     }
-                    knex('order_menu_items').insert(orderMenuItemsObj)
+                    knex('order_menu_items')
+                        .insert(orderMenuItemsObj)
                         .returning("id")
                         .then(function(id) {
                             console.log('orderMenuItemsID = ', id);

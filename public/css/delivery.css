@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin-top: 7%;
+}
+
+.h1Container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.datePickerText {
+    border: 1px solid black;
+    margin-top: 5%;
+    height: 20%;
+    color: white;
+    background-color: #f26226;
+}
+
+.deliveryForm {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 50%;
+}
+
+.confirm {
+    width: 100%;
+    border: 1px solid black;
+    margin-top: 2%;
+    background-color: #f26226;
+}
+
+.formField {
+    width: 100%;
+    margin-top: 2%;
+}
