@@ -17,27 +17,48 @@ router.route("/")
             });
     })
     .post((req, res) => {
-        console.log('In the orders post route');
-        console.log(req.body);
-
-        //       { menuItemID: '1',
-        // quantity: '1',
-        // item_price: '45',
-        // schedDate: '04/26/2017',
-        // recurring: 'false',
-        // frequency: 'Weekly' }
-
+        // console.log('In the orders post route');
+        console.log('req.body = ', req.body);
+        // console.log('req.body.item_price = ', req.body.item_price);
+        //console.log('User = ', req.session.userId);
 
         for (var order in req.body) {
-            console.log(req.body[order]);
-            var menuItemID = req.body[order].menuItemID;
-            var qty = req.body[order].quantity;
-            var price = req.body[order].item_price;
-            var recur = req.body[order].recurring;
-            var freq = req.body[order].frequency;
-            var totalPrice = price * qty;
+            let userID = req.session.userId;
+            let menuItemID = req.body.menuItemID;
+            let qty = req.body.quantity;
+            let price = req.body.item_price;
+            let recur = req.body.recurring;
+            let freq = req.body.frequency;
+            let totalPrice = price * qty;
+            let todaysDate = new Date();
+            let schedDate = req.body.schedDate;
 
+            let orderObj = {
+                "order_number": getRandomArbitrary(1000000, 9999999),
+                "order_date": todaysDate.getMonth() + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
+                "order_status": "In Progress",
+                "order_total": totalPrice,
+                "user_id": userID,
+                "delivery_date": schedDate
+            }
 
+            knex('orders').insert(orderObj)
+                .returning("id")
+                .then(function(id) {
+                    let orderMenuItemsObj = {
+                        "order_id": parseInt(id),
+                        "menu_item_id": parseInt(menuItemID)
+                    }
+                    knex('order_menu_items').insert(orderMenuItemsObj)
+                        .returning("id")
+                        .then(function(id) {
+                            console.log('orderMenuItemsID = ', id);
+                        })
+                })
+
+            function getRandomArbitrary(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
         }
 
 
