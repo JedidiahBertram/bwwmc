@@ -16,7 +16,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-    <link rel="stylesheet" href="public/assets/index.css">
+    <link rel="stylesheet" href="public/css/stylesheet.css">
 
     <script>
         //create an array of dates (reached max deliverys) to exclude from the calendar
@@ -97,69 +97,23 @@ function sendOrderToRoute(){
 </script>
 
   </head>
-  <body>
+
+  <header>
     <%- include('../templates/navbar'); %>
+  </header>
 
+  <body>
 
-    <div>
-      <p>
-        Data Here.
-      </p>
-      <p>
-        Data Here.
-      </p>
-      <p>
-        Data Here.
-      </p>
-      <p>
-        Data Here.
-      </p>
-      <p>
-        Data Here.
-      </p>
+<br />
+<br />
+<br />
+<br />
 
-
-    </div>
-
-
-
-      <div class="bootstrap-iso">
-       <div class="container-fluid">
-        <div class="row">
-         <div class="col-md-6 col-sm-6 col-xs-12">
-           <div class="datePicker">
-             <label class="datePickerLabel" for="date">Delivery Date:</label>
-             <input class="datePickerText" id="dateText" name="date" placeholder="MM/DD/YYY" type="text"/>
-           </div>
-          </div>
-        </div>
-       </div>
-      </div>
-      <div class="row">
-  <!-- <div class="col-lg-6">
-    <div class="input-group">
-      <span class="recurringCBGroup">
-        <label for="recurringCB">Recurring Order?</label>
-        <input id= "recurringCB" value="recurringCB" type="checkbox" aria-label="...">
-      </span>
-    </div>
-
-
+  <div class-"datePickerContainer">
+   <label class="datePickerLabel" for="date">Delivery Date:</label>
+   <input class="datePickerText" id="dateText" name="date" placeholder="Click to schedule" type="text"/>
   </div>
-</div>
 
-<!-- <div class="recurrenceDD" id="recurrenceDD">
-  <select id="dropdown-menu">
-    <option value='Weekly'>Weekly</option>
-    <option value='Bi-Weekly'>Bi-Weekly</option>
-    <option value='Monthly'>Monthly</option>
-  </select>
-</div> -->
-
-<div class="form-group"> <!-- Submit button -->
-  <input type="button" value="Submit Order" onclick="sendOrderToRoute()"></button>
-</div>
-    <!-- </form> -->
-
+  <input id="submitSchedule" type="button" class="btn btn-primary btn-lg" value="Submit Order" onclick="sendOrderToRoute()"></button>
   </body>
 </html>

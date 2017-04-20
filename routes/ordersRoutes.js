@@ -18,6 +18,8 @@ router.route("/")
     })
     .post((req, res) => {
 
+        var orderNumber = getRandomArbitrary(1000000, 9999999);
+
         console.log("in the orders post route");
         for (var order in req.body) {
             let userID = req.session.userId;
@@ -32,7 +34,7 @@ router.route("/")
             let currentMonth = todaysDate.getMonth() + 1;
 
             orderObj = {
-                "order_number": getRandomArbitrary(1000000, 9999999),
+                "order_number": orderNumber,
                 "order_date": currentMonth + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
                 "order_status": "In Progress",
                 "order_total": totalPrice,
@@ -56,15 +58,15 @@ router.route("/")
                         })
                 })
 
-            function getRandomArbitrary(min, max) {
-                return Math.floor(Math.random() * (max - min)) + min;
-            }
 
             res.render("orders/orderSchedule", {
                 orderObj
             });
         }
 
+        function getRandomArbitrary(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
 
 
         //WILL BE USED FOR CONFIRMATION EMAIL
