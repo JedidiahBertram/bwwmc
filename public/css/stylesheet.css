@@ -42,10 +42,13 @@ html, body {
 }
 
 .opaque {
-    background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
+  background-color: black;
+
 }
-
-
+nav {
+  border: 5px dashed pink;
+}
 /*  Register, Login, and Logout Navbar Styling */
 
 
