@@ -27,15 +27,18 @@ router.route("/")
             let totalPrice = price * qty;
             let todaysDate = new Date();
             let schedDate = req.body.schedDate;
+            let currentMonth = todaysDate.getMonth() + 1;
 
             let orderObj = {
                 "order_number": getRandomArbitrary(1000000, 9999999),
-                "order_date": todaysDate.getMonth() + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
+                "order_date": currentMonth + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
                 "order_status": "In Progress",
                 "order_total": totalPrice,
                 "user_id": userID,
                 "delivery_date": schedDate
             }
+
+            console.log('todays date = ', orderObj.order_date);
 
             knex('orders').insert(orderObj)
                 .returning("id")
