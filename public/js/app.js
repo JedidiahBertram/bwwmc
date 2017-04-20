@@ -3,7 +3,8 @@ $(document).ready(() => {
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    if (scroll > 780) {
+    // if (scroll > 780) {
+    if (scroll > 150) {
       console.log('This works');
       $('nav').addClass('opaque')
     } else {
