@@ -99,26 +99,10 @@ function sendOrderToRoute(){
   <body>
     <%- include('../templates/navbar'); %>
 
-    <!-- <form name="orderPay" method="post" action="/ordersRoutes"> -->
       <div class="bootstrap-iso">
        <div class="container-fluid">
         <div class="row">
          <div class="col-md-6 col-sm-6 col-xs-12">
-          <!-- <form method="post">
-            <div>
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-              <label>Menu Item</label><br />
-            </div>
-
-
-
-           </form> -->
            <div class="datePicker">
              <label class="datePickerLabel" for="date">Delivery Date:</label>
              <input class="datePickerText" id="dateText" name="date" placeholder="MM/DD/YYY" type="text"/>
@@ -127,32 +111,29 @@ function sendOrderToRoute(){
         </div>
        </div>
       </div>
-
-
       <div class="row">
-  <div class="col-lg-6">
-
+  <!-- <div class="col-lg-6">
     <div class="input-group">
       <span class="recurringCBGroup">
         <label for="recurringCB">Recurring Order?</label>
         <input id= "recurringCB" value="recurringCB" type="checkbox" aria-label="...">
       </span>
-    </div><!-- /input-group -->
+    </div>
 
 
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
+  </div>
+</div>
 
-<div class="recurrenceDD" id="recurrenceDD">
+<!-- <div class="recurrenceDD" id="recurrenceDD">
   <select id="dropdown-menu">
     <option value='Weekly'>Weekly</option>
     <option value='Bi-Weekly'>Bi-Weekly</option>
     <option value='Monthly'>Monthly</option>
   </select>
-</div>
+</div> -->
 
 <div class="form-group"> <!-- Submit button -->
-  <input type="button" value="Submit" onclick="sendOrderToRoute()">Submit Order</button>
+  <input type="button" value="Submit Order" onclick="sendOrderToRoute()"></button>
 </div>
     <!-- </form> -->
 
