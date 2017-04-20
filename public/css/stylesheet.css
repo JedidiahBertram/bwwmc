@@ -1,0 +1,143 @@
+/********** Style Reference Chart **********
+  Colors:
+  base color: #f26226
+  color 1   : #2ab7ca
+  color 2   : #fed766
+  color 3   : #e6e6ea
+  color 4   : #f4f4f8
+
+  Fonts:
+  Lato, Raleway
+**********/
+html,
+body {
+  height: 100%;
+}
+
+/*cover*/
+
+.cover {
+  background: #222 url('../assets/images/Dog-Food.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.cover-caption {
+  width: 100%;
+}
+
+.imgsize {
+  width: 520px;
+  height: 400px;
+}
+
+
+/*  Register, Login, and Logout Navbar Styling */
+
+
+/*  LOGIN FORM STYLING  */
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    margin-top: 10%;
+}
+
+.login {
+    margin-top: 5%;
+}
+
+.formField {
+    width: 100%;
+}
+
+
+/*  MENU STYLING */
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.menuHeader {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 3%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.menuTitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menuSubtitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menuItem {
+    display: flex;
+    flex-flow: row wrap;
+    width: 30%;
+    margin-top: 3%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.menuImageContainer {
+    display: flex;
+    width: 100%;
+}
+
+.menuImage {
+    width: 80%;
+    box-shadow: 5px 5px 2.5px grey;
+}
+
+.menuTextContainer {
+    width: 80%;
+}
+
+.datePicker{
+  display: flex;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: 3%;
+}
+
+.datePickerLabel{
+  width: 400px;
+}
+
+.recurringCBGroup{
+  display: flex;
+  width: 45%;
+  margin-left: 50%;
+  margin-top: 3%;
+}
+.recurrenceDD{
+  display: flex;
+  width: 20%;
+  margin-left: 30%;
+  margin-top: 3%;
+}
+#submitSchedule{
+  display: flex;
+  width: 13%;
+  margin-left: 30%;
+  margin-top: 3%;
+  background-color: #f26226;
+  margin-left: auto;
+   margin-right: auto;
+}
