@@ -1,17 +1,21 @@
+'use strict';
 $(document).ready(() => {
   // Make transparent navigation bar visible once the user scrolls past 200px
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    // if (scroll > 780) {
-    if (scroll > 150) {
-      console.log('This works');
-      $('nav').addClass('opaque')
+    if ( document.title === 'HOME PAGE') {
+      if (scroll > 150) {
+        // console.log('This works');
+        $('nav').addClass('opaque')
+      } else {
+        $('nav').removeClass('opaque')
+      }
     } else {
-      $('nav').removeClass('opaque')
+      console.log('Test');
 
     }
-
+      // $('nav').addClass('booybooybooy')
   });
   //
   // $(window).scroll(() => {
