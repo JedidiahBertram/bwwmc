@@ -59,6 +59,18 @@ router.route('/:user_id/delete')
         });
     });
 
+router.route('/:user_id/order_history')
+    .get((req, res) => {
+        knex('orders')
+            .where("user_id", req.session.userId)
+            .then((orders) => {
+
+                res.render('users/orderhist', {
+                    orders: orders
+                });
+            })
+    })
+
 
 
 //Routes specific to one user
