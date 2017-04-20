@@ -2,31 +2,92 @@
 <html lang="en">
   <%- include('../templates/head', {title: 'HOME PAGE'}); %>
 <body>
-  <%- include('../templates/navbar'); %>
-  <div class="bg">
-    <img src="../assets/images/splash.jpg" alt="">
-  </div>
 
-  <main>
-    <section>
-      <h1>BOW WOW Where's My Chow?</h1>
-      <h2>How does it work?</h2>
+    <section id="cover" >
+      <div id="cover-caption">
+        <div class="container">
+          <div class="col-sm-10 col-sm-offset-1">
+          <h1 class="display-2">Bow Wow Where's My Chow?</h1>
+          <h2>Quality Dog Food from Our Door to You</h2>
+
+          <br>
+
+          <a href="nav-main" class="btn btn-secondary-outline btn-sm" role="button">&darr;</a>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <%- include('../templates/navbar'); %>
+
+
     <section>
-      <p>Step 1: Select your order</p>
-      <img src="../assets/images/story2.png">
+      <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
 
-      <img src="../assets/images/story4.png" alt="">
-      <p>Step 2: Pick a Delivery Date</p>
+          <h2>How does it work?</h2>
+          <br  />
 
-      <p>Step 3: Enjoy treating your dog to the good life!</p>
-      <img src="../assets/images/story3.png" alt="">
+          <div class="row">
+              <div class="col">
+                <p>Step 1: Select your order</p>
+              </div>
+              <div class="col">
+                <img src="../assets/images/story2.png" class="imgsize">
+              </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
 
+          <div class="row">
+              <div class="col">
+                <img src="../assets/images/story4.png" class="imgsize">
+              </div>
+              <div class="col">
+                <p>Step 2: Pick a Delivery Date</p>
+              </div>
+          </div>
 
-      <button type="button" name="button" class="btn"><a href="/menu_items">Get Started</a></button>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <div class="row">
+              <div class="col">
+                <p>Step 3: Enjoy treating your dog to the good life!</p>
+              </div>
+              <div class="col">
+                <img src="../assets/images/story3.png" class="imgsize">
+              </div>
+          </div>
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <div class="row">
+            <div class="col">
+              <button type="button" name="button" class="btn"><a href="/menu_items">Get Started</a></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </section>
-  </main>
+
 </body>
 </html>
