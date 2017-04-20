@@ -11,7 +11,7 @@
         <script type="text/javascript" src="/js/cart.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
-        <link rel="stylesheet" href="/stylesheet.css">
+        <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
 
     <body>
@@ -36,9 +36,9 @@
                             <ul>Ingredients:
                                 <%= item.item_ingredients %>
                             </ul>
-                            <ul id"<%= item.item_price %>">Price:
+                            <ul id "<%= item.item_price %>">Price:
                                 <%= item.item_price %>
-                                      <select id="dropdown<%= item.id %>">Qty:
+                                    <select id="dropdown<%= item.id %>">Qty:
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -53,6 +53,7 @@
                     </div>
 
                     <% }) %>
+            </div>
 
     </body>
 
