@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(() => {
-  // Make transparent navigation bar visible once the user scrolls past 200px
+  // adds 'opaque' class to the navbar.
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
@@ -15,29 +15,41 @@ $(document).ready(() => {
       console.log('Test');
 
     }
-      // $('nav').addClass('booybooybooy')
   });
-  //
-  // $(window).scroll(() => {
-  //   if($(this).scrollTop() > 200) {
-  //     $('.navigation a').addClass('opaque');
-  //   }
-  //   $('.navigation a').removeClass('opaque');
-  // });
 
 
-  // $(window).scroll(() => {
-  //   const height = $(window).scrollTop();
-  //   // if ($(this).scrollTop() > 300) {
-  //   //   $('step-one').addClass('fadeInLeft');
-  //   //   console.log('Event Fired');
-  //   //
-  //   // }
-  //   console.log(height);
-  //   if (height > 210) {
-  //     $('step-one').addClass('fadeInLeft');
-  //     console.log('Event Fired');
-  //   }
-  // })
+  $(window).scroll(() => {
+    const scroll = $(window).scrollTop();
 
+    if (scroll > 360) {
+      $('h2').addClass('fadeInDown')
+      $('h2').addClass('showme')
+    }
+  })
+
+  $(window).scroll(() => {
+    const scroll = $(window).scrollTop();
+
+    if (scroll > 500) {
+      $('div#step-one').addClass('fadeInLeft')
+      $('div#step-one').addClass('showme')
+    }
+  })
+  $(window).scroll(() => {
+    const scroll = $(window).scrollTop();
+
+    if (scroll > 540) {
+      $('div#step-two').addClass('fadeInRight')
+      $('div#step-two').addClass('showme')
+    }
+  })
+  $(window).scroll(() => {
+    const scroll = $(window).scrollTop();
+
+    if (scroll > 900) {
+      console.log('Triggered');
+      $('div#step-three').addClass('fadeInLeft')
+      $('div#step-three').addClass('showme')
+    }
+  })
 });

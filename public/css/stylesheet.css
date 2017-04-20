@@ -46,14 +46,16 @@ html, body {
     transition-delay: 0.1s;
     background-color: #fff;
     box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
-  transition: background-color 0.1s ease 0s;
-  background-color: #fff;
-  box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.8);
+    transition: background-color 0.1s ease 0s;
 
 }
 
-.bootybootybooty {
-  border: 10px dashed pink;
+.hideme {
+  opacity:0;
+  transition: all ease 0.8s;
+}
+.showme {
+  opacity: 1;
 }
 
 
