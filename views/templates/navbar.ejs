@@ -1,24 +1,16 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-light navigation sticky-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <%# Brand  %>
   <a class="navbar-brand" href="/">Bow Wow Where's My Chow?</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <%# <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>%>
-      <li class="nav-item">
-        <a class="nav-link" href="/menu_items">Menu</a>
-      </li>
-      <div class="userOptions">
-        <li class="nav-item user">
-          <a class="nav-link navbar-login-text" href="/login"><span>Login</span></a>
-        </li>
-        <li class="nav-item user">
-          <a class="nav-link navbar-login-text" href="/register"><span>Sign Up</span></a>
-        </li>
-      </div>
-    </ul>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+    <%# Links %>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/menu_items">Menu</a>
+      <a class="nav-item nav-link go-right" href="/login">Login</a>
+      <a class="nav-item nav-link go-right" href="/register">Sign Up</a>
+    </div>
   </div>
 </nav>
