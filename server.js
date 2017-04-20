@@ -27,9 +27,15 @@ app.use(bodyParser.json());
 app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.use(session({
-    keys: [process.env.SESSION_KEY1, process.env.SESSION_KEY2]
+    name: 'session',
+    secret: 'userId',
+    maxAge: 24 * 60 * 60 * 1000
 }));
 
+app.use(function(req, res, next) {
+    console.log('User = ', req.session.userId);
+    next();
+})
 
 
 app.get('/', function(req, res) {
@@ -41,6 +47,8 @@ app.use("/users", usersRouter);
 app.use("/orders", ordersRouter);
 app.use("/menu_items", menu_itemsRoutes);
 app.use('/', authRouter);
+
+
 
 
 app.listen(PORT, () => {

@@ -71,8 +71,8 @@ router.route('/:user_id')
             .then((user) => {
 
                 res.render('users/show', {
-                    user_id: user[0].user_id,
-                    full_name: user[0].full_name,
+                    first_name: user[0].first_name,
+                    last_name: user[0].last_name,
                     phone: user[0].phone,
                     email: user[0].email,
                     address: user[0].address,

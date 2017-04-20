@@ -17,38 +17,79 @@ router.route("/")
             });
     })
     .post((req, res) => {
-        knex('orders')
-            .insert(req.body.order)
-            //WILL BE USED FOR CONFIRMATION EMAIL
-            // .returning('id')
-            // .then((id) => {
-            //     // create reusable transporter object using the default SMTP transport
-            //     let transporter = nodemailer.createTransport({
-            //         service: 'gmail',
-            //         auth: {
-            //             user: 'chowconfirmation@gmail.com',
-            //             pass: 'bowwowwheresmychow'
-            //         }
-            //     });
-            //     // setup email data with unicode symbols
-            //     let mailOptions = {
-            //         from: '"BWWMC" <chowconfirmation@gmail.com>', // sender address
-            //         to: 'bar@blurdybloop.com' // list of receivers
-            //         subject: 'BWWMC Order Confirmation', // Subject line
-            //         text: "Thank you for your order!", // plain text body
-            //         html: '<b>Thank you for your order!</b>' // html body
-            //     };
-            //     // send mail with defined transport object
-            //     transporter.sendMail(mailOptions, (error, info) => {
-            //         if (error) {
-            //             return console.log(error);
-            //         }
-            //         console.log('Message %s sent: %s', info.messageId, info.response);
-            //     });
-            // })
-            .catch((err) => {
-                console.log(err);
-            });
+        for (var order in req.body) {
+            let userID = req.session.userId;
+            let menuItemID = req.body.menuItemID;
+            let qty = req.body.quantity;
+            let price = req.body.item_price;
+            let recur = req.body.recurring;
+            let freq = req.body.frequency;
+            let totalPrice = price * qty;
+            let todaysDate = new Date();
+            let schedDate = req.body.schedDate;
+
+            let orderObj = {
+                "order_number": getRandomArbitrary(1000000, 9999999),
+                "order_date": todaysDate.getMonth() + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
+                "order_status": "In Progress",
+                "order_total": totalPrice,
+                "user_id": userID,
+                "delivery_date": schedDate
+            }
+
+            knex('orders').insert(orderObj)
+                .returning("id")
+                .then(function(id) {
+                    let orderMenuItemsObj = {
+                        "order_id": parseInt(id),
+                        "menu_item_id": parseInt(menuItemID)
+                    }
+                    knex('order_menu_items').insert(orderMenuItemsObj)
+                        .returning("id")
+                        .then(function(id) {
+                            console.log('orderMenuItemsID = ', id);
+                        })
+                })
+
+            function getRandomArbitrary(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+        }
+
+
+
+        //WILL BE USED FOR CONFIRMATION EMAIL
+        // .returning('id')
+        // .then((id) => {
+        //     // create reusable transporter object using the default SMTP transport
+        //     let transporter = nodemailer.createTransport({
+        //         service: 'gmail',
+        //         auth: {
+        //             user: 'chowconfirmation@gmail.com',
+        //             pass: 'bowwowwheresmychow'
+        //         }
+        //     });
+        //     // setup email data with unicode symbols
+        //     let mailOptions = {
+        //         from: '"BWWMC" <chowconfirmation@gmail.com>', // sender address
+        //         to: 'bar@blurdybloop.com' // list of receivers
+        //         subject: 'BWWMC Order Confirmation', // Subject line
+        //         text: "Thank you for your order!", // plain text body
+        //         html: '<b>Thank you for your order!</b>' // html body
+        //     };
+        //     // send mail with defined transport object
+        //     transporter.sendMail(mailOptions, (error, info) => {
+        //         if (error) {
+        //             return console.log(error);
+        //         }
+        //         console.log('Message %s sent: %s', info.messageId, info.response);
+        //     });
+        // })
+        // .catch((err) => {
+        //     console.log(err);
+        // });
+
+
     })
     .put((req, res) => {
 
@@ -79,6 +120,11 @@ router.route("/delete")
     .get(function(req, res) {
         res.render("orders/delete");
     });
+
+router.route("/order_pay")
+    .get(function(req, res) {
+        res.render("orders/order_pay")
+    })
 
 //ALl the single order routes (update, delete, show, etc.)
 //Must be at the bottom of the file to avoid route
