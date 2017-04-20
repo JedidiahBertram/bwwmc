@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../templates/head', {title: 'Register'}); %>
 
-        <body>
-            <%- include('../templates/navbar'); %>
+    <head>
+        <meta charset="utf-8">
+        <title>Your Orders</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/js/cart.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+        <link rel="stylesheet" href="/css/stylefix.css">
+    </head>
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light navigation target-nav" id="navToggle">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <%# Brand  %>
+          <a class="navbar-brand" href="/">Bow Wow Where's My Chow?</a>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+              <%# Links %>
+                  <div class="navbar-nav">
+                      <a class="nav-item nav-link" href="/menu_items">Menu</a>
+                      <a class="nav-item nav-link go-right" href="/login">Login</a>
+                      <a class="nav-item nav-link go-right btn btn-primary " role="btn" style="background-color:rgb(242,98,38)" href="/register">Sign Up</a>
+                      <img src="/assets/images/shopping cart@2x.png" alt="shopping cart image"><div class='cart' id="cartCount"></div>
+                  </div>
+          </div>
+  </nav>
 
                 <!-- Registration FORM  -->
                 <div class="container">
