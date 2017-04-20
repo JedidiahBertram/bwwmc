@@ -9,19 +9,32 @@
   Fonts:
   Lato, Raleway
 **********/
-
-/*  Register, Login, and Logout Navbar Styling */
-
-.userOptions {
-    margin-left: 95vh;
-    display: flex;
-}
-
-.bg {
-  position: absolute;
-  width: 100%;
+html,
+body {
   height: 100%;
 }
+
+/*cover*/
+
+#cover {
+  background: #222 url('../assets/images/Dog-Food.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#cover-caption {
+  width: 100%;
+}
+
+.imgsize {
+  width: 520px;
+  height: 400px;
+}
+/*  Register, Login, and Logout Navbar Styling */
+
 
 /*  LOGIN FORM STYLING  */
 
