@@ -39,15 +39,19 @@ html, body {
     position: fixed;
     margin: 18px;
     z-index: 10000;
+  position: fixed;
+  /*margin: 18px;*/
+  z-index: 10000;
 }
 
 .opaque {
-  /*background-color: #f2f2f2;*/
-  background-color: black;
+  transition-delay: 0.1s;
+  background-color: #fff;
+  box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
 
 }
 nav {
-  border: 5px dashed pink;
+  /*border: 5px dashed pink;*/
 }
 /*  Register, Login, and Logout Navbar Styling */
 

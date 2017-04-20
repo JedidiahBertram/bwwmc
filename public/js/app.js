@@ -1,12 +1,16 @@
 $(document).ready(() => {
   // Make transparent navigation bar visible once the user scrolls past 200px
   $(window).scroll(() => {
-    // console.log('Triggered');
-    if($(this).scrollTop() > 200) {
-      console.log('Event Triggered');
-      $('#navToggle').addClass('opaque');
+    const scroll = $(window).scrollTop();
+
+    if (scroll > 780) {
+      console.log('This works');
+      $('nav').addClass('opaque')
+    } else {
+      $('nav').removeClass('opaque')
+
     }
-      $('#navToggle').removeClass('opaque');
+
   });
   //
   // $(window).scroll(() => {
