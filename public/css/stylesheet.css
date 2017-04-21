@@ -28,16 +28,18 @@ html, body {
     display: flex;
     align-items: center;
 }
+
 .cover2 {
-  height: 100%;
+    height: 100%;
     text-align: center;
 }
+
 .cover-caption {
     width: 100%;
 }
 
 .cover-caption1 {
-  width: 100%;
+    width: 100%;
 }
 
 .imgsize {
@@ -67,8 +69,6 @@ html, body {
 .showme {
     opacity: 1;
 }
-<<<<<<< HEAD
-=======
 
 
 /*  Register, Login, and Logout Navbar Styling */
@@ -153,4 +153,3 @@ html, body {
 
 
 /* End of Menu page styling */
->>>>>>> adds styling to the delivery page

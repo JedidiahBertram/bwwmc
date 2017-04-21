@@ -28,7 +28,7 @@ router.route('/login')
                     if (matches) {
                         req.session.userId = user.id;
                         console.log(req.session.userId);
-                        res.render('menu_items/index');
+                        res.redirect('/');
                     }
                 } else {
                     res.redirect('/register');

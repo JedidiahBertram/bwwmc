@@ -9,7 +9,6 @@ const knex = require('../db/knex');
 router.route("/")
 
     .get((req, res) => {
-        console.log('user = ', req.session.userId);
         knex('menu_items')
             .then((items) => {
                 res.render('menu_items/index', {
