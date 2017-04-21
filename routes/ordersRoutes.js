@@ -146,6 +146,10 @@ router.route("/order/orderData")
             orderObj
         })
     })
+router.route("/order_confirmation")
+    .get(function(req, res) {
+        res.render("orders/order_confirmation")
+    })
 
 
 //ALl the single order routes (update, delete, show, etc.)

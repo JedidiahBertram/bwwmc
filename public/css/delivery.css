@@ -38,3 +38,20 @@ body {
     width: 100%;
     margin-top: 2%;
 }
+
+
+/* ORDER CONFIRMATION STYLES */
+
+.thankYou {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+h1 {
+    width: 100%;
+}
+
+h4 {
+    width: 100%;
+}
