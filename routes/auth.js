@@ -75,7 +75,9 @@ router.route('/register')
                     //Redirecting the logged in user to the home page for now
                     // res.redirect('/');
                     // res.redirect('menu_items/index');
-                    res.redirect('/');
+                    res.render('statics/home', {
+                        loggedIn: true
+                    });
                 })
                 //Error handling
                 .catch((err) => {
