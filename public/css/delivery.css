@@ -48,10 +48,22 @@ body {
     flex-flow: row wrap;
 }
 
+.orderInfo {
+    margin-top: 4%;
+}
+
 h1 {
     width: 100%;
+    font-family: 'Raleway', sans-serif;
 }
 
 h4 {
     width: 100%;
+    margin-top: 6%;
+    font-family: 'Raleway', sans-serif;
+}
+
+img {
+    width: 10%;
+    align: middle;
 }
