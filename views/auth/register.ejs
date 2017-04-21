@@ -42,15 +42,15 @@
 
                             <form action="/register" method="POST">
                                 <h2 class="emailstyle">Email</h2>
-                                <input class="formField" name="user[email]" type="email" placeholder="Email" required>
+                                <input class="formField" name="user[email]" type="email" placeholder="your@email.com" required>
 
                                 <h2 class="passwordstyle">Create a Password</h2>
-                                <input class="formField" type="password" name="user[password]" placeholder="Password" required>
+                                <input class="formField" type="password" name="user[password]" placeholder="Must have at least 6 characters" required>
                                 <button class="loginbtn registerbtn" type="submit">Register</button>
                                 <br/>
-                                <span class="terms termstext1">By clicking above, you agree to our <a href="#">Terms of Use</a></span>
+                                <span class="terms termstext1">By clicking above, you agree to our <a href="#" class="dedpage">Terms of Use</a></span>
                                   <br/>
-                                <span class="terms termstext"> and consent to our Privacy Policy</span>
+                                <span class="terms termstext"> and consent to our <a href="#" class="dedpage">Privacy Policy</a></span>
 
 
                             </form>
@@ -58,7 +58,7 @@
                             <div class="member">
                               <form action="/login" method="POST">
                                 Already a memeber?
-                                <a href="/login">Log In</a>
+                                <a href="/login" class="tologinpage">Log In</a>
                               </form>
                             </div>
                         </div>

@@ -34,11 +34,14 @@ form {
 
 .loginstyle {
 	width: 116px;
+  position: relative;
+  left: 100px;
+  margin-bottom: 40px;
 	height: 52px;
 	font-family: Lato;
 	font-size: 44px;
 	text-align: center;
-	color: #000000;
+	color: #000;
 	color: var(--black-two);
 }
 .login {
@@ -100,7 +103,7 @@ form {
 .passwdforgot {
   position: relative;
   top: 06px;
-  left: 22.7%;
+  left: 20%;
   width: 109px;
   height: 17px;
   font-family: 'Lato';
@@ -125,6 +128,8 @@ form {
 
 /* Register Page Styling*/
 .getstarted {
+  font-family: 'Lato';
+  margin-bottom: 40px;
   position: relative;
   left: 95px;
 }
@@ -153,6 +158,11 @@ form {
   position: relative;
   left: 40px;
 }
+
+.tologinpage {
+  color: ##2AB7CA;
+}
+
 /*  MENU STYLING */
 
 .menuContainer {
