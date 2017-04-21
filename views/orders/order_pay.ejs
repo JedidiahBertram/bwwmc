@@ -21,8 +21,6 @@
       <script>
 
           var todaysDate = new Date();
-
-
           $(document).ready(function(){
             var date_input=$('input[name="date"]'); //our date input has the name "date"
             var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
@@ -92,8 +90,8 @@
       <div class="h1Container">
         <h1>Schedule Delivery</h1>
       </div>
-        <form class="deliveryForm" action="">
-          <input class="datePickerText" id="dateText" name="date" value="Select a delivery date" type="text"/>
+        <form class="deliveryForm" action="/orders/order_confirmation">
+           <input class="datePickerText" id="dateText" name="date" value="Select a delivery date" type="text"/>
            <input class="formField" type="text" placeholder="Name">
            <input class="formField" type="text" placeholder="Street Address">
            <input class="formField"type="text" placeholder="State">

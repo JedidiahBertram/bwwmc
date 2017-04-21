@@ -5,6 +5,8 @@
     padding: 18px;
     /*border: 10px dashed pink;*/
 }
+
+
 /*  Register, Login, and Logout Navbar Styling */
 
 
@@ -30,7 +32,8 @@
 
 /*  MENU STYLING */
 
-.menuContainer {
+
+/*.menuContainer {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -88,13 +91,14 @@
 
 /* End of Menu page styling */
 
+
 /* Order Page Styling */
+
 .datePickerContainer {
     display: flex;
     justify-content: center;
     background-color: yellow;
 }
-
 
 .datePickerText {
     display: flex;
@@ -122,3 +126,5 @@
     margin-top: 15px;
     text-align: center;
 }
+
+*/

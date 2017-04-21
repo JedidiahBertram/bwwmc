@@ -13,9 +13,10 @@ body {
 }
 
 .datePickerText {
-    border: 1px solid black;
     margin-top: 5%;
+    text-align: center;
     height: 20%;
+    width: 20%;
     color: white;
     background-color: #f26226;
 }
@@ -29,7 +30,6 @@ body {
 
 .confirm {
     width: 100%;
-    border: 1px solid black;
     margin-top: 2%;
     background-color: #f26226;
 }
