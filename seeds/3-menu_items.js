@@ -9,40 +9,48 @@ exports.seed = function(knex, Promise) {
             // Inserts seed entries
             return knex('menu_items')
                 .insert([{
+                        id: 1,
                         item_name: 'Chicken Pot Pie',
-                        item_ingredients: 'Rice, Lentils, Quinoa, Carrots, Peas, Zucchini, Squash, Fish Oil',
-                        image_url: 'http://www.keepthetailwagging.com/wp-content/uploads/2012/02/Chicken-Pot-Pie-2-500x332.jpg',
-                        item_price: '$45.00'
+                        item_ingredients: 'Chicken, rice, lentils, quinoa, carrots, peas, shredded zucchini, squash, cranberries, oil',
+                        item_price: '$30.00',
+                        image_url: 'http://i.imgur.com/3ueAQ0o.jpg'
                     },
                     {
+                        id: 2,
                         item_name: 'Chicken Casserole',
-                        item_ingredients: 'Chicken, Chopped Vegetables, Rolled Oats, Chicken Broth, Oil',
-                        image_url: 'http://dogsaholic.com/wp-content/uploads/2015/03/Chicken-Casserole.jpg',
-                        item_price: '$25.37'
+                        item_ingredients: 'Chicken breasts, chopped vegetables (carrots, green beans, broccoli), chicken broth, oil',
+                        item_price: '$25.00',
+                        image_url: 'http://i.imgur.com/PP6AsbL.jpg'
                     },
                     {
+                        id: 3,
                         item_name: 'Doggie Beef Stew',
-                        item_ingredients: 'Beef Stew Meat, Potato, Sweet Potato, Carrots, Water, White Flour, Olive Oil',
-                        image_url: 'http://dogsaholic.com/wp-content/uploads/2015/03/Doggie-beef-stew.jpg',
-                        item_price: '$18.00'
-                    }, {
-                        item_name: 'Chicken Pot Pie',
-                        item_ingredients: 'Rice, Lentils, Quinoa, Carrots, Peas, Zucchini, Squash, Fish Oil',
-                        image_url: 'http://www.keepthetailwagging.com/wp-content/uploads/2012/02/Chicken-Pot-Pie-2-500x332.jpg',
-                        item_price: '$45.00'
+                        item_ingredients: 'Beef stew meat, regular potatoes, sweet potatoes, carrots, water, white flour, olive oil',
+                        item_price: '$30.00',
+                        image_url: 'http://i.imgur.com/6rKBsF5.jpg'
                     },
                     {
-                        item_name: 'Chicken Casserole',
-                        item_ingredients: 'Chicken, Chopped Vegetables, Rolled Oats, Chicken Broth, Oil',
-                        image_url: 'http://dogsaholic.com/wp-content/uploads/2015/03/Chicken-Casserole.jpg',
-                        item_price: '$25.37'
+                        id: 4,
+                        item_name: 'Chicken and Rice',
+                        item_ingredients: 'Ground turkey, brown rice, baby spinach, carrots, peas, zucchini, oil',
+                        item_price: '$35.00',
+                        image_url: 'http://i.imgur.com/ybfIZfP.jpg'
                     },
                     {
-                        item_name: 'Doggie Beef Stew',
-                        item_ingredients: 'Beef Stew Meat, Potato, Sweet Potato, Carrots, Water, White Flour, Olive Oil',
-                        image_url: 'http://dogsaholic.com/wp-content/uploads/2015/03/Doggie-beef-stew.jpg',
-                        item_price: '$18.00'
+                        id: 5,
+                        item_name: 'Vegetable Soup',
+                        item_ingredients: ' Sweet potatoes, russet potatoes, celery, carrots, tomatoes, red bell peppers, quinoa, coriander, parsley, basil',
+                        item_price: '$27.00',
+                        image_url: 'http://i.imgur.com/O7xbGqo.jpg'
                     },
+                    {
+                        id: 6,
+                        item_name: 'Pot Roast with Vegetables',
+                        item_ingredients: 'Roast, sweet potato, white potato, mushrooms, carrots, celery, coconut oil, chicken liver and parsley, oil',
+                        item_price: '$45.00',
+                        image_url: 'http://i.imgur.com/npuXnAd.jpg'
+
+                    }
                 ]);
         });
 };
