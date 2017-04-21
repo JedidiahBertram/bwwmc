@@ -12,24 +12,116 @@
 
 /*  LOGIN FORM STYLING  */
 
+form {
+  position: relative;
+  left: 97.5px;
+}
 .container {
     display: flex;
     justify-content: center;
+    width: 551px;
+    height: 651px;
+    border-radius: 2px;
+  	background-color: #ffffff;
+  	background-color: var(--white);
+  	box-shadow: 0 2px 11px 0 #c9c9c9;
+    top: 100px;
 }
 
 .login-container {
     margin-top: 10%;
 }
 
+.loginstyle {
+	width: 116px;
+	height: 52px;
+	font-family: Lato;
+	font-size: 44px;
+	text-align: center;
+	color: #000000;
+	color: var(--black-two);
+}
 .login {
     margin-top: 5%;
 }
-
-.formField {
-    width: 100%;
+.loginbtn {
+  position: relative;
+  left: -20px;
+  margin-top: 5%;
+  width: 280px;
+  height: 53.2px;
+  border-radius: 7px;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: #fff;
+  background-color: #f26226;
 }
 
+.formField {
+    width: 280px;
+    height: 52px;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 4px 0 rgba(145, 145, 145, 0.5);
+    border: solid 1px #979797;
+}
 
+.form-check-input {
+  width: 29px;
+	height: 29px;
+	border-radius: 2px;
+	border: solid 1px #979797;
+
+}
+
+.passwordstyle,
+.emailstyle {
+  font-family: 'Lato'
+}
+.rememberpasswd {
+  position: relative;
+  top: 03px;
+}
+
+.forminputtxt {
+  position: relative;
+  top: 06px;
+  width: 96px;
+	height: 17px;
+	font-family: 'Lato';
+	font-size: 14px;
+	color: #a3a3a5;
+  height: 17px;
+  font-family: 'Lato';
+  font-size: 14px;
+  color: #a3a3a5;
+}
+
+.passwdforgot {
+  position: relative;
+  top: 06px;
+  left: 22.7%;
+  width: 109px;
+  height: 17px;
+  font-family: 'Lato';
+  font-size: 14px;
+  color: #424245;
+}
+
+.signupfield {
+  position: relative;
+  /*right: 118px;*/
+  right: 100px;
+  top: 11px;
+  text-align: center;
+  font-family: 'Lato';
+}
+
+.signmeup {
+  position: relative;
+  left: 20px;
+  color: #00bccd;
+}
 /*  MENU STYLING */
 
 .menuContainer {
