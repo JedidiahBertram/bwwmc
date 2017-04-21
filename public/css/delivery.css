@@ -10,13 +10,14 @@ body {
     justify-content: center;
     width: 100%;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
 }
 
 .datePickerText {
     margin-top: 5%;
     text-align: center;
     height: 20%;
-    width: 20%;
+    width: 40%;
     color: white;
     background-color: #f26226;
 }
