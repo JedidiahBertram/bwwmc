@@ -38,7 +38,9 @@ app.use(session({
 
 
 app.get('/', function(req, res) {
-    res.render("statics/home");
+    res.render("statics/home", {
+        loggedIn: undefined
+    });
 });
 
 // Routes
