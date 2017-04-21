@@ -39,7 +39,7 @@ form {
     left: 15px;
     margin-bottom: 40px;
     height: 52px;
-    font-family: Lato;
+    font-family: 'Raleway', sans-serif;
     font-size: 44px;
     text-align: center;
     color: #000;
@@ -80,7 +80,7 @@ form {
 }
 
 .passwordstyle, .emailstyle {
-    font-family: 'Lato'
+    font-family: 'Raleway', sans-serif;
 }
 
 .rememberpasswd {
@@ -132,7 +132,7 @@ form {
 /* Register Page Styling*/
 
 .getstarted {
-    font-family: 'Lato';
+    font-family: 'Raleway', sans-serif;
     margin-bottom: 40px;
     position: relative;
     left: 95px;
