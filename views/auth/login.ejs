@@ -40,26 +40,32 @@
             <div class="avatar"></div>
             <div class="form-box">
                 <form action="/login" method="POST">
-                <h1>Log In</h1>
+                <h1 class="loginstyle">Log In</h1>
 
-                <h2>Email</h2>
+                <h2 class="emailstyle">Email</h2>
                     <input class="formField" name="user[email]" type="email" placeholder="Email" required>
 
-                <h2>Password</h2>
-                <input class="formField" type="password" name="user[password]" placeholder="Password" required>
+                <h2 class="passwordstyle">Password</h2>
+                <input class="formField passwd-field" type="password" name="user[password]" placeholder="Must have at least 6 characters" required>
                 <label class="form-check-label">
 
-                <input type="checkbox" class="form-check-input"> Remember Me?
+                <div class="rememberpasswd">
+                  <input type="checkbox" class="form-check-input"> <span class="forminputtxt">Remember Me?</span>
+                  <a href="#" class="passwdforgot">Forgot Password</a>
 
-                <button class="btn btn-info btn-block login" type="submit">Log In</button>
+                </div>
+
+                <%# <button class="btn btn-info btn-block login" type="submit">Log In</button>%>
+                <button class="loginbtn" type="submit">Log In</button>
 
 
                   </form>
 
                   <form action="/register" method="POST">
-                    Don't have an account?
+                    <span class="signupfield">
+                      Don't have an account?
                     <a href="/register">Sign Up</a>
-
+                    </span>
                   </form>
               </div>
               </div>
