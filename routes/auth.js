@@ -73,7 +73,7 @@ router.route('/register')
                     //Redirecting the logged in user to the home page for now
                     // res.redirect('/');
                     // res.redirect('menu_items/index');
-                    res.render('menu_items/index');
+                    res.redirect('/');
                 })
                 //Error handling
                 .catch((err) => {
