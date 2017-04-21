@@ -120,7 +120,38 @@ form {
 .signmeup {
   position: relative;
   left: 20px;
-  color: #00bccd;
+  color: ##2AB7CA;
+}
+
+/* Register Page Styling*/
+.getstarted {
+  position: relative;
+  left: 95px;
+}
+.registerbtn {
+  position: relative;
+  left: 1px;
+}
+.terms {
+  font-family: 'Lato';
+  font-size: 12px;
+  text-align: center;
+  color: #898989;
+}
+.termstext {
+  text-align: center;
+  position: relative;
+  left: 60px;
+}
+.termstext1 {
+  position: relative;
+  left: 20px;
+}
+
+.member {
+  margin-top: 12px;
+  position: relative;
+  left: 40px;
 }
 /*  MENU STYLING */
 

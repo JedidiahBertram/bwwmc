@@ -38,25 +38,29 @@
                         <div id="output"></div>
                         <div class="avatar"></div>
                         <div class="form-box">
-                          <h1>Let's Get Started</h1>
+                          <h1 class="getstarted">Let's Get Started</h1>
 
                             <form action="/register" method="POST">
-                                <h2>Email</h2>
+                                <h2 class="emailstyle">Email</h2>
                                 <input class="formField" name="user[email]" type="email" placeholder="Email" required>
 
-                                <h2>Create a Password</h2>
+                                <h2 class="passwordstyle">Create a Password</h2>
                                 <input class="formField" type="password" name="user[password]" placeholder="Password" required>
+                                <button class="loginbtn registerbtn" type="submit">Register</button>
+                                <br/>
+                                <span class="terms termstext1">By clicking above, you agree to our <a href="#">Terms of Use</a></span>
+                                  <br/>
+                                <span class="terms termstext"> and consent to our Privacy Policy</span>
 
-                                <button class="btn btn-info btn-block login" type="submit">Register</button>
-                                By clicking above, you agree to our Terms and Use and consent to our Privacy Policy
-
-                            </form>
-
-                            <form action="/login" method="POST">
-                              Already a memeber?
-                              <a href="/login">Log In</a>
 
                             </form>
+
+                            <div class="member">
+                              <form action="/login" method="POST">
+                                Already a memeber?
+                                <a href="/login">Log In</a>
+                              </form>
+                            </div>
                         </div>
                     </div>
                 </div>
