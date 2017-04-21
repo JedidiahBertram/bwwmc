@@ -32,8 +32,7 @@
 
 /*  MENU STYLING */
 
-
-/*.menuContainer {
+.menuContainer {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -48,7 +47,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
- .menuTitle {
+.menuTitle {
     display: flex;
     justify-content: center;
     width: 100%;
