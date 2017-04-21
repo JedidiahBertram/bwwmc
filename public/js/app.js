@@ -4,19 +4,12 @@ $(document).ready(() => {
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    if ( document.title === 'HOME PAGE') {
-      if (scroll > 150) {
-        // console.log('This works');
-        $('nav').addClass('opaque')
-      } else {
-        $('nav').removeClass('opaque')
-      }
+    if (scroll > 360) {
+      $('nav').addClass('opaque')
     } else {
-      console.log('Test');
-
+      $('nav').removeClass('opaque')
     }
-  });
-
+  })
 
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
