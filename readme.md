@@ -39,17 +39,31 @@ At the time of this project they had been studying full-stack web development fo
 
 ![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Home%20Page%20Puppy%20Image.png)
 
+###### Explanation here
+
 ![Login](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Login.png)
+
+###### Explanation here
 
 ![Step 1 Select Your Order ](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Select%20Your%20Order.png)
 
+###### Explanation here
+
 ![Step 2 Schedule Delivery](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Pick%20a%20Delivery%20Date.png)
+
+###### Explanation here
 
 ![Step 3 Treat Your Dog](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Treat%20Your%20Dog.png)
 
+###### Explanation here
+
 ![Menu](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Menu.png)
 
+###### Explanation here
+
 ![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Cart.png)
+
+###### Explanation here
 
 ![Confirmation](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Confirmation.png)
 
