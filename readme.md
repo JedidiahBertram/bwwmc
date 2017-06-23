@@ -37,6 +37,8 @@ At the time of this project they had been studying full-stack web development fo
 
 ### App Walkthrough
 
+###### Explanation here
+
 ![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Home%20Page%20Puppy%20Image.png)
 
 ###### Explanation here
