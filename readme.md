@@ -1,5 +1,9 @@
 # Bow Wow Where's My Chow?
 
+![App Screenshot](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Banner%20Image.png)
+
+
+
 ### Description
 
 Walk into the dog food aisle at your local grocery or pet store and you
