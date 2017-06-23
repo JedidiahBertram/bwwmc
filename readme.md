@@ -1,4 +1,6 @@
-<-----------Bow Wow Where's My Chow?----------->
+# Bow Wow Where's My Chow?
+
+### Description
 
 Walk into the dog food aisle at your local grocery or pet store and you
 are instantly surrounded by towering walls shelving a veritable smorgasbord of
@@ -12,11 +14,10 @@ Enter Bow Wow Where's My Chow.
 
 Not only does it eliminate the need to get a whiff of the wonderful aroma of the
 dog food aisle (or possibly a trip to the store all together) through a convenient
-delivery system, but it provides dogs and their owners a healthy, organic altern-
-ative to the big brand name dog foods.
+delivery system, but it provides dogs and their owners a healthy, organic alternative to the big brand name dog foods.
 
 Putting you, and your dogs bowels at ease. You're life may have never been so
-melan-COLLIE. ;)
+melanCOLLIE. ;)
 
 The tools we will use to make this project a reality:
 
@@ -32,7 +33,11 @@ These lovely folks are all part of the G45 cohort at Galvanize in Austin Texas.
 At the time of this project they had been studying full-stack web development for
 9 weeks.
 
-Trello? Are you there? There you are! https://trello.com/b/4vydhv9M/q2-project
+### App Walkthrough
+
+
+
+
 
 Photos!
 
