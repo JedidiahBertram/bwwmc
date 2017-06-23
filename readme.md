@@ -1,8 +1,6 @@
 # Bow Wow Where's My Chow?
 
-![App Screenshot](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Banner%20Image.png)
-
-
+![Banner Image](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Banner%20Image.png)
 
 ### Description
 
@@ -39,8 +37,21 @@ At the time of this project they had been studying full-stack web development fo
 
 ### App Walkthrough
 
-![App Screenshot]()
+![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Home%20Page%20Puppy%20Image.png)
 
+![Login](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Login.png)
+
+![Step 1 Select Your Order ](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Select%20Your%20Order.png)
+
+![Step 2 Schedule Delivery](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Pick%20a%20Delivery%20Date.png)
+
+![Step 3 Treat Your Dog](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Treat%20Your%20Dog.png)
+
+![Menu](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Menu.png)
+
+![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Cart.png)
+
+![Confirmation](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Confirmation.png)
 
 
 Photos!
