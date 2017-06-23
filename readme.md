@@ -14,10 +14,10 @@
 
 ### The team
 
-###### Christina Angeline
-###### Toby Godfrey
-###### Jon Ramer
-###### Adrian Thomas
+###### Christina Angeline - https://github.com/christinaatx
+###### Toby Godfrey - https://github.com/tgodfrey12
+###### Jon Ramer - https://github.com/JonDRamer
+###### Adrian Thomas - https://github.com/adriandeveloper
 ###### Jedidiah Bertram
 
 These lovely folks are all part of the G45 cohort at Galvanize in Austin Texas.
