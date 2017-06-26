@@ -14,7 +14,7 @@
 
 ### The team
 
-###### Christina Angeline - https://github.com/christinaatx
+###### Christina Angeline - https://github.com/ChristinaAngeline
 ###### Toby Godfrey - https://github.com/tgodfrey12
 ###### Jon Ramer - https://github.com/JonDRamer
 ###### Adrian Thomas - https://github.com/adriandeveloper
