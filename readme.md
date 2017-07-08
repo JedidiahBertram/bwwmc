@@ -11,6 +11,11 @@
 ###### Bootstrap - to help with styling
 ###### Google Calendar API
 ###### EJS
+###### Cookie-session
+###### Cookie-parser
+###### Bcryptjs
+###### Mocha
+###### Chai
 
 ### The team
 
@@ -47,35 +52,31 @@ melanCOLLIE. ;)
 
 ### App Walkthrough
 
-###### Explanation here
+###### From the home screen the user can choose to sign up, login, or view the menu.
 
 ![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Home%20Page%20Puppy%20Image.png)
 
-###### Explanation here
+###### We wrote our own authorization and authentication for BWWMC.  We used bcrypt to hash passwords securely.
 
 ![Login](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Login.png)
 
-###### Explanation here
+###### Select your order
 
-![Step 1 Select Your Order ](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Select%20Your%20Order.png)
+![Step 1 Select Your order ](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Select%20Your%20Order.png)
 
-###### Explanation here
+###### Schedule your order
 
 ![Step 2 Schedule Delivery](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Pick%20a%20Delivery%20Date.png)
 
-###### Explanation here
+###### Treat your dog
 
 ![Step 3 Treat Your Dog](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Treat%20Your%20Dog.png)
 
-###### Explanation here
+###### Menu Page
 
 ![Menu](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Menu.png)
 
-###### Explanation here
-
-![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Cart.png)
-
-###### Explanation here
+###### Order confirmation page
 
 ![Confirmation](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Confirmation.png)
 
