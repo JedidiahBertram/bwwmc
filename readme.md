@@ -9,13 +9,16 @@
 ###### PostgreSQL
 ###### KnexJS
 ###### Bootstrap - to help with styling
-###### Google Calendar API
 ###### EJS
 ###### Cookie-session
 ###### Cookie-parser
 ###### Bcryptjs
 ###### Mocha
 ###### Chai
+###### jQuery
+###### Balsamiq
+###### Zeplin
+###### HTML 5/CSS
 
 ### The team
 
