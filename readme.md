@@ -61,6 +61,7 @@ melanCOLLIE. ;)
 
 ###### After the order is selected, the user fills out delivery information, and submits the order.
 
-![Delivery Info/Place Order ](hhttps://github.com/JedidiahBertram/bwwmc/blob/master/assets/gifs/bwwmc-walkthrough-3.gif)
+![Delivery Info/Place Order](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/gifs/bwwmc-walkthrough-3.gif)
 
 ###### The team working hard
+![team work](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/theTeam.JPG)
