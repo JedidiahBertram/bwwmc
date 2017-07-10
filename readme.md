@@ -52,35 +52,15 @@ melanCOLLIE. ;)
 
 ### App Walkthrough
 
-###### From the home screen the user can choose to sign up, login, or view the menu.
+###### From the home screen the user can choose to sign up, login, or view the menu. The following gif shows a new user signing up. We wrote our own authorization and authentication for BWWMC. We used bcrypt to hash passwords securely.
 
-![Top of Home Page](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Home%20Page%20Puppy%20Image.png)
+![Sign Up](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/gifs/bwwmc-walkthrough-1.gif)
 
-###### We wrote our own authorization and authentication for BWWMC.  We used bcrypt to hash passwords securely.
+###### After a user registers, the website goes through the steps to order, and they can navigate to the order screen. Once there, they can choose which food, and what quantities they would like to order, add it to their cart, and place their order.
+![Navigate Site/Order](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/gifs/bwwmc-walkthrough-2.gif)
 
-![Login](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Login.png)
+###### After the order is selected, the user fills out delivery information, and submits the order.
 
-###### Select your order
+![Delivery Info/Place Order ](hhttps://github.com/JedidiahBertram/bwwmc/blob/master/assets/gifs/bwwmc-walkthrough-3.gif)
 
-![Step 1 Select Your order ](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Select%20Your%20Order.png)
-
-###### Schedule your order
-
-![Step 2 Schedule Delivery](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Pick%20a%20Delivery%20Date.png)
-
-###### Treat your dog
-
-![Step 3 Treat Your Dog](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Treat%20Your%20Dog.png)
-
-###### Menu Page
-
-![Menu](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Menu.png)
-
-###### Order confirmation page
-
-![Confirmation](https://github.com/JedidiahBertram/bwwmc/blob/master/assets/screenshots/Confirmation.png)
-
-
-Photos!
-
-![alt tag](https://thumb.ibb.co/cYHaRQ/IMG_6834.jpg)
+###### The team working hard
