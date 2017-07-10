@@ -20,7 +20,7 @@
 ###### Zeplin
 ###### HTML 5/CSS
 
-### The team
+### The Team
 
 ###### Christina Angeline - https://github.com/ChristinaAngeline
 ###### Toby Godfrey - https://github.com/tgodfrey12
@@ -49,7 +49,7 @@ Not only does it eliminate the need to get a whiff of the wonderful aroma of the
 dog food aisle (or possibly a trip to the store all together) through a convenient
 delivery system, but it provides dogs and their owners a healthy, organic alternative to the big brand name dog foods.
 
-Putting you, and your dogs bowels at ease. You're life may have never been so
+Putting you, and your dog's bowels at ease. Your life may have never been so
 melanCOLLIE. ;)
 
 
