@@ -10,12 +10,12 @@ const express = require('express'),
     menu_itemsRoutes = require("./routes/menu_itemsRoutes"),
     authRouter = require("./routes/auth"),
     cookieParser = require('cookie-parser'),
-    session = require('cookie-session');
+    session = require('cookie-session'),
+    ejs = require('ejs');
+
 
 const PORT = process.env.PORT || 3000;
 
-require('ejs');
-require("locus");
 app.set('view engine', 'ejs');
 app.use(morgan('tiny'));
 app.use(express.static(__dirname + "/public"));
@@ -53,7 +53,7 @@ app.use('/', authRouter);
 
 
 app.listen(PORT, () => {
-    console.log('listening on', PORT);
+    console.log(`listening on port ${PORT}`);
 });
 
 
