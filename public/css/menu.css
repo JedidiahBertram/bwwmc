@@ -1,0 +1,58 @@
+/*  MENU STYLING */
+
+a {
+  color: black;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.cartCount {
+  font-size: 20px;
+  vertical-align: top;
+}
+
+.glyphicon {
+  font-size: 30px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.menu {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.menuItem {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.target-nav {
+    box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.title1 {
+  text-align: center;
+  margin-top: 120px;
+}
+.title2 {
+  text-align: center;
+}
+
+
+/* End of Menu page styling */

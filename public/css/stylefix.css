@@ -171,68 +171,6 @@ form {
     color: ##2AB7CA;
 }
 
-
-/*  MENU STYLING */
-
-.menuContainer {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-}
-
-.menuHeader {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin-top: 10%;
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
-}
-
-.menuTitle {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.menuSubtitle {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.menuItem {
-    display: flex;
-    flex-flow: row wrap;
-    width: 30%;
-    margin-top: 3%;
-    font-family: 'Raleway', sans-serif;
-}
-
-.menuImageContainer {
-    display: flex;
-    width: 100%;
-}
-
-.menuImage {
-    width: 80%;
-    box-shadow: 5px 5px 2.5px grey;
-}
-
-.menuTextContainer {
-    width: 80%;
-}
-
-.deliveryButton {
-    width: 20%;
-    margin-top: 2%;
-    margin-bottom: 5%;
-}
-
-
-/* End of Menu page styling */
-
-
 /* Order Page Styling */
 
 .datePickerContainer {
