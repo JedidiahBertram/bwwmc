@@ -71,9 +71,17 @@ fieldset[disabled] .btn-custom.active {
   margin-bottom: 10px;
 }
 
+.navbar-brand {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
 .target-nav {
+    background-color: #fff;
+    border-color: #fff;
+    color: black;
     box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
-    /*padding: 10px;*/
+    padding-top: 10px;
 }
 
 .title1 {
