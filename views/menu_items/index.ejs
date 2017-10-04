@@ -40,7 +40,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a class="nav-item nav-link go-right"><span class="glyphicon glyphicon-shopping-cart"><span id="cartCount" class="cartCount"></span></span></a></li>
+              <li data-toggle="modal" data-target=".cart-modal-lg"><a class="nav-item nav-link go-right"><span class="glyphicon glyphicon-shopping-cart"><span id="cartCount" class="cartCount"></span></span></a></li>
               <li><a class="nav-item nav-link go-right" href="/"><button type="button" class="btn btn-custom">Logout</button></a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -52,6 +52,26 @@
         <h1 class="title1 col-xs-12">Our Menu</h1>
         <h4 class="title2 col-xs-12">Pick from our award winning menu</h4>
       </div>
+
+      <div class="modal fade cart-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="gridSystemModalLabel">Cart</h4>
+            </div>
+            <div class="modal-body">
+              <ol>
+                <%=  %>
+              </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
       <div class="row menu">
       <% items.forEach((item) => { %>
