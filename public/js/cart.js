@@ -10,6 +10,7 @@ $(document)
 
         let order = [];
         let cartCount = null;
+        let subTotal = null;
 
         let chickenPotPie = items.filter((item) => {
           return item.item_name === "Chicken Pot Pie";
@@ -197,5 +198,20 @@ $(document)
               sum += order[i].quantity;
           }
           cartCount = sum;
+          orderSubTotal();
+        }
+        function orderSubTotal() {
+          let sum = null;
+          for (let i = 0; i < order.length; i++) {
+              let price = order[i].item_price.split('');
+              price.shift();
+              price = price.join('');
+              sum += price * order[i].quantity;
+              console.log(price);
+              sum = `$${sum}`;
+              console.log(sum);
+          }
+          subTotal = sum;
+          $("#subTotal").append(`<td>${subTotal}</td>`);
         }
     });
