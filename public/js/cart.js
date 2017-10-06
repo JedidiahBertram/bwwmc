@@ -3,28 +3,33 @@
 
 $(document)
     .ready(() => {
-      console.log("Items: ", JSON.parse(localStorage.items));
+      let items = JSON.parse(localStorage.items).menuItems;
+      items.forEach((item) => {
+        item.quantity = null;
+        console.log(item);
+      })
         let order = [];
         let currentItem = null;
         let cartCount = null;
-        let chickenPotPie = {
-            item_name: "Chicken Pot Pie",
-            item_price: 45.00,
-            id: 1,
-            quantity: null
-        };
-        let chickenCasserole = {
-            item_name: "Chicken Casserole",
-            item_price: 25.37,
-            id: 2,
-            quantity: null
-        };
-        let doggieBeefStew = {
-            item_name: "Doggie Beef Stew",
-            item_price: 18.00,
-            id: 3,
-            quantity: null
-        };
+
+        // let chickenPotPie = {
+        //     item_name: "Chicken Pot Pie",
+        //     item_price: 45.00,
+        //     id: 1,
+        //     quantity: null
+        // };
+        // let chickenCasserole = {
+        //     item_name: "Chicken Casserole",
+        //     item_price: 25.37,
+        //     id: 2,
+        //     quantity: null
+        // };
+        // let doggieBeefStew = {
+        //     item_name: "Doggie Beef Stew",
+        //     item_price: 18.00,
+        //     id: 3,
+        //     quantity: null
+        // };
         $('.addToCart')
             .click((e) => {
                 if (e.target.id === "1") {
