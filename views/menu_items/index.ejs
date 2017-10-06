@@ -11,7 +11,7 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- FONTS -->
@@ -52,18 +52,38 @@
         <h1 class="title1 col-xs-12">Our Menu</h1>
         <h4 class="title2 col-xs-12">Pick from our award winning menu</h4>
       </div>
+      <script>
+        let menuItems = <%- JSON.stringify(items) %>;
+        localStorage.setItem('items', JSON.stringify({menuItems}));
+      </script>
 
+      <!-- CART MODAL -->
       <div class="modal fade cart-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="gridSystemModalLabel">Cart</h4>
+              <h4 class="modal-title" id="gridSystemModalLabel">Order Summary</h4>
             </div>
             <div class="modal-body">
-              <ol>
-                <%=  %>
-              </ol>
+              <table id="cart">
+                <tr>
+                  <th>Item:</th>
+                  <th>Price:</th>
+                  <th>Quantity:</th>
+                </tr>
+                <tr>
+                  <td>Chicken Pot Pie</td>
+                  <td>$30.00</td>
+                  <td>5</td>
+                </tr>
+              </table>
+              <table>
+                <tr id="subTotal">
+                  <th>Subtotal</th>
+                  <td>$150.00</td>
+                </tr>
+              </table>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -71,12 +91,12 @@
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+      </div><!-- /CART modal -->
 
       <div class="row menu">
       <% items.forEach((item) => { %>
           <div class="col-xs-12 col-sm-6 col-md-4 menuItem">
-            <img class="img-responsive" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
+            <img class="img-responsive img-thumbnail" src="<%= item.image_url%>" alt="Picture of dog food menu item.">
             <div>
               <p id="<%= item.item_name %>">
                 <%= item.item_name %>
@@ -106,6 +126,7 @@
       <div class="row">
         <a class="nav-item nav-link go-right btn btn-custom col-xs-4 col-xs-offset-4" href="/orders/order_pay">Schedule Delivery</a>
       </div>
+
     </body>
 
 </html>

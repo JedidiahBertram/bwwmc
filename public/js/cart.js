@@ -3,6 +3,7 @@
 
 $(document)
     .ready(() => {
+      console.log("Items: ", JSON.parse(localStorage.items));
         let order = [];
         let currentItem = null;
         let cartCount = null;
@@ -37,6 +38,7 @@ $(document)
                     console.log("Local Storage", JSON.parse(localStorage.cart));
                     $('#cartCount')
                         .text(cartCount);
+                    $('#orderSummary').append("<li></li>").text(`${JSON.parse(localStorage.cart)[0].item_name}`)
                 } else if (e.target.id === "2") {
                     chickenCasserole.quantity = parseInt($("#dropdown2 option:selected")
                         .text());
