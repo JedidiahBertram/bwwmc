@@ -61,47 +61,141 @@ $(document)
                   });
                     if (itemInOrder === true) {
                       order[myItem].quantity += parseInt($("#dropdown1 option:selected").text());
-                      cartCount = order[myItem].quantity;
+                      updateCartQuantity();
                       $('#chickenPotPieQuantity').text(`${order[myItem].quantity}`);
                     } else {
                       chickenPotPie.quantity = parseInt($("#dropdown1 option:selected").text());
                       order.push(chickenPotPie);
-                      cartCount = chickenPotPie.quantity;
+                      updateCartQuantity();
                       myItem = order.length - 1;
                       $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="chickenPotPieQuantity">${order[myItem].quantity}</td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
-                    // console.log("Order: ", order);
-                    // console.log("Local Storage", JSON.parse(localStorage.cart));
                     $('#cartCount')
                         .text(cartCount);
-                    console.log("Order: ", order[myItem]);
                   } else if (e.target.id === "2") {
-                    chickenCasserole.quantity = parseInt($("#dropdown2 option:selected")
-                        .text());
-                    if (chickenCasserole.quantity !== 0) {
-                        cartCount += chickenCasserole.quantity;
+                    let itemInOrder = false;
+                    let myItem = null;
+                    order.forEach((item) => {
+                      if (item.item_name === "Chicken Casserole") {
+                        itemInOrder = true;
+                        myItem = order.indexOf(item);
+                      }
+                    });
+                      if (itemInOrder === true) {
+                        order[myItem].quantity += parseInt($("#dropdown2 option:selected").text());
+                        updateCartQuantity();
+                        $('#chickenCasseroleQuantity').text(`${order[myItem].quantity}`);
+                      } else {
+                        chickenCasserole.quantity = parseInt($("#dropdown2 option:selected").text());
+                        order.push(chickenCasserole);
+                        updateCartQuantity();
+                        myItem = order.length - 1;
+                        $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="chickenCasseroleQuantity">${order[myItem].quantity}</td></tr>`);
+                      }
+                      localStorage.cart = JSON.stringify(order);
+                      $('#cartCount')
+                          .text(cartCount);
+                } else if (e.target.id === "3") {
+                  let itemInOrder = false;
+                  let myItem = null;
+                  order.forEach((item) => {
+                    if (item.item_name === "Doggie Beef Stew") {
+                      itemInOrder = true;
+                      myItem = order.indexOf(item);
                     }
-                    currentItem = chickenCasserole;
-                    order.push(currentItem);
-                    console.log("Order", order);
-                    console.log("Local Storage", JSON.parse(localStorage.cart));
+                  });
+                    if (itemInOrder === true) {
+                      order[myItem].quantity += parseInt($("#dropdown3 option:selected").text());
+                      updateCartQuantity();
+                      $('#doggieBeefStewQuantity').text(`${order[myItem].quantity}`);
+                    } else {
+                      doggieBeefStew.quantity = parseInt($("#dropdown3 option:selected").text());
+                      order.push(doggieBeefStew);
+                      updateCartQuantity();
+                      myItem = order.length - 1;
+                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="doggieBeefStewQuantity">${order[myItem].quantity}</td></tr>`);
+                    }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                } else if (e.target.id === "3") {
-                    doggieBeefStew.quantity = parseInt($("#dropdown3 option:selected")
-                        .text());
-                    if (doggieBeefStew.quantity) {
-                        cartCount += doggieBeefStew.quantity;
+                } else if (e.target.id === "4") {
+                  let itemInOrder = false;
+                  let myItem = null;
+                  order.forEach((item) => {
+                    if (item.item_name === "Chicken and Rice") {
+                      itemInOrder = true;
+                      myItem = order.indexOf(item);
                     }
-                    currentItem = doggieBeefStew;
-                    order.push(currentItem);
-                    console.log("Order", order);
-                    console.log("Local Storage", JSON.parse(localStorage.cart));
+                  });
+                    if (itemInOrder === true) {
+                      order[myItem].quantity += parseInt($("#dropdown4 option:selected").text());
+                      updateCartQuantity();
+                      $('#chickenAndRiceQuantity').text(`${order[myItem].quantity}`);
+                    } else {
+                      chickenAndRice.quantity = parseInt($("#dropdown4 option:selected").text());
+                      order.push(chickenAndRice);
+                      updateCartQuantity();
+                      myItem = order.length - 1;
+                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="chickenAndRiceQuantity">${order[myItem].quantity}</td></tr>`);
+                    }
+                    localStorage.cart = JSON.stringify(order);
+                    $('#cartCount')
+                        .text(cartCount);
+                } else if (e.target.id === "5") {
+                  let itemInOrder = false;
+                  let myItem = null;
+                  order.forEach((item) => {
+                    if (item.item_name === "Vegetable Soup") {
+                      itemInOrder = true;
+                      myItem = order.indexOf(item);
+                    }
+                  });
+                    if (itemInOrder === true) {
+                      order[myItem].quantity += parseInt($("#dropdown5 option:selected").text());
+                      updateCartQuantity();
+                      $('#vegetableSoupQuantity').text(`${order[myItem].quantity}`);
+                    } else {
+                      vegetableSoup.quantity = parseInt($("#dropdown5 option:selected").text());
+                      order.push(vegetableSoup);
+                      updateCartQuantity();
+                      myItem = order.length - 1;
+                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="vegetableSoupQuantity">${order[myItem].quantity}</td></tr>`);
+                    }
+                    localStorage.cart = JSON.stringify(order);
+                    $('#cartCount')
+                        .text(cartCount);
+                } else if (e.target.id === "6") {
+                  let itemInOrder = false;
+                  let myItem = null;
+                  order.forEach((item) => {
+                    if (item.item_name === "Pot Roast with Vegetables") {
+                      itemInOrder = true;
+                      myItem = order.indexOf(item);
+                    }
+                  });
+                    if (itemInOrder === true) {
+                      order[myItem].quantity += parseInt($("#dropdown6 option:selected").text());
+                      updateCartQuantity();
+                      $('#potRoastWithVegetablesQuantity').text(`${order[myItem].quantity}`);
+                    } else {
+                      potRoastWithVegetables.quantity = parseInt($("#dropdown6 option:selected").text());
+                      order.push(potRoastWithVegetables);
+                      updateCartQuantity();
+                      myItem = order.length - 1;
+                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="potRoastWithVegetablesQuantity">${order[myItem].quantity}</td></tr>`);
+                    }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
                 }
             });
+
+        function updateCartQuantity() {
+          let sum = null;
+          for (let i = 0; i < order.length; i++) {
+              sum += order[i].quantity;
+          }
+          cartCount = sum;
+        }
     });
