@@ -15,8 +15,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <!-- My JS -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">        <!-- My JS -->
         <script type="text/javascript" src="/js/cart.js"></script>
         <link rel="stylesheet" href="/css/menu.css">
     </head>
@@ -68,20 +67,21 @@
             <div class="modal-body">
               <table id="cart">
                 <tr>
-                  <th>Item:</th>
-                  <th>Price:</th>
+                  <th class="cartHeader">Item:</th>
+                  <th class="cartHeader">Price:</th>
                   <th>Quantity:</th>
                 </tr>
               </table>
-              <table>
-                <tr id="subTotal">
-                  <th>Subtotal</th>
+              <table class="subTotalTable">
+                <tr>
+                  <th class="subTotalHeader">Subtotal</th>
+                  <td id="subTotal">$0.00</td>
                 </tr>
               </table>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-custom">Save changes</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

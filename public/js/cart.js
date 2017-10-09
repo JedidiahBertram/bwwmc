@@ -10,7 +10,7 @@ $(document)
 
         let order = [];
         let cartCount = null;
-        let subTotal = null;
+        let subTotal = "$0.00";
 
         let chickenPotPie = items.filter((item) => {
           return item.item_name === "Chicken Pot Pie";
@@ -69,7 +69,7 @@ $(document)
                       order.push(chickenPotPie);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="chickenPotPieQuantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -92,7 +92,7 @@ $(document)
                         order.push(chickenCasserole);
                         updateCartQuantity();
                         myItem = order.length - 1;
-                        $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="chickenCasseroleQuantity">${order[myItem].quantity}</td></tr>`);
+                        $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
                       }
                       localStorage.cart = JSON.stringify(order);
                       $('#cartCount')
@@ -115,7 +115,7 @@ $(document)
                       order.push(doggieBeefStew);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="doggieBeefStewQuantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -138,7 +138,7 @@ $(document)
                       order.push(chickenAndRice);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="chickenAndRiceQuantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -161,7 +161,7 @@ $(document)
                       order.push(vegetableSoup);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="vegetableSoupQuantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -184,7 +184,7 @@ $(document)
                       order.push(potRoastWithVegetables);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td>${order[myItem].item_name}</td><td>${order[myItem].item_price}</td><td id="potRoastWithVegetablesQuantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -201,6 +201,7 @@ $(document)
           orderSubTotal();
         }
         function orderSubTotal() {
+          $('#subTotal').append(`<td>$${subTotal}</td>`)
           let sum = null;
           for (let i = 0; i < order.length; i++) {
               let price = order[i].item_price.split('');
@@ -210,9 +211,9 @@ $(document)
           }
           subTotal = sum;
           if (subTotal % 1 === 0) {
-            $('#subTotal').append(`<td>$${subTotal}.00</td>`)
+            $('#subTotal').text(`$${subTotal}.00`)
           } else {
-            $('#subTotal').append(`<td>$${subTotal}</td>`)
+            $('#subTotal').text(`$${subTotal}`)
           }
         }
     });
