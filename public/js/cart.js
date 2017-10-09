@@ -53,143 +53,154 @@ $(document)
             .click((e) => {
                 if (e.target.id === "1") {
                   let itemInOrder = false;
-                  let myItem = null;
+                  let itemName = "chickenPotPie";
+                  let itemIndex = null;
                   order.forEach((item) => {
                     if (item.item_name === "Chicken Pot Pie") {
                       itemInOrder = true;
-                      myItem = order.indexOf(item);
+                      itemIndex = order.indexOf(item);
                     }
                   });
                     if (itemInOrder === true) {
-                      order[myItem].quantity += parseInt($("#dropdown1 option:selected").text());
+                      order[itemIndex].quantity += parseInt($("#dropdown1 option:selected").text());
                       updateCartQuantity();
-                      $('#chickenPotPieQuantity').text(`${order[myItem].quantity}`);
+                      $('#chickenPotPieQuantity').text(`${order[itemIndex].quantity}`);
                     } else {
                       chickenPotPie.quantity = parseInt($("#dropdown1 option:selected").text());
                       order.push(chickenPotPie);
                       updateCartQuantity();
-                      myItem = order.length - 1;
-                      $('#cart').append(`<tr id="chickenPotPie"><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      itemIndex = order.length - 1;
+                      $('#cart').append(`<tr id="chickenPotPie"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                    removeFromCart(myItem);
+                    removeFromCart(itemName, itemIndex);
                   } else if (e.target.id === "2") {
                     let itemInOrder = false;
-                    let myItem = null;
+                    let itemName = "chickenCasserole";
+                    let itemIndex = null;
                     order.forEach((item) => {
                       if (item.item_name === "Chicken Casserole") {
                         itemInOrder = true;
-                        myItem = order.indexOf(item);
+                        itemIndex = order.indexOf(item);
                       }
                     });
                       if (itemInOrder === true) {
-                        order[myItem].quantity += parseInt($("#dropdown2 option:selected").text());
+                        order[itemIndex].quantity += parseInt($("#dropdown2 option:selected").text());
                         updateCartQuantity();
-                        $('#chickenCasseroleQuantity').text(`${order[myItem].quantity}`);
+                        $('#chickenCasseroleQuantity').text(`${order[itemIndex].quantity}`);
                       } else {
                         chickenCasserole.quantity = parseInt($("#dropdown2 option:selected").text());
                         order.push(chickenCasserole);
                         updateCartQuantity();
-                        myItem = order.length - 1;
-                        $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                        itemIndex = order.length - 1;
+                        $('#cart').append(`<tr id="chickenCasserole"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                       }
                       localStorage.cart = JSON.stringify(order);
                       $('#cartCount')
                           .text(cartCount);
+                      removeFromCart(itemName, itemIndex);
                 } else if (e.target.id === "3") {
                   let itemInOrder = false;
-                  let myItem = null;
+                  let itemName = "doggieBeefStew";
+                  let itemIndex = null;
                   order.forEach((item) => {
                     if (item.item_name === "Doggie Beef Stew") {
                       itemInOrder = true;
-                      myItem = order.indexOf(item);
+                      itemIndex = order.indexOf(item);
                     }
                   });
                     if (itemInOrder === true) {
-                      order[myItem].quantity += parseInt($("#dropdown3 option:selected").text());
+                      order[itemIndex].quantity += parseInt($("#dropdown3 option:selected").text());
                       updateCartQuantity();
-                      $('#doggieBeefStewQuantity').text(`${order[myItem].quantity}`);
+                      $('#doggieBeefStewQuantity').text(`${order[itemIndex].quantity}`);
                     } else {
                       doggieBeefStew.quantity = parseInt($("#dropdown3 option:selected").text());
                       order.push(doggieBeefStew);
                       updateCartQuantity();
-                      myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      itemIndex = order.length - 1;
+                      $('#cart').append(`<tr id="doggieBeefStew"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
+                    removeFromCart(itemName, itemIndex);
                 } else if (e.target.id === "4") {
                   let itemInOrder = false;
-                  let myItem = null;
+                  let itemName = "chickenAndRice";
+                  let itemIndex = null;
                   order.forEach((item) => {
                     if (item.item_name === "Chicken and Rice") {
                       itemInOrder = true;
-                      myItem = order.indexOf(item);
+                      itemIndex = order.indexOf(item);
                     }
                   });
                     if (itemInOrder === true) {
-                      order[myItem].quantity += parseInt($("#dropdown4 option:selected").text());
+                      order[itemIndex].quantity += parseInt($("#dropdown4 option:selected").text());
                       updateCartQuantity();
-                      $('#chickenAndRiceQuantity').text(`${order[myItem].quantity}`);
+                      $('#chickenAndRiceQuantity').text(`${order[itemIndex].quantity}`);
                     } else {
                       chickenAndRice.quantity = parseInt($("#dropdown4 option:selected").text());
                       order.push(chickenAndRice);
                       updateCartQuantity();
-                      myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      itemIndex = order.length - 1;
+                      $('#cart').append(`<tr id="chickenAndRice"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
+                    removeFromCart(itemName, itemIndex);
                 } else if (e.target.id === "5") {
                   let itemInOrder = false;
-                  let myItem = null;
+                  let itemName = "vegetableSoup";
+                  let itemIndex = null;
                   order.forEach((item) => {
                     if (item.item_name === "Vegetable Soup") {
                       itemInOrder = true;
-                      myItem = order.indexOf(item);
+                      itemIndex = order.indexOf(item);
                     }
                   });
                     if (itemInOrder === true) {
-                      order[myItem].quantity += parseInt($("#dropdown5 option:selected").text());
+                      order[itemIndex].quantity += parseInt($("#dropdown5 option:selected").text());
                       updateCartQuantity();
-                      $('#vegetableSoupQuantity').text(`${order[myItem].quantity}`);
+                      $('#vegetableSoupQuantity').text(`${order[itemIndex].quantity}`);
                     } else {
                       vegetableSoup.quantity = parseInt($("#dropdown5 option:selected").text());
                       order.push(vegetableSoup);
                       updateCartQuantity();
-                      myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      itemIndex = order.length - 1;
+                      $('#cart').append(`<tr id="vegetableSoup"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
+                    removeFromCart(itemName, itemIndex);
                 } else if (e.target.id === "6") {
                   let itemInOrder = false;
-                  let myItem = null;
+                  let itemName = "potRoastWithVegetables";
+                  let itemIndex = null;
                   order.forEach((item) => {
                     if (item.item_name === "Pot Roast with Vegetables") {
                       itemInOrder = true;
-                      myItem = order.indexOf(item);
+                      itemIndex = order.indexOf(item);
                     }
                   });
                     if (itemInOrder === true) {
-                      order[myItem].quantity += parseInt($("#dropdown6 option:selected").text());
+                      order[itemIndex].quantity += parseInt($("#dropdown6 option:selected").text());
                       updateCartQuantity();
-                      $('#potRoastWithVegetablesQuantity').text(`${order[myItem].quantity}`);
+                      $('#potRoastWithVegetablesQuantity').text(`${order[itemIndex].quantity}`);
                     } else {
                       potRoastWithVegetables.quantity = parseInt($("#dropdown6 option:selected").text());
                       order.push(potRoastWithVegetables);
                       updateCartQuantity();
-                      myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      itemIndex = order.length - 1;
+                      $('#cart').append(`<tr id="potRoastWithVegetables"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
+                    removeFromCart(itemName, itemIndex);
                 }
             });
 
@@ -220,13 +231,10 @@ $(document)
           }
         }
 
-        $(".glyphicon-remove").on("click", (e) => {
-          console.log(e);
-        })
-        function removeFromCart(myItem) {
+        function removeFromCart(itemName, itemIndex) {
           $(".glyphicon-remove").on("click", (e) => {
-            $("#chickenPotPie").remove();
-            order.splice(myItem);
+            $(`#${itemName}`).remove();
+            order.splice(itemIndex);
             updateCartQuantity();
             localStorage.cart = JSON.stringify(order);
           })
