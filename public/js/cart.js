@@ -237,6 +237,7 @@ $(document)
             order.splice(itemIndex);
             updateCartQuantity();
             localStorage.cart = JSON.stringify(order);
+            console.log(localStorage.cart);
           })
         }
 

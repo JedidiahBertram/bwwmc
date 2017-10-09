@@ -16,6 +16,11 @@ h4 {
   font-size: 25px;
 }
 
+input {
+  margin: 10px;
+  height: 40px;
+}
+
 p {
   font-size: 20px;
 }
@@ -47,6 +52,11 @@ p {
   padding-right: 62px;
 }
 
+.confirm {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .glyphicon {
   color: black;
   font-size: 30px;
@@ -56,6 +66,12 @@ p {
 .glyphicon-remove {
   font-size: 12px;
   margin: 5px;
+}
+
+.h1Container {
+  margin-top: 120px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .item {
@@ -75,6 +91,10 @@ p {
 .navbar-brand {
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
+}
+
+.scheduleDelivery {
+  margin-bottom: 40px;
 }
 
 .subTotalHeader {
