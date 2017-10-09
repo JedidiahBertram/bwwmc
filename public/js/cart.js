@@ -69,11 +69,12 @@ $(document)
                       order.push(chickenPotPie);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr id="chickenPotPie"><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
+                    removeFromCart(myItem);
                   } else if (e.target.id === "2") {
                     let itemInOrder = false;
                     let myItem = null;
@@ -92,7 +93,7 @@ $(document)
                         order.push(chickenCasserole);
                         updateCartQuantity();
                         myItem = order.length - 1;
-                        $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
+                        $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                       }
                       localStorage.cart = JSON.stringify(order);
                       $('#cartCount')
@@ -115,7 +116,7 @@ $(document)
                       order.push(doggieBeefStew);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -138,7 +139,7 @@ $(document)
                       order.push(chickenAndRice);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -161,7 +162,7 @@ $(document)
                       order.push(vegetableSoup);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -184,7 +185,7 @@ $(document)
                       order.push(potRoastWithVegetables);
                       updateCartQuantity();
                       myItem = order.length - 1;
-                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[myItem].quantity}</td></tr>`);
+                      $('#cart').append(`<tr><td class="item">${order[myItem].item_name}</td><td class="price">${order[myItem].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[myItem].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
@@ -198,11 +199,13 @@ $(document)
               sum += order[i].quantity;
           }
           cartCount = sum;
+          $('#cartCount')
+              .text(cartCount);
           orderSubTotal();
         }
         function orderSubTotal() {
           $('#subTotal').append(`<td>$${subTotal}</td>`)
-          let sum = null;
+          let sum = 0;
           for (let i = 0; i < order.length; i++) {
               let price = order[i].item_price.split('');
               price.shift();
@@ -216,4 +219,17 @@ $(document)
             $('#subTotal').text(`$${subTotal}`)
           }
         }
-    });
+
+        $(".glyphicon-remove").on("click", (e) => {
+          console.log(e);
+        })
+        function removeFromCart(myItem) {
+          $(".glyphicon-remove").on("click", (e) => {
+            $("#chickenPotPie").remove();
+            order.splice(myItem);
+            updateCartQuantity();
+            localStorage.cart = JSON.stringify(order);
+          })
+        }
+
+    });//End of document ready

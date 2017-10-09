@@ -53,6 +53,11 @@ p {
   margin-right: 15px;
 }
 
+.glyphicon-remove {
+  font-size: 12px;
+  margin: 5px;
+}
+
 .item {
   padding-right: 40px;
 }
