@@ -207,11 +207,12 @@ $(document)
               price.shift();
               price = price.join('');
               sum += price * order[i].quantity;
-              console.log(price);
-              sum = `$${sum}`;
-              console.log(sum);
           }
           subTotal = sum;
-          $("#subTotal").append(`<td>${subTotal}</td>`);
+          if (subTotal % 1 === 0) {
+            $('#subTotal').append(`<td>$${subTotal}.00</td>`)
+          } else {
+            $('#subTotal').append(`<td>$${subTotal}</td>`)
+          }
         }
     });
