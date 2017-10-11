@@ -74,6 +74,10 @@ p {
   margin-bottom: 20px;
 }
 
+.iconBar {
+  color: black;
+}
+
 .item {
   padding-right: 40px;
 }
@@ -93,6 +97,10 @@ p {
   font-family: 'Raleway', sans-serif;
 }
 
+.icon-bar {
+  background-color: black;
+}
+
 .scheduleDelivery {
   margin-bottom: 40px;
 }
@@ -108,8 +116,6 @@ p {
 
 .target-nav {
   background-color: #fff;
-  border-color: #fff;
-  color: black;
   box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
   padding-top: 10px;
 }

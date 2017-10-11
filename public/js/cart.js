@@ -16,7 +16,6 @@ $(document)
         let chickenPotPie = items.filter((item) => {
           return item.item_name === "Chicken Pot Pie";
         })[0];
-        console.log(chickenPotPie.item_name.split(' ').join(''));
         let chickenCasserole = items.filter((item) => {
           return item.item_name === "Chicken Casserole";
         })[0];
@@ -90,7 +89,6 @@ $(document)
                       $('#cartCount')
                           .text(cartCount);
                       $('.glyphicon-remove').click((e) => {
-                        console.log("click fired");
                         removeFromCart(e);
                       })
                 } else if (e.target.id === "3") {
@@ -142,7 +140,6 @@ $(document)
                     $('#cartCount')
                         .text(cartCount);
                     $('.glyphicon-remove').click((e) => {
-                      console.log("click fired");
                       removeFromCart(e);
                     })
                 } else if (e.target.id === "5") {
@@ -170,7 +167,6 @@ $(document)
                     $('#cartCount')
                         .text(cartCount);
                     $('.glyphicon-remove').click((e) => {
-                      console.log("click fired");
                       removeFromCart(e);
                     })
                 } else if (e.target.id === "6") {
@@ -198,7 +194,6 @@ $(document)
                     $('#cartCount')
                         .text(cartCount);
                     $('.glyphicon-remove').click((e) => {
-                      console.log("click fired");
                       removeFromCart(e);
                     })
                 }
@@ -240,7 +235,6 @@ $(document)
         }
 
         $('.glyphicon-remove').click((e) => {
-          console.log("click fired");
           removeFromCart(e);
         })
 
@@ -249,12 +243,10 @@ $(document)
             order.forEach((item) => {
               if (item.id == e.target.id) {
                 itemIndex = order.indexOf(item);
-            console.log("Item name: ", item.item_name);
             $(`#${item.item_name.split(' ').join('')}`).remove();
             order.splice(itemIndex, 1);
             updateCartQuantity();
             localStorage.cart = JSON.stringify(order);
-            console.log(order);
           }
         });
       };
