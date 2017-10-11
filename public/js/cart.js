@@ -8,13 +8,15 @@ $(document)
           item.quantity = null;
         })
 
-        let order = [];
+        let order = localStorage.cart !== undefined ? JSON.parse(localStorage.cart) : [];
+
         let cartCount = null;
         let subTotal = "$0.00";
 
         let chickenPotPie = items.filter((item) => {
           return item.item_name === "Chicken Pot Pie";
         })[0];
+        console.log(chickenPotPie.item_name.split(' ').join(''));
         let chickenCasserole = items.filter((item) => {
           return item.item_name === "Chicken Casserole";
         })[0];
@@ -31,24 +33,8 @@ $(document)
           return item.item_name === "Pot Roast with Vegetables";
         })[0];
 
-        // let chickenPotPie = {
-        //     item_name: "Chicken Pot Pie",
-        //     item_price: 45.00,
-        //     id: 1,
-        //     quantity: null
-        // };
-        // let chickenCasserole = {
-        //     item_name: "Chicken Casserole",
-        //     item_price: 25.37,
-        //     id: 2,
-        //     quantity: null
-        // };
-        // let doggieBeefStew = {
-        //     item_name: "Doggie Beef Stew",
-        //     item_price: 18.00,
-        //     id: 3,
-        //     quantity: null
-        // };
+        updateCart();
+
         $('.addToCart')
             .click((e) => {
                 if (e.target.id === "1") {
@@ -70,12 +56,15 @@ $(document)
                       order.push(chickenPotPie);
                       updateCartQuantity();
                       itemIndex = order.length - 1;
-                      $('#cart').append(`<tr id="chickenPotPie"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      $('#cart').append(`<tr id=${chickenPotPie.item_name.split(' ').join('')}><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenPotPieQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i id="1" class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                    removeFromCart(itemName, itemIndex);
+                    $('.glyphicon-remove').click((e) => {
+                      console.log("click fired");
+                      removeFromCart(e);
+                    })
                   } else if (e.target.id === "2") {
                     let itemInOrder = false;
                     let itemName = "chickenCasserole";
@@ -95,12 +84,15 @@ $(document)
                         order.push(chickenCasserole);
                         updateCartQuantity();
                         itemIndex = order.length - 1;
-                        $('#cart').append(`<tr id="chickenCasserole"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                        $('#cart').append(`<tr id=${chickenCasserole.item_name.split(' ').join('')}><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenCasseroleQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i id="2" class="glyphicon glyphicon-remove"></i></td></tr>`);
                       }
                       localStorage.cart = JSON.stringify(order);
                       $('#cartCount')
                           .text(cartCount);
-                      removeFromCart(itemName, itemIndex);
+                      $('.glyphicon-remove').click((e) => {
+                        console.log("click fired");
+                        removeFromCart(e);
+                      })
                 } else if (e.target.id === "3") {
                   let itemInOrder = false;
                   let itemName = "doggieBeefStew";
@@ -120,12 +112,11 @@ $(document)
                       order.push(doggieBeefStew);
                       updateCartQuantity();
                       itemIndex = order.length - 1;
-                      $('#cart').append(`<tr id="doggieBeefStew"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      $('#cart').append(`<tr id=${doggieBeefStew.item_name.split(' ').join('')}><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="doggieBeefStewQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i id="3" class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                    removeFromCart(itemName, itemIndex);
                 } else if (e.target.id === "4") {
                   let itemInOrder = false;
                   let itemName = "chickenAndRice";
@@ -145,12 +136,15 @@ $(document)
                       order.push(chickenAndRice);
                       updateCartQuantity();
                       itemIndex = order.length - 1;
-                      $('#cart').append(`<tr id="chickenAndRice"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      $('#cart').append(`<tr id=${chickenAndRice.item_name.split(' ').join('')}><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="chickenAndRiceQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i id="4" class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                    removeFromCart(itemName, itemIndex);
+                    $('.glyphicon-remove').click((e) => {
+                      console.log("click fired");
+                      removeFromCart(e);
+                    })
                 } else if (e.target.id === "5") {
                   let itemInOrder = false;
                   let itemName = "vegetableSoup";
@@ -170,12 +164,15 @@ $(document)
                       order.push(vegetableSoup);
                       updateCartQuantity();
                       itemIndex = order.length - 1;
-                      $('#cart').append(`<tr id="vegetableSoup"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      $('#cart').append(`<tr id=${vegetableSoup.item_name.split(' ').join('')}><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="vegetableSoupQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i id="5" class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                    removeFromCart(itemName, itemIndex);
+                    $('.glyphicon-remove').click((e) => {
+                      console.log("click fired");
+                      removeFromCart(e);
+                    })
                 } else if (e.target.id === "6") {
                   let itemInOrder = false;
                   let itemName = "potRoastWithVegetables";
@@ -195,12 +192,15 @@ $(document)
                       order.push(potRoastWithVegetables);
                       updateCartQuantity();
                       itemIndex = order.length - 1;
-                      $('#cart').append(`<tr id="potRoastWithVegetables"><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i class="glyphicon glyphicon-remove"></i></td></tr>`);
+                      $('#cart').append(`<tr id=${potRoastWithVegetables.item_name.split(' ').join('')}><td class="item">${order[itemIndex].item_name}</td><td class="price">${order[itemIndex].item_price}</td><td id="potRoastWithVegetablesQuantity" class="quantity">${order[itemIndex].quantity}</td><td><i id="6" class="glyphicon glyphicon-remove"></i></td></tr>`);
                     }
                     localStorage.cart = JSON.stringify(order);
                     $('#cartCount')
                         .text(cartCount);
-                    removeFromCart(itemName, itemIndex);
+                    $('.glyphicon-remove').click((e) => {
+                      console.log("click fired");
+                      removeFromCart(e);
+                    })
                 }
             });
 
@@ -231,14 +231,32 @@ $(document)
           }
         }
 
-        function removeFromCart(itemName, itemIndex) {
-          $(".glyphicon-remove").on("click", (e) => {
-            $(`#${itemName}`).remove();
-            order.splice(itemIndex);
+
+        function updateCart() {
+          order.forEach((item) => {
+            $('#cart').append(`<tr id=${item.item_name.split(' ').join('')}><td class="item">${item.item_name}</td><td class="price">${item.item_price}</td><td class="quantity">${item.quantity}</td><td><i id=${item.id} class="glyphicon glyphicon-remove"></i></td></tr>`);
+          });
+          updateCartQuantity();
+        }
+
+        $('.glyphicon-remove').click((e) => {
+          console.log("click fired");
+          removeFromCart(e);
+        })
+
+        function removeFromCart(e) {
+            let itemIndex = null;
+            order.forEach((item) => {
+              if (item.id == e.target.id) {
+                itemIndex = order.indexOf(item);
+            console.log("Item name: ", item.item_name);
+            $(`#${item.item_name.split(' ').join('')}`).remove();
+            order.splice(itemIndex, 1);
             updateCartQuantity();
             localStorage.cart = JSON.stringify(order);
-            console.log(localStorage.cart);
-          })
-        }
+            console.log(order);
+          }
+        });
+      };
 
     });//End of document ready

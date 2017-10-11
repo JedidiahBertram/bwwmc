@@ -118,17 +118,6 @@ router.route("/")
             });
     });
 
-//The users/new route - render the data entry page to insert a new user
-router.route("/new")
-    .get(function(req, res) {
-        res.render("orders/new");
-    });
-
-router.route("/update")
-    .get(function(req, res) {
-        res.render("orders/update");
-    });
-
 router.route("/delete")
     .get(function(req, res) {
         res.render("orders/delete");
@@ -136,7 +125,7 @@ router.route("/delete")
 
 router.route("/order_pay")
     .get(function(req, res) {
-        res.render("orders/order_pay")
+        res.render("orders/order_pay");
     })
 
 //http://localhost:3000/orders/order/orderData
