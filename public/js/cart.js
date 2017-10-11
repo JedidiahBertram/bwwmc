@@ -61,7 +61,6 @@ $(document)
                     $('#cartCount')
                         .text(cartCount);
                     $('.glyphicon-remove').click((e) => {
-                      console.log("click fired");
                       removeFromCart(e);
                     })
                   } else if (e.target.id === "2") {

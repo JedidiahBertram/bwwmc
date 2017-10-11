@@ -2,23 +2,8 @@
 <html lang="en">
   <%- include('../templates/orders', {title: 'Order Confirmation'}); %>
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-light navigation target-nav fixed-top" id="navToggle">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-        <%# Brand  %>
-            <a class="navbar-brand" href="/">Bow Wow Where's My Chow?</a>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <%- include('../templates/logged_in_not_home_nav'); %>
 
-                <%# Links %>
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/">Home</a>
-                    <a class="nav-item nav-link" href="/menu_items">Menu</a>
-                    <a class="nav-item nav-link go-right btn btn-primary " role="btn" style="background-color:rgb(242,98,38)" href="/">Logout</a>
-                    <img src="/assets/images/shopping cart@2x.png" alt="shopping cart image"><div class='cart' id="cartCount"></div>
-                </div>
-            </div>
-    </nav>
       <div class="thankYou">
         <center><img src="http://www.clipartbest.com/cliparts/dT7/ogx/dT7ogxo8c.jpg" alt="Picture of a check mark"></center>
           <div class="orderInfo">
