@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../templates/orders', {title: 'Order Confirmation'}); %>
-  <body>
+  <body class="container">
     <%- include('../templates/logged_in_not_home_nav'); %>
 
-      <div class="thankYou">
-        <center><img src="http://www.clipartbest.com/cliparts/dT7/ogx/dT7ogxo8c.jpg" alt="Picture of a check mark"></center>
-          <div class="orderInfo">
-              <h1>Your order is on it's way!</h1>
-              <h4>Confirmation #: 5098154</h4>
-              <h4>Order date: 4/21/17</h4>
-              <h4>Delivery date: 4/26/17</h4>
-              <h4>Delivery address: 1965 Matilda St. Dallas, Tx 75206</h4>
+      <div class="row">
+        <img class="img-responsive center-block check" src="http://www.clipartbest.com/cliparts/dT7/ogx/dT7ogxo8c.jpg" alt="Picture of a check mark">
+          <div class="row">
+              <h1 class="col-xs-6 col-xs-offset-3">Your order is on it's way!</h1>
+              <h4 class="col-xs-6 col-xs-offset-3">Confirmation #: 5098154</h4>
+              <h4 class="col-xs-6 col-xs-offset-3">Order date: 4/21/17</h4>
+              <h4 class="col-xs-6 col-xs-offset-3">Delivery date: 4/26/17</h4>
+              <h4 class="col-xs-6 col-xs-offset-3">Delivery address: 1965 Matilda St. Dallas, Tx 75206</h4>
           </div>
       </div>
-
-
   </body>
 </html>

@@ -2,6 +2,10 @@ a {
   color: black;
 }
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 .btn-custom {
   background-color: #FF5202;
   border-color: #FF5202;
@@ -17,11 +21,6 @@ a {
 .btn-custom.disabled:hover, .btn-custom.disabled:focus, .btn-custom.disabled:active, .btn-custom.disabled.active, .btn-custom[disabled]:hover, .btn-custom[disabled]:focus, .btn-custom[disabled]:active, .btn-custom[disabled].active, fieldset[disabled] .btn-custom:hover, fieldset[disabled] .btn-custom:focus, fieldset[disabled] .btn-custom:active, fieldset[disabled] .btn-custom.active {
   background-color: #FF5202;
   border-color: #FF5202;
-}
-
-.navbar-brand {
-  font-size: 20px;
-  font-family: 'Raleway', sans-serif;
 }
 
 .icon-bar {
@@ -37,52 +36,13 @@ a {
 
 /* ORDER CONFIRMATION STYLES */
 
-.thankYou {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-}
-
-.orderInfo {
-  margin-top: 4%;
-}
-
-center {
+.check {
   margin-top: 100px;
+  height: 100px;
 }
 
-h1 {
-  width: 100%;
-  font-family: 'Raleway', sans-serif;
-}
 
-h4 {
-  width: 100%;
-  margin-top: 6%;
-  font-family: 'Raleway', sans-serif;
-}
-
-img {
-  width: 10%;
-  align: middle;
-}
-
-.btn-custom {
-  background-color: #FF5202;
-  border-color: #FF5202;
-  color: black;
-}
-
-.btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active {
-  background-color: #e84900;
-  border-color: #ce4100;
-  color: white;
-}
-
-.btn-custom.disabled:hover, .btn-custom.disabled:focus, .btn-custom.disabled:active, .btn-custom.disabled.active, .btn-custom[disabled]:hover, .btn-custom[disabled]:focus, .btn-custom[disabled]:active, .btn-custom[disabled].active, fieldset[disabled] .btn-custom:hover, fieldset[disabled] .btn-custom:focus, fieldset[disabled] .btn-custom:active, fieldset[disabled] .btn-custom.active {
-  background-color: #FF5202;
-  border-color: #FF5202;
-}
+/* END OF ORDER CONFIRMATION STYLES */
 
 .cartCount {
   font-size: 20px;
@@ -99,12 +59,4 @@ img {
 .navbar-brand {
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
-}
-
-.target-nav {
-  background-color: #fff;
-  border-color: #fff;
-  color: black;
-  box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
-  padding-top: 10px;
 }
