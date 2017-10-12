@@ -87,21 +87,19 @@ $(document).ready(function(){
   //This should also make a post to the orders resource in the db
   $('#test').click((e) => {
     localStorage.cart = JSON.stringify(order);
-    console.log("Order: ", order);
-    console.log(localStorage);
     let acc = 1;
     orderPost = {
       delivery_date: $('.datePickerText').val(),
-      total: JSON.parse(localStorage.subTotal)
-      // user_id: //grab user id here
+      total: JSON.parse(localStorage.subTotal),
+      user_id: JSON.parse(localStorage.user_id)
     };
     for (let prop in order) {
         orderPost[`item_${acc}_name`] = order[prop].item_name;
         orderPost[`item_${acc}_price`] = order[prop].item_price;
         orderPost[`item_${acc}_quantity`] = order[prop].quantity;
         acc ++;
-        console.log("Order Post: ", orderPost);
     }
+    console.log("Order Post: ", orderPost);
   });
 
 

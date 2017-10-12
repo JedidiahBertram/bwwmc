@@ -2,14 +2,14 @@
 <html lang="en">
   <%- include('../templates/head', {title: 'BWWMC'}); %>
 <body>
-  <% if (userId) { %>
+  <% if (user_id !== undefined) { %>
     <%- include('../templates/logged_in_home_nav'); %>
-  <% }  else if (!userId){ %>
+  <% }  else if (user_id === undefined){ %>
     <%- include('../templates/navbar'); %>
   <% } %>
   <script>
-    let userId = <%- JSON.stringify(userId) %>;
-    localStorage.setItem('items', JSON.stringify({menuItems}));
+    let userId = <%- JSON.stringify(user_id) %>;
+    localStorage.setItem('user_id', JSON.stringify(userId));
   </script>
 
     <section class="cover" >

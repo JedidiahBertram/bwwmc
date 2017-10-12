@@ -28,7 +28,7 @@ router.route('/login')
           if (matches) {
             req.session.userId = user.id;
             res.render('statics/home', {
-              userId: user.id
+              user_id: user.id
             });
           }
         } else {
@@ -76,7 +76,7 @@ router.route('/register')
           // res.redirect('/');
           // res.redirect('menu_items/index');
           res.render('statics/home', {
-            userId: user.id
+            user_id: user.id
           });
         })
         //Error handling
