@@ -78,10 +78,12 @@ $(document).ready(function(){
     container: container,
     todayHighlight: true,
     autoclose: true,
+    orientation: "right",
     daysOfWeekDisabled: [0, 6],
     startDate: todaysDate,
   };
   date_input.datepicker(options);
+
 
   $('.recurrenceDD').hide();
   $('#recurringCB').click(function () {
