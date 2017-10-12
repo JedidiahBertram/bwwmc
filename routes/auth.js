@@ -28,7 +28,7 @@ router.route('/login')
           if (matches) {
             req.session.userId = user.id;
             res.render('statics/home', {
-              loggedIn: true
+              userId: user.id
             });
           }
         } else {

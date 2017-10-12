@@ -44,6 +44,7 @@ $(document).ready(function(){
     } else {
       $('#subTotal').text(`$${subTotal}`)
     }
+    localStorage.subTotal = JSON.stringify(subTotal);
   }
 
   //Attach event listenter to delete glyphicon in the cart when the page loads
@@ -84,23 +85,37 @@ $(document).ready(function(){
 
   //Reset the order to an empty array
   //This should also make a post to the orders resource in the db
-  $('#submitSchedule').click((e) => {
+  $('#test').click((e) => {
     localStorage.cart = JSON.stringify(order);
-    order = [];
+    console.log("Order: ", order);
+    console.log(localStorage);
+    let acc = 1;
+    orderPost = {
+      delivery_date: $('.datePickerText').val(),
+      total: JSON.parse(localStorage.subTotal)
+      // user_id: //grab user id here
+    };
+    for (let prop in order) {
+        orderPost[`item_${acc}_name`] = order[prop].item_name;
+        orderPost[`item_${acc}_price`] = order[prop].item_price;
+        orderPost[`item_${acc}_quantity`] = order[prop].quantity;
+        acc ++;
+        console.log("Order Post: ", orderPost);
+    }
   });
 
 
   //Re-factor this to use the submit click event callback above
   //Check db for formatting requirements
-  function sendOrderToRoute(){
-      var schedDate = $('.datePickerText').val();
-
-      //ajax call to the appropriate route
-      var request = $.ajax({
-        url: "http://localhost:3000/orders",
-        method: "POST",
-        data: order,
-        dataType: "json"
-      });
-    };
+  // function sendOrderToRoute(){
+  //     var schedDate = $('.datePickerText').val();
+  //
+  //     //ajax call to the appropriate route
+  //     var request = $.ajax({
+  //       url: "http://localhost:3000/orders",
+  //       method: "POST",
+  //       data: order,
+  //       dataType: "json"
+  //     });
+  //   };
 });

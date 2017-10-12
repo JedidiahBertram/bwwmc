@@ -223,6 +223,7 @@ $(document)
           } else {
             $('#subTotal').text(`$${subTotal}`)
           }
+          localStorage.subTotal = JSON.stringify(subTotal);
         }
 
 
