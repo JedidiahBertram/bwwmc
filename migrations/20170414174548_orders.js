@@ -14,33 +14,35 @@ exports.up = function(knex, Promise) {
         t.string("item_2_name")
             .defaultTo('');
         t.integer("item_2_price")
-            .defaultTo('');
+            .defaultTo(0);
         t.integer("item_2_quantity")
-            .defaultTo('');
+            .defaultTo(0);
         t.string("item_3_name")
             .defaultTo('');
         t.integer("item_3_price")
-            .defaultTo('');
+            .defaultTo(0);
         t.integer("item_3_quantity")
-            .defaultTo('');
+            .defaultTo(0);
         t.string("item_4_name")
             .defaultTo('');
         t.integer("item_4_price")
-            .defaultTo('');
+            .defaultTo(0);
         t.integer("item_4_quantity")
-            .defaultTo('');
+            .defaultTo(0);
         t.string("item_5_name")
             .defaultTo('');
         t.integer("item_5_price")
-            .defaultTo('');
+            .defaultTo(0);
         t.integer("item_5_quantity")
-            .defaultTo('');
+            .defaultTo(0);
         t.string("item_6_name")
             .defaultTo('');
         t.integer("item_6_price")
-            .defaultTo('');
+            .defaultTo(0);
         t.integer("item_6_quantity")
-            .defaultTo('');
+            .defaultTo(0);
+        t.integer("total")
+            .notNullable();
         t.date('delivery_date')
         .notNullable();
         t.integer('user_id')
