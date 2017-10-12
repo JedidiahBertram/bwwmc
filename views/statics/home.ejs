@@ -2,11 +2,15 @@
 <html lang="en">
   <%- include('../templates/head', {title: 'BWWMC'}); %>
 <body>
-  <% if (loggedIn === true) { %>
+  <% if (userId) { %>
     <%- include('../templates/logged_in_home_nav'); %>
-  <% }  else if (loggedIn === undefined){ %>
+  <% }  else if (!userId){ %>
     <%- include('../templates/navbar'); %>
   <% } %>
+  <script>
+    let userId = <%- JSON.stringify(userId) %>;
+    localStorage.setItem('items', JSON.stringify({menuItems}));
+  </script>
 
     <section class="cover" >
       <div class="cover-caption">
