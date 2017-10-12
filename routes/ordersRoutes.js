@@ -17,92 +17,12 @@ router.route("/")
             });
     })
     .post((req, res) => {
-
-        var orderNumber = getRandomArbitrary(1000000, 9999999);
-
-        console.log("in the orders post route");
-        for (var order in req.body) {
-            let userID = req.session.userId;
-            let menuItemID = req.body.menuItemID;
-            let qty = req.body.quantity;
-            let price = req.body.item_price;
-            let recur = req.body.recurring;
-            let freq = req.body.frequency;
-            let totalPrice = price * qty;
-            let todaysDate = new Date();
-            let schedDate = req.body.schedDate;
-            let currentMonth = todaysDate.getMonth() + 1;
-
-            orderObj = {
-                "order_number": orderNumber,
-                "order_date": currentMonth + '-' + todaysDate.getDate() + '-' + todaysDate.getFullYear(),
-                "order_status": "In Progress",
-                "order_total": totalPrice,
-                "user_id": userID,
-                "delivery_date": schedDate
-            }
-
-            console.log('todays date = ', orderObj.order_date);
-
-            knex('orders')
-                .insert(orderObj)
-                .returning("id")
-                .then(function(id) {
-                    let orderMenuItemsObj = {
-                        "order_id": parseInt(id),
-                        "menu_item_id": parseInt(menuItemID)
-                    }
-                    knex('order_menu_items')
-                        .insert(orderMenuItemsObj)
-                        .returning("id")
-                        .then(function(id) {
-                            console.log('orderMenuItemsID = ', id);
-                        })
-                })
-
-
-            res.render("orders/orderSchedule", {
-                orderObj
-            });
-        }
-
-        function getRandomArbitrary(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-
-
-        //WILL BE USED FOR CONFIRMATION EMAIL
-        // .returning('id')
-        // .then((id) => {
-        //     // create reusable transporter object using the default SMTP transport
-        //     let transporter = nodemailer.createTransport({
-        //         service: 'gmail',
-        //         auth: {
-        //             user: 'chowconfirmation@gmail.com',
-        //             pass: 'bowwowwheresmychow'
-        //         }
-        //     });
-        //     // setup email data with unicode symbols
-        //     let mailOptions = {
-        //         from: '"BWWMC" <chowconfirmation@gmail.com>', // sender address
-        //         to: 'bar@blurdybloop.com' // list of receivers
-        //         subject: 'BWWMC Order Confirmation', // Subject line
-        //         text: "Thank you for your order!", // plain text body
-        //         html: '<b>Thank you for your order!</b>' // html body
-        //     };
-        //     // send mail with defined transport object
-        //     transporter.sendMail(mailOptions, (error, info) => {
-        //         if (error) {
-        //             return console.log(error);
-        //         }
-        //         console.log('Message %s sent: %s', info.messageId, info.response);
-        //     });
-        // })
-        // .catch((err) => {
-        //     console.log(err);
-        // });
-
-
+      knex('orders')
+        .insert(req.body)
+        .returning("id")
+        .then(function(id) {
+          res.send(id);
+        })
     })
     .put((req, res) => {
 
