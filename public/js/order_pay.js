@@ -59,12 +59,10 @@ $(document).ready(function(){
     order.forEach((item) => {
       if (item.id == e.target.id) {
         itemIndex = order.indexOf(item);
-      console.log("Item name: ", item.item_name);
       $(`#${item.item_name.split(' ').join('')}`).remove();
       order.splice(itemIndex, 1);
       updateCartQuantity();
       localStorage.cart = JSON.stringify(order);
-      console.log(order);
       }
     });
   };
@@ -84,18 +82,11 @@ $(document).ready(function(){
   };
   date_input.datepicker(options);
 
-
-  $('.recurrenceDD').hide();
-  $('#recurringCB').click(function () {
-      $( ".recurrenceDD" ).show( "slow", function() {
-      });
-  });
-
   //Reset the order to an empty array
   //This should also make a post to the orders resource in the db
   $('#submitSchedule').click((e) => {
-    order = [];
     localStorage.cart = JSON.stringify(order);
+    order = [];
   });
 
 
@@ -103,21 +94,6 @@ $(document).ready(function(){
   //Check db for formatting requirements
   function sendOrderToRoute(){
       var schedDate = $('.datePickerText').val();
-      //var recurring = $('#recurringCB')[0].checked;
-      //var ddVal = $('#recurrenceDD :selected').text();
-
-      if(!schedDate){
-        alert("Please schedule a delivery date");
-      }
-
-      var order = {
-        'menuItemID': JSON.parse(localStorage.cart)[0].id,
-        'quantity': JSON.parse(localStorage.cart)[0].quantity,
-        'item_price': JSON.parse(localStorage.cart)[0].item_price,
-        'schedDate': schedDate//,
-        //'recurring': recurring,
-        //'frequency': ddVal
-      };
 
       //ajax call to the appropriate route
       var request = $.ajax({
