@@ -2,15 +2,7 @@
 <html lang="en">
   <%- include('../templates/head', {title: 'BWWMC'}); %>
 <body>
-  <% if (user_id !== undefined) { %>
-    <%- include('../templates/logged_in_home_nav'); %>
-  <% }  else if (user_id === undefined){ %>
-    <%- include('../templates/navbar'); %>
-  <% } %>
-  <script>
-    let userId = <%- JSON.stringify(user_id) %>;
-    localStorage.setItem('user_id', JSON.stringify(userId));
-  </script>
+  <%- include('../templates/navbar'); %>
 
     <section class="cover" >
       <div class="cover-caption">
