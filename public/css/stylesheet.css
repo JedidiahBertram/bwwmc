@@ -12,6 +12,7 @@
 
 html, body {
   height: 100%;
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -20,6 +21,10 @@ a {
 
 a:hover {
   color: black;
+}
+
+h1 {
+  font-weight: 700;
 }
 
 .btn-custom {
@@ -43,7 +48,7 @@ a:hover {
 /* Home Page */
 
 .getStarted {
-  margin-bottom: 20%;
+  margin-bottom: 40px;
 }
 
 
@@ -59,7 +64,6 @@ a:hover {
 }
 
 .cover2 {
-  height: 100%;
   text-align: center;
 }
 
