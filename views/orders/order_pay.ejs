@@ -6,7 +6,7 @@
   <body class="container">
     <!-- NAV -->
     <%- include('../templates/cart_nav'); %>
-    
+
       <!-- CART MODAL -->
       <div class="modal fade cart-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
         <div class="modal-dialog" role="document">
@@ -44,6 +44,7 @@
       <form class="row" action="/orders/order_confirmation" method="GET">
          <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" value="Select a delivery date" type="text"/>
          <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[name]" placeholder="Name">
+         <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[email]" placeholder="Email">
          <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[address]" placeholder="Street Address">
          <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[city]" placeholder="City">
          <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[state]" placeholder="State">
