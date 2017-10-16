@@ -7,50 +7,25 @@
     <!-- NAV -->
     <%- include('../templates/cart_nav'); %>
 
-      <!-- CART MODAL -->
-      <div class="modal fade cart-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="gridSystemModalLabel">Order Summary</h4>
-            </div>
-            <div class="modal-body">
-              <table id="cart">
-                <tr>
-                  <th class="cartHeader">Item:</th>
-                  <th class="cartHeader">Price:</th>
-                  <th>Quantity:</th>
-                </tr>
-              </table>
-              <table class="subTotalTable">
-                <tr>
-                  <th class="subTotalHeader">Subtotal</th>
-                  <td id="subTotal">$0.00</td>
-                </tr>
-              </table>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-custom">Save changes</button>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /CART modal -->
+    <!-- CART MODAL -->
+    <%- include('../templates/cart_modal'); %>
 
-      <div class="h1Container row">
-        <h1>Schedule Delivery</h1>
-      </div>
-      <form class="row" action="/orders/order_confirmation" method="GET">
-         <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" value="Select a delivery date" type="text"/>
-         <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[name]" placeholder="Name">
-         <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[email]" placeholder="Email">
-         <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[address]" placeholder="Street Address">
-         <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[city]" placeholder="City">
-         <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[state]" placeholder="State">
-         <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[zip]" placeholder="Zip Code">
-         <input id="submitSchedule" type="submit" class="btn btn-custom btn-lg confirm col-xs-12 col-md-8 col-md-offset-2" value="Submit Order" onclick="sendOrderToRoute()"></button>
-      </form>
-      <button class="row center-block" id="test">Order Test Button</button>
+    <div class="h1Container row">
+      <h1>Schedule Delivery</h1>
+    </div>
+
+    <form class="row" action="/orders/order_confirmation" method="GET">
+       <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" value="Select a delivery date" type="text"/>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[name]" placeholder="Name">
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[email]" placeholder="Email">
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[address]" placeholder="Street Address">
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[city]" placeholder="City">
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[state]" placeholder="State">
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[zip]" placeholder="Zip Code">
+       <input id="submitSchedule" type="submit" class="btn btn-custom btn-lg confirm col-xs-12 col-md-8 col-md-offset-2" value="Submit Order" onclick="sendOrderToRoute()"></button>
+    </form>
+    
+    <button class="row center-block" id="test">Order Test Button</button>
+
   </body>
 </html>
