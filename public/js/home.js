@@ -14,7 +14,7 @@ $(document).ready(() => {
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    if (scroll > 300) {
+    if (scroll > 5) {
       $('h2').addClass('fadeInDown')
       $('h2').addClass('showme')
     }
@@ -23,7 +23,7 @@ $(document).ready(() => {
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    if (scroll > 300) {
+    if (scroll > 100) {
       $('#step-one').addClass('fadeInLeft')
       $('#step-one').addClass('showme')
     }
