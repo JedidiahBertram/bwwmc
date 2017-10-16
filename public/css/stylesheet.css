@@ -11,66 +11,92 @@
 **********/
 
 html, body {
-    height: 100%;
+  height: 100%;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.btn-custom {
+  background-color: #FF5202;
+  border-color: #FF5202;
+  color: black;
+}
+
+.btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active {
+  background-color: #e84900;
+  border-color: #ce4100;
+  color: white;
+}
+
+.btn-custom.disabled:hover, .btn-custom.disabled:focus, .btn-custom.disabled:active, .btn-custom.disabled.active, .btn-custom[disabled]:hover, .btn-custom[disabled]:focus, .btn-custom[disabled]:active, .btn-custom[disabled].active, fieldset[disabled] .btn-custom:hover, fieldset[disabled] .btn-custom:focus, fieldset[disabled] .btn-custom:active, fieldset[disabled] .btn-custom.active {
+  background-color: #FF5202;
+  border-color: #FF5202;
 }
 
 
 /* Home Page */
 
 .getStarted {
-    margin-bottom: 20%;
+  margin-bottom: 20%;
 }
+
 
 /*cover*/
 
 .cover {
-    background: #222 url('../assets/images/Dog-Food.jpg') center center no-repeat;
-    background-size: cover;
-    height: 100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
+  background: #222 url('../assets/images/Dog-Food.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .cover2 {
-    height: 100%;
-    text-align: center;
+  height: 100%;
+  text-align: center;
 }
 
 .cover-caption {
-    width: 100%;
+  width: 100%;
 }
 
 .cover-caption1 {
-    width: 100%;
+  width: 100%;
 }
 
 .imgsize {
-    width: 520px;
-    height: 400px;
+  width: 520px;
+  height: 400px;
 }
 
 .target-nav {
-    position: fixed;
-    padding: 18px;
-    z-index: 10000;
-    transition: background-color 0.1s ease 0s;
+  position: fixed;
+  padding: 18px;
+  z-index: 10000;
+  transition: background-color 0.1s ease 0s;
 }
 
 .opaque {
-    transition-delay: 0.1s;
-    background-color: #fff;
-    box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
-    transition: background-color 0.1s ease 0s;
+  transition-delay: 0.1s;
+  background-color: #fff;
+  box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
+  transition: background-color 0.1s ease 0s;
 }
 
 .hideme {
-    opacity: 0;
-    transition: all ease 0.8s;
+  opacity: 0;
+  transition: all ease 0.8s;
 }
 
 .showme {
-    opacity: 1;
+  opacity: 1;
 }
 
 
@@ -80,79 +106,23 @@ html, body {
 /*  LOGIN FORM STYLING  */
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .login-container {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 .login {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .formField {
-    width: 100%;
+  width: 100%;
 }
 
-
-/*  MENU STYLING */
-
-.menuContainer {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
+.navbar-brand {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
 }
-
-.menuHeader {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin-top: 10%;
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
-}
-
-.menuTitle {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.menuSubtitle {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.menuItem {
-    display: flex;
-    flex-flow: row wrap;
-    width: 30%;
-    margin-top: 3%;
-    font-family: 'Raleway', sans-serif;
-}
-
-.menuImageContainer {
-    display: flex;
-    width: 100%;
-}
-
-.menuImage {
-    width: 80%;
-    box-shadow: 5px 5px 2.5px grey;
-}
-
-.menuTextContainer {
-    width: 80%;
-}
-
-.deliveryButton {
-    width: 20%;
-    margin-top: 2%;
-    margin-bottom: 5%;
-}
-
-
-/* End of Menu page styling */

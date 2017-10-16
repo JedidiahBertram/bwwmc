@@ -7,7 +7,6 @@ exports.seed = function(knex, Promise) {
             return knex('orders')
                 .insert([
                   {
-                    user_id: 1,
                     item_1_name: 'Chicken Pot Pie',
                     item_1_price: '30',
                     item_1_quantity: '1',
@@ -30,7 +29,6 @@ exports.seed = function(knex, Promise) {
                     delivery_date: '11-18-2017'
                   },
                   {
-                    user_id: 2,
                     item_1_name: 'Chicken Pot Pie',
                     item_1_price: '30',
                     item_1_quantity: '1',
@@ -53,7 +51,6 @@ exports.seed = function(knex, Promise) {
                     delivery_date: '11-18-2017'
                   },
                   {
-                    user_id: 3,
                     item_1_name: 'Chicken Pot Pie',
                     item_1_price: '30',
                     item_1_quantity: '1',

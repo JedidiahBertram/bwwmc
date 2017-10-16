@@ -45,12 +45,6 @@ exports.up = function(knex, Promise) {
             .notNullable();
         t.date('delivery_date')
         .notNullable();
-        t.integer('user_id')
-            .notNullable()
-            .references('id')
-            .inTable('users')
-            .onDelete('CASCADE')
-            .index();
     })
 };
 
