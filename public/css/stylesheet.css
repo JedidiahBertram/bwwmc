@@ -27,6 +27,14 @@ h1 {
   font-weight: 700;
 }
 
+section {
+  text-align: center;
+}
+
+.bowWow {
+  margin-top: 250px;
+}
+
 .btn-custom {
   background-color: #FF5202;
   border-color: #FF5202;
@@ -44,47 +52,30 @@ h1 {
   border-color: #FF5202;
 }
 
-
-/* Home Page */
-
-.getStarted {
-  margin-bottom: 40px;
+.container {
+  width: 100vw;
+  margin: 0px;
 }
-
-
-/*cover*/
 
 .cover {
   background: #222 url('../assets/images/Dog-Food.jpg') center center no-repeat;
   background-size: cover;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
+  height: 100vh;
 }
 
-.cover2 {
-  text-align: center;
+.getStarted {
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
-.cover-caption {
-  width: 100%;
-}
-
-.cover-caption1 {
-  width: 100%;
+.hideme {
+  opacity: 0;
+  transition: all ease 0.8s;
 }
 
 .imgsize {
   width: 520px;
   height: 400px;
-}
-
-.target-nav {
-  position: fixed;
-  padding: 18px;
-  z-index: 10000;
-  transition: background-color 0.1s ease 0s;
 }
 
 .opaque {
@@ -94,39 +85,28 @@ h1 {
   transition: background-color 0.1s ease 0s;
 }
 
-.hideme {
-  opacity: 0;
-  transition: all ease 0.8s;
-}
-
 .showme {
   opacity: 1;
 }
 
-
-/*  Register, Login, and Logout Navbar Styling */
-
-
-/*  LOGIN FORM STYLING  */
-
-.container {
-  display: flex;
-  justify-content: center;
+.step1 {
+  margin-top: 30px;
+  margin-right: 30vw;
 }
 
-.login-container {
-  margin-top: 10%;
+.step2 {
+  margin-top: 30px;
+  margin-left: 30vw;
 }
 
-.login {
-  margin-top: 5%;
+.step3 {
+  margin-top: 30px;
+  margin-right: 30vw;
 }
 
-.formField {
-  width: 100%;
-}
-
-.navbar-brand {
-  font-size: 20px;
-  font-family: 'Raleway', sans-serif;
+.target-nav {
+  position: fixed;
+  padding: 18px;
+  z-index: 10000;
+  transition: background-color 0.1s ease 0s;
 }

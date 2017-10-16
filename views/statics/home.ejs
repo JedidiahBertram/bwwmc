@@ -14,13 +14,17 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP DATE PICKER -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-    <%# Stylesheet%>
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/css/animate.css">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="/css/stylesheet.css">
-    <script src="/js/app.js" charset="utf-8"></script>
+    <!-- MY JS -->
+    <script src="/js/home.js" charset="utf-8"></script>
 </head>
-<body>
+<body class="container">
   <!-- NAV -->
   <nav class="navbar target-nav navbar-fixed-top">
     <div class="container-fluid">
@@ -45,75 +49,38 @@
   </nav>
   <!-- END OF NAV -->
 
+  <!-- HERO SECTION -->
+  <section class="row cover">
+        <h1 class="col-xs-12 bowWow">Bow Wow</h1>
+        <h1 class="col-xs-12">Where's My Chow?</h1>
+        <h2 class="col-xs-12">Quality Dog Food from Our Door to You</h2>
+        <a href="nav-main" class="btn btn-secondary-outline btn-sm" role="button">&darr;</a>
+  </section>
 
-    <section class="cover" >
-      <div class="cover-caption">
-        <div class="container">
-          <div class="col-sm-10 col-sm-offset-1">
-          <h1 class="display-2">Bow Wow</h1>
-          <h1 class="display-2">Where's My Chow?</h1>
-          <h2>Quality Dog Food from Our Door to You</h2>
+  <!-- HOW IT WORKS SECTION -->
+  <section class="row">
+    <h2 class="col-xs-12 animated hideme">How does it work?</h2>
 
-          <br>
+    <!-- STEP ONE -->
+    <div class="row animated hideme step1" id="step-one">
+      <h3 class="col-xs-12">Step 1: Select your order</h3>
+      <img src="../assets/images/story2.png" class="imgsize">
+    </div>
 
-          <a href="nav-main" class="btn btn-secondary-outline btn-sm" role="button">&darr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- STEP TWO -->
+    <div class="row animated hideme step2" id="step-two">
+      <h3 class="col-xs-12">Step 2: Pick a Delivery Date</h3>
+      <img src="../assets/images/story4.png" class="imgsize">
+    </div>
 
+    <!-- STEP THREE -->
+    <div class="row animated hideme step3" id="step-three">
+      <h3 class="col-xs-12">Step 3: Treat your dog to the good life!</h3>
+      <img src="../assets/images/story3.png" class="imgsize">
+    </div>
 
-
-    <section class="cover2">
-      <div class="cover-caption1">
-        <div class="container">
-          <div class="col-sm-10 col-sm-offset-1">
-            <div class="col">
-              <h2 class="display-2 caption animated hideme">How does it work?</h2>
-
-              <!-- STEP ONE -->
-              <div class="row animated hideme" id="step-one">
-                <div class="col">
-                  <p >Step 1: Select your order</p>
-                </div>
-                <div class="col">
-                  <img src="../assets/images/story2.png" class="imgsize">
-                </div>
-              </div>
-
-              <!-- STEP TWO -->
-              <div class="row animated hideme" id="step-two">
-                <div class="col">
-                  <img src="../assets/images/story4.png" class="imgsize">
-                </div>
-                <div class="col">
-                  <p>Step 2: Pick a Delivery Date</p>
-                </div>
-              </div>
-
-              <!-- STEP THREE -->
-              <div class="row animated hideme" id="step-three">
-                <div class="col">
-                  <p>Step 3: Enjoy treating your dog to the good life!</p>
-                </div>
-                <div class="col">
-                  <img src="../assets/images/story3.png" class="imgsize">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col">
-                  <a href="/menu_items" class="btn btn-custom btn-lg getStarted" role="btn" style="background-color:rgb(242,98,38)">Get Started</a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          </div>
-
-      </div>
-
-    </section>
+    <a href="/menu_items" class="btn btn-custom btn-lg getStarted" role="btn" style="background-color:rgb(242,98,38)">Get Started</a>
+  </section>
 
 </body>
 </html>
