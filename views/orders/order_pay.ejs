@@ -14,18 +14,38 @@
       <h1>Schedule Delivery</h1>
     </div>
 
-    <form class="row" action="/orders/order_confirmation" method="GET">
-       <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" value="Select a delivery date" type="text"/>
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[name]" placeholder="Name">
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[email]" placeholder="Email">
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2" type="text" name="delivery[address]" placeholder="Street Address">
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[city]" placeholder="City">
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[state]" placeholder="State">
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2"type="text" name="delivery[zip]" placeholder="Zip Code">
-       <input id="submitSchedule" type="submit" class="btn btn-custom btn-lg confirm col-xs-12 col-md-8 col-md-offset-2" value="Submit Order" onclick="sendOrderToRoute()"></button>
+    <form class="row" id="needs-validation" action="/orders/order_confirmation" method="GET">
+       <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" placeholder="Select a delivery date" type="text" required/>
+        <div id="calendarError">
+          Please select a date from the calendar.
+        </div>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="name" type="text" name="delivery[name]" placeholder="Name" required>
+         <div id="nameError">
+           Please enter your first and last name.
+         </div>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="email" type="email" name="delivery[email]" placeholder="Email" required>
+         <div id="emailError">
+           Please enter a valid email address.
+         </div>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="address" type="text" name="delivery[address]" placeholder="Street Address" required>
+         <div id="addressError">
+           Please enter your shipping address.
+         </div>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="city" type="text" name="delivery[city]" placeholder="City" required>
+         <div id="cityError">
+           Please enter your city.
+         </div>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="state" type="text" name="delivery[state]" placeholder="State" required>
+         <div id="stateError">
+           Please enter your state.
+         </div>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="zip" type="text" name="delivery[zip]" placeholder="Zip Code" required>
+         <div id="zipError">
+           Please enter your zip code.
+         </div>
+       <button id="submitSchedule" type="submit" class="btn btn-custom btn-lg confirm col-xs-12 col-md-8 col-md-offset-2">Submit Order</button>
     </form>
-    
-    <button class="row center-block" id="test">Order Test Button</button>
 
+    <button class="row center-block" id="test">Order Test Button</button>
   </body>
 </html>

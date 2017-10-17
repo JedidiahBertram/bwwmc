@@ -1,5 +1,9 @@
 /*  MENU STYLING */
 
+input:valid {
+  border: 1px solid green;
+}
+
 a {
   color: black;
 }
@@ -74,6 +78,10 @@ p {
   margin-bottom: 20px;
 }
 
+.invalid-feedback {
+  color: red;
+}
+
 .iconBar {
   color: black;
 }
@@ -141,7 +149,37 @@ p {
   text-align: center;
 }
 
+#calendarError {
+  visibility: hidden;
+  color: red;
+}
 
-/* End of Menu page styling */
+#nameError {
+  visibility: hidden;
+  color: red;
+}
 
-/
+#emailError {
+  visibility: hidden;
+  color: red;
+}
+
+#addressError {
+  visibility: hidden;
+  color: red;
+}
+
+#cityError {
+  visibility: hidden;
+  color: red;
+}
+
+#stateError {
+  visibility: hidden;
+  color: red;
+}
+
+#zipError {
+  visibility: hidden;
+  color: red;
+}
