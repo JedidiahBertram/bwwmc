@@ -14,7 +14,7 @@
       <h1>Schedule Delivery</h1>
     </div>
 
-    <form class="row" id="needs-validation" action="/orders/order_confirmation" method="GET">
+    <form class="row" id="needs-validation" method="GET">
        <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" placeholder="Select a delivery date" type="text" required/>
         <div id="calendarError">
           Please select a date from the calendar.
@@ -23,7 +23,7 @@
          <div id="nameError">
            Please enter your first and last name.
          </div>
-       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="email" type="email" name="delivery[email]" placeholder="Email" required>
+       <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="email" name="delivery[email]" placeholder="Email" required>
          <div id="emailError">
            Please enter a valid email address.
          </div>

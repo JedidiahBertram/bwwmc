@@ -88,14 +88,14 @@ $(document).ready(function(){
   $('#test').click((e) => {
     localStorage.cart = JSON.stringify(order);
     let acc = 1;
-    orderPost = {
+    let orderPost = {
       delivery_date: $('.datePickerText').val(),
       name: $('#name').val(),
       email: $('#email').val(),
       address: $('#address').val(),
       city: $('#city').val(),
       state: $('#state').val(),
-      zip: $('#zip').val(),
+      zip_code: $('#zip').val(),
       total: JSON.parse(localStorage.subTotal)
     };
     for (let prop in order) {
@@ -108,76 +108,106 @@ $(document).ready(function(){
   });
 
 
-  //Re-factor this to use the submit click event callback above
-  //Check db for formatting requirements
-  // function sendOrderToRoute(){
-  //     var schedDate = $('.datePickerText').val();
-  //
-  //     //ajax call to the appropriate route
-  //     var request = $.ajax({
-  //       url: "http://localhost:3000/orders",
-  //       method: "POST",
-  //       data: order,
-  //       dataType: "json"
-  //     });
-  //   };
+  //FORM VALIDATION
+  let form = $('#needs-validation');
+  let validName = false;
+  let validEmail = false;
+  let validAddress = false;
+  let validForm = false;
+  form.submit((event) => {
+    if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) !== null) {
+      if ($('#email').val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) !== null) {
+        if ($('#address').val().match(/^\d+\s[A-z]+\s[A-z]+/) !== null) {
+          validForm = true;
+        }
+      }
+    }
+    if (!validForm) {
+      event.preventDefault();
+    } else {
+      event.preventDefault();
+      localStorage.cart = JSON.stringify(order);
+      let acc = 1;
+      let orderPost = {
+        delivery_date: $('.datePickerText').val(),
+        name: $('#name').val(),
+        email: $('#email').val(),
+        address: $('#address').val(),
+        city: $('#city').val(),
+        state: $('#state').val(),
+        zip_code: $('#zip').val(),
+        total: JSON.parse(localStorage.subTotal)
+      };
+      for (let prop in order) {
+          orderPost[`item_${acc}_name`] = order[prop].item_name;
+          orderPost[`item_${acc}_price`] = order[prop].item_price;
+          orderPost[`item_${acc}_quantity`] = order[prop].quantity;
+          acc ++;
+      }
+      $.post("http://localhost:3000/orders", orderPost)
+        .done((res) => {
+          console.log(res);
+      });
+    }
+  });
 
-//FORM VALIDATION
-let form = $('#needs-validation');
+  bindEventListenersToForm();
 
-  // Name Field Validation
-  $('#name').focus((event) => {
-    $('#name').keydown((event) => {
+  function bindEventListenersToForm() {
+    // Name Field Validation
+    $('#name').focus((event) => {
+      $('#name').keydown((event) => {
+        if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) === null) {
+          $('#name').css({"border": "1px solid red"});
+          $("#nameError").css({"visibility": "visible"});
+        } else {
+          $('#name').css({"border": "1px solid green"});
+          $("#nameError").css({"visibility": "hidden"});
+        }
+      })
+    });
+    $('#name').blur((event) => {
       if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) === null) {
         $('#name').css({"border": "1px solid red"});
         $("#nameError").css({"visibility": "visible"});
-      } else {
-        $('#name').css({"border": "1px solid green"});
-        $("#nameError").css({"visibility": "hidden"});
       }
-    })
-  });
-  $('#name').blur((event) => {
-    if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) === null) {
-      $('#name').css({"border": "1px solid red"});
-      $("#nameError").css({"visibility": "visible"});
-    }
-  });
-  // EMAIL Field Validation
-  $('#email').focus((event) => {
-    $('#email').keydown((event) => {
+    });
+    // EMAIL Field Validation
+    $('#email').focus((event) => {
+      $('#email').keydown((event) => {
+        if ($('#email').val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
+          $('#email').css({"border": "1px solid red"});
+          $("#emailError").css({"visibility": "visible"});
+        } else {
+          $('#email').css({"border": "1px solid green"});
+          $("#emailError").css({"visibility": "hidden"});
+        }
+      })
+    });
+    $('#email').blur((event) => {
       if ($('#email').val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
         $('#email').css({"border": "1px solid red"});
         $("#emailError").css({"visibility": "visible"});
-      } else {
-        $('#email').css({"border": "1px solid green"});
-        $("#emailError").css({"visibility": "hidden"});
       }
-    })
-  });
-  $('#email').blur((event) => {
-    if ($('#email').val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
-      $('#email').css({"border": "1px solid red"});
-      $("#emailError").css({"visibility": "visible"});
-    }
-  });
-  // ADDRESS Field Validation
-  $('#address').focus((event) => {
-    $('#address').keydown((event) => {
+    });
+    // ADDRESS Field Validation
+    $('#address').focus((event) => {
+      $('#address').keydown((event) => {
+        if ($('#address').val().match(/^\d+\s[A-z]+\s[A-z]+/) === null) {
+          $('#address').css({"border": "1px solid red"});
+          $("#addressError").css({"visibility": "visible"});
+        } else {
+          $('#address').css({"border": "1px solid green"});
+          $("#addressError").css({"visibility": "hidden"});
+        }
+      })
+    });
+    $('#address').blur((event) => {
       if ($('#address').val().match(/^\d+\s[A-z]+\s[A-z]+/) === null) {
         $('#address').css({"border": "1px solid red"});
         $("#addressError").css({"visibility": "visible"});
-      } else {
-        $('#address').css({"border": "1px solid green"});
-        $("#addressError").css({"visibility": "hidden"});
       }
-    })
-  });
-  $('#address').blur((event) => {
-    if ($('#address').val().match(/^\d+\s[A-z]+\s[A-z]+/) === null) {
-      $('#address').css({"border": "1px solid red"});
-      $("#addressError").css({"visibility": "visible"});
-    }
-  });
+    });
+  };
 
 });
