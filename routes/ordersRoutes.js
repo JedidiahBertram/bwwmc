@@ -20,7 +20,7 @@ router.route("/")
       knex('orders')
         .insert(req.body)
         .returning("id")
-        .then(function(id) {
+        .then((id) => {
           res.send(id);
         })
     })

@@ -125,7 +125,6 @@ $(document).ready(function(){
     if (!validForm) {
       event.preventDefault();
     } else {
-      event.preventDefault();
       localStorage.cart = JSON.stringify(order);
       let acc = 1;
       let orderPost = {
