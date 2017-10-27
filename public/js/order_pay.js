@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   //Grab cart information from order and store it locally
-  let order = JSON.parse(localStorage.cart);
+  let order = localStorage.cart === undefined || "undefined" ? [] : JSON.parse(localStorage.cart);
 
   //Loop through the local order info and repopulate the cart info
   updateCart();
@@ -83,32 +83,7 @@ $(document).ready(function(){
   };
   date_input.datepicker(options);
 
-  //Reset the order to an empty array
-  //This should also make a post to the orders resource in the db
-  $('#test').click((e) => {
-    localStorage.cart = JSON.stringify(order);
-    let acc = 1;
-    let orderPost = {
-      delivery_date: $('.datePickerText').val(),
-      name: $('#name').val(),
-      email: $('#email').val(),
-      address: $('#address').val(),
-      city: $('#city').val(),
-      state: $('#state').val(),
-      zip_code: $('#zip').val(),
-      total: JSON.parse(localStorage.subTotal)
-    };
-    for (let prop in order) {
-        orderPost[`item_${acc}_name`] = order[prop].item_name;
-        orderPost[`item_${acc}_price`] = order[prop].item_price;
-        orderPost[`item_${acc}_quantity`] = order[prop].quantity;
-        acc ++;
-    }
-    console.log("Order Post: ", orderPost);
-  });
-
-
-  //FORM VALIDATION
+  //FORM VALIDATION and Order Submission
   let form = $('#needs-validation');
   let validName = false;
   let validEmail = false;
@@ -148,6 +123,7 @@ $(document).ready(function(){
           console.log(res);
       });
       localStorage.order = JSON.stringify(orderPost);
+      localStorage.cart = undefined;
     }
   });
 

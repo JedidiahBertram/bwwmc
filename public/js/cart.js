@@ -6,9 +6,9 @@ $(document)
         let items = JSON.parse(localStorage.items).menuItems;
         items.forEach((item) => {
           item.quantity = null;
-        })
+        });
 
-        let order = localStorage.cart !== undefined ? JSON.parse(localStorage.cart) : [];
+        let order = localStorage.cart === undefined || "undefined" ? [] : JSON.parse(localStorage.cart);
 
         let cartCount = null;
         let subTotal = "$0.00";
