@@ -8,7 +8,7 @@ $(document)
           item.quantity = null;
         });
 
-        let order = localStorage.cart === undefined || "undefined" ? [] : JSON.parse(localStorage.cart);
+        let order = localStorage.cart === undefined ? [] : (localStorage.cart === "undefined" ? [] : JSON.parse(localStorage.cart));
 
         let cartCount = null;
         let subTotal = "$0.00";
@@ -250,5 +250,13 @@ $(document)
           }
         });
       };
+
+      $(".scheduleDelivery").click((event) => {
+        if (order.length !== 0) {
+          window.location.href = 'orders/order_pay';
+        } else {
+          $('.emptyCart-modal-lg').modal('show');
+        }
+      });
 
     });//End of document ready

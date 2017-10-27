@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
   //Grab cart information from order and store it locally
-  let order = localStorage.cart === undefined || "undefined" ? [] : JSON.parse(localStorage.cart);
+  let order = localStorage.cart === undefined ? [] : (localStorage.cart === "undefined" ? [] : JSON.parse(localStorage.cart));
 
   //Loop through the local order info and repopulate the cart info
   updateCart();
