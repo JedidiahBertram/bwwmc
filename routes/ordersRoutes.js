@@ -22,10 +22,9 @@ router.route("/")
         .returning("id")
         .then((id) => {
           res.send(id);
-        })
+        });
     })
     .put((req, res) => {
-
         knex('orders')
             .where('id', '=', req.body.order.order_id)
             .update(req.body.order)

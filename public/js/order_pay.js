@@ -147,6 +147,7 @@ $(document).ready(function(){
         .done((res) => {
           console.log(res);
       });
+      localStorage.order = JSON.stringify(orderPost);
     }
   });
 
