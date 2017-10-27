@@ -4,7 +4,7 @@ $(document).ready(() => {
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    if (scroll > 360) {
+    if (scroll > 150) {
       $('nav').addClass('opaque')
     } else {
       $('nav').removeClass('opaque')
