@@ -16,31 +16,31 @@
 
     <form class="row" id="needs-validation" action="/orders/order_confirmation" method="GET">
        <input class="datePickerText col-xs-12 col-md-8 col-md-offset-2" id="dateText" name="date" placeholder="Select a delivery date" type="text" required/>
-        <div id="calendarError">
+        <div id="calendarError" class="col-xs-12 col-md-8 col-md-offset-2">
           Please select a date from the calendar.
         </div>
        <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="name" type="text" name="delivery[name]" placeholder="Name" required>
-         <div id="nameError">
+         <div id="nameError" class="col-xs-12 col-md-8 col-md-offset-2">
            Please enter your first and last name.
          </div>
        <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="email" name="delivery[email]" placeholder="Email" required>
-         <div id="emailError">
+         <div id="emailError" class="col-xs-12 col-md-8 col-md-offset-2">
            Please enter a valid email address.
          </div>
        <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="address" type="text" name="delivery[address]" placeholder="Street Address" required>
-         <div id="addressError">
+         <div id="addressError" class="col-xs-12 col-md-8 col-md-offset-2">
            Please enter your shipping address.
          </div>
        <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="city" type="text" name="delivery[city]" placeholder="City" required>
-         <div id="cityError">
+         <div id="cityError" class="col-xs-12 col-md-8 col-md-offset-2">
            Please enter your city.
          </div>
        <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="state" type="text" name="delivery[state]" placeholder="State" required>
-         <div id="stateError">
+         <div id="stateError" class="col-xs-12 col-md-8 col-md-offset-2">
            Please enter your state.
          </div>
        <input class="formField col-xs-12 col-md-8 col-md-offset-2" id="zip" type="text" name="delivery[zip]" placeholder="Zip Code" required>
-         <div id="zipError">
+         <div id="zipError" class="col-xs-12 col-md-8 col-md-offset-2">
            Please enter your zip code.
          </div>
        <button id="submitSchedule" type="submit" class="btn btn-custom btn-lg confirm col-xs-12 col-md-8 col-md-offset-2">Submit Order</button>
